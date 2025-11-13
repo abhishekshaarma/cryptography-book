@@ -1,0 +1,44 @@
+\sectionthree{One-time pad cipher}
+\begin{python0}
+from solutions import *; clear()
+\end{python0}
+\section*{One-Time Pad}
+
+The one-time pad (OTP) offers perfect secrecy (information-theoretic security) when used correctly. Its key properties are:
+
+\begin{itemize}
+  \item Use a truly random key stream, as long as the plaintext.
+  \item Encrypt by bitwise XOR: 
+    \[
+      C_i = P_i \oplus K_i.
+    \]
+  \item Every possible plaintext of that length is equally likely given the ciphertext.
+  \item An attacker with only the ciphertext gains zero information about the plaintext.
+  \item Security does not rely on computational assumptions—no amount of computing power can break it.
+\end{itemize}
+
+\subsection*{Key Requirements}
+\begin{itemize}
+  \item The key must be generated from a truly random source.
+  \item The key length must be at least as long as the message.
+  \item Each key bit is used exactly once and never reused.
+  \item The key must remain perfectly secret.
+\end{itemize}
+
+\subsection*{Practical Considerations}
+\begin{itemize}
+  \item Generating and distributing large, truly random keys is difficult.
+  \item Secure key exchange and storage are the main challenges.
+  \item In practice, OTPs are rare—often replaced by stream ciphers that approximate randomness.
+\end{itemize}
+
+\input{exercises/otp-0/main.tex}
+
+There's a rumor that during the Cold War, Washington D.C. communicates with
+Moscow using one time pad.
+
+(Using the concept of entropy of information theory, Claude Shannon can prove that
+the ciphertext contains no information about the plaintext, other than the length.)
+
+
+

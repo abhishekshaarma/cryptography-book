@@ -1,0 +1,40 @@
+\sectionthree{Permutation cipher}
+\begin{python0}
+from solutions import *; clear()
+\end{python0}
+A permutation cipher reorders the characters of the plaintext according to a fixed permutation, making the ciphertext appear scrambled.
+
+\subsection*{Definition}
+Given a permutation $\sigma$ on $\{1,2,\dots,n\}$, each plaintext block $(x_1,x_2,\dots,x_n)$ is mapped to $(x_{\sigma(1)},x_{\sigma(2)},\dots,x_{\sigma(n)})$.
+
+\subsection*{Example}
+Let $\sigma$ be a permutation of $\{1,2,3,4,5,6,7\}$ defined by:
+\[
+\sigma:\quad\begin{array}{c}
+1\ 2\ 3\ 4\ 5\ 6\ 7
+\end{array}\to
+\begin{array}{c}
+4\ 6\ 1\ 7\ 5\ 2\ 3
+\end{array}.
+\]
+In cycle notation:
+\[
+\sigma = (1\,4\,7\,3)(2\,6)(5).
+\]
+Omitting fixed points, this is often written as $\sigma=(1\,4\,7\,3)(2\,6)$.
+
+\subsection*{Key Properties}
+\begin{itemize}
+  \item The permutation must be invertible (a bijection).
+  \item Encryption and decryption are mutual inverses: apply $\sigma$ to encrypt, $\sigma^{-1}$ to decrypt.
+  \item Security depends on block size and secrecy of $\sigma$.
+\end{itemize}
+
+\input{exercises/permutation-5/main.tex}
+\input{exercises/permutation-6/main.tex}
+\input{exercises/permutation-7/main.tex}
+\input{exercises/permutation-8/main.tex}
+\input{exercises/permutation-9/main.tex}
+\input{exercises/permutation-10/main.tex}
+
+

@@ -1,0 +1,89 @@
+%-*-latex-*-
+\sectionthree{Block and stream ciphers}
+\begin{python0}
+from solutions import *; clear()
+\end{python0}
+
+In cryptography, we have two primary approaches to encrypting data: stream ciphers and block ciphers. Let's explore these concepts with simple examples.
+
+\subsection{Stream Ciphers}
+
+Stream ciphers process data one unit (typically one byte or character) at a time. Think of them as applying a transformation to each element independently.
+
+\subsubsection*{Example: Caesar Cipher}
+The Caesar cipher is a classic stream cipher where each letter is shifted by a fixed number of positions.
+
+With a key of 3:
+\begin{itemize}
+    \item Plain: ``hello''
+    \item Process: $h \rightarrow k$, $e \rightarrow h$, $l \rightarrow o$, $l \rightarrow o$, $o \rightarrow r$
+    \item Cipher: ``khoor''
+\end{itemize}
+
+Notice how each character is encrypted individually without considering its neighbors. Mathematically, we can express this as:
+\begin{equation}
+E_K(m_1 \parallel m_2 \parallel \ldots \parallel m_n) = E_K(m_1) \parallel E_K(m_2) \parallel \ldots \parallel E_K(m_n)
+\end{equation}
+where $\parallel$ represents concatenation.
+
+\subsubsection*{Example: One-Time Pad}
+Another stream cipher example is the one-time pad, where each character is combined (usually with XOR) with a random key character:
+
+\begin{itemize}
+    \item Plain: ``cat''
+    \item Key: ``xyz'' (random)
+    \item Process: $c \oplus x$, $a \oplus y$, $t \oplus z$
+    \item Cipher: Result of each XOR operation
+\end{itemize}
+
+\subsection{Block Ciphers}
+
+Block ciphers process fixed-size blocks of data as a single unit. This approach helps mask patterns in the original text.
+
+\subsubsection*{Example: Hill Cipher}
+The Hill cipher uses matrix multiplication to encrypt blocks of characters:
+
+With a $2\times2$ key matrix $K = \begin{pmatrix} 2 & 3 \\ 1 & 4 \end{pmatrix}$ and using $A=0$, $B=1$, etc.:
+
+\begin{itemize}
+    \item Plain: ``help'' $\rightarrow$ split into blocks: ``he'' and ``lp''
+    \item First block: ``he'' $\rightarrow [7,4]$
+    \item Encrypted first block: $K \times \begin{pmatrix} 7 \\ 4 \end{pmatrix} = \begin{pmatrix} 2 & 3 \\ 1 & 4 \end{pmatrix} \times \begin{pmatrix} 7 \\ 4 \end{pmatrix} = \begin{pmatrix} 14+12 \\ 7+16 \end{pmatrix} = \begin{pmatrix} 26 \\ 23 \end{pmatrix} \mod 26 = \begin{pmatrix} 0 \\ 23 \end{pmatrix}$
+    \item This translates to ``AX''
+    \item Similarly for ``lp''
+    \item Cipher: Result after processing all blocks
+\end{itemize}
+
+\subsubsection*{Example: Modern Block Cipher Concept}
+Consider a simplified version of a modern block cipher:
+
+\begin{itemize}
+    \item Plain: ``The quick brown fox''
+    \item Split into 4-character blocks: ``The '' + ``quic'' + ``k br'' + ``own '' + ``fox''
+    \item Each block undergoes multiple complex transformations
+    \item Cipher: Result of transforming each block
+\end{itemize}
+
+\subsection{Comparison and Applications}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|p{0.45\textwidth}|p{0.45\textwidth}|}
+\hline
+\textbf{Stream Ciphers} & \textbf{Block Ciphers} \\
+\hline
+Fast and simple & More complex but offer stronger security \\
+\hline
+Operate with minimal memory & Require padding for incomplete blocks \\
+\hline
+Vulnerable to statistical attacks when used improperly & Better at hiding patterns in the data \\
+\hline
+\end{tabular}
+\caption{Comparison of Stream and Block Ciphers}
+\end{table}
+
+\subsection{Real-World Context}
+
+Modern encryption systems like AES (Advanced Encryption Standard) are block ciphers, processing data in blocks of 128 bits. Stream ciphers like ChaCha20 are still used in scenarios requiring high speed and low resource usage, such as encrypting data on resource-constrained devices.
+
+When implementing either type of cipher in practice, we must consider additional factors like initialization vectors, padding methods, and operation modes to ensure security.

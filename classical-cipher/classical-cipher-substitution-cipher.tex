@@ -1,0 +1,112 @@
+\sectionthree{Substitution cipher}
+\begin{python0}
+from solutions import *; clear()
+\end{python0}
+
+Deciphering a substitution cipher is a challenging task. Frequency analysis only takes us so far; many letters have similar frequencies, making full decryption difficult.
+
+\subsection*{Key Techniques}
+\begin{itemize}
+  \item Use frequency analysis to identify likely candidates for 'e', 't', 'a', etc.
+  \item Apply digram (two-letter) analysis to known letters, treating decryption like solving a crossword puzzle.
+  \item Examine common n-grams ("th", "he", "in") and adjust mappings iteratively.
+  \item Refine by re‑examining patterns after each correct substitution.
+\end{itemize}
+
+\subsection*{Example Cipher and Approach}
+\begin{verbatim}
+FMRZVGBYIZBVGCTGDRBBSHJVGCZMVNMVGOFRDCMZVRJF
+DMZSBLSNRYABIRZGJNVGCZRBFRBCRBKBJKBCTGDMTZLGV
+TVRBFRBCRBBWRBFMNWIBFRBCZAVGJLMFMGBSZCBCWVGMJ
+FJBZBSVZWVGCZFJNZBVJWBJNBSAVZWKBCRBAZWIBZMRM
+SSNWVGCBTVSYVCBSVGCZFJNZBVJCTGDLNFBTKWVGCZ
+\end{verbatim}
+
+\paragraph{1. Frequency Analysis}
+Most frequent letters: Z (25), B (22), C (18), V (17), G (15), R (15), F (12).\
+Guess $Z \to e$ and mark all $Z$ as $e$.
+
+\paragraph{2. Digram Analysis}
+Look for patterns like "?e" and "e?". Assign $C \to t$ if "te" appears often.
+
+\paragraph{3. Trigram Analysis}
+Identify "the" patterns: if "eR" recurs, map $R \to h$, then fill $G \to n$, $B \to a$, etc.
+
+Continue iterating through frequency, digram, and trigram patterns until the plaintext emerges clearly.
+
+\begin{comment}
+====================================================
+ENCRYPTION KEY
+==============
+a -> t   b -> u   c -> v   d -> l   e -> m  
+f -> f   g -> n   h -> a   i -> j   j -> y  
+k -> c   l -> k   m -> r   n -> x   o -> e  
+p -> g   q -> z   r -> h   s -> q   t -> i  
+u -> b   v -> w   w -> o   x -> d   y -> s  
+z -> p  
+
+MESSAGES (ciphertext on top)
+============================
+amqtijxtheitijxnvatjhumajxltuhetlitukmoajvaotqvewm
+hesatinarotatingchairbehindabroadtablewhichwascove
+
+hmlojiaueecqrtgqtxlljtnhtrqtqjmximhmlajqqmtiqgbxhe
+redwithbooksmapsanddiagramsasienteredhisseatspunro
+
+bxlieftvmrmajqtggmthtxvmrtlmrmntqgjotqghmgthmlfehq
+undtofacemehisappearancemademegaspiwaspreparedfors
+
+ermiajxnqihtxnmubixeifehqeewmhgeomhjxntgmhqextkjis
+omethingstrangebutnotforsooverpoweringapersonality
+
+tqiajqjiotqajqqjpmoajvaieecexmquhmtiatotsajqqjpmtx
+asthisitwashissizewhichtookonesbreathawayhissizean
+
+lajqjrgeqjxnghmqmxvmajqamtlotqmxehrebqiamkthnmqija
+dhisimposingpresencehisheadwasenormousthelargestih
+
+twmmwmhqmmxbgextabrtxumjxnjtrqbhmiatiajqiegatiatlj
+aveeverseenuponahumanbeingiamsurethathistophathadi
+
+mwmhwmxibhmlielexjioebklatwmqkjggmlewmhrmmxijhmkst
+everventuredtodonitwouldhaveslippedovermeentirelya
+
+xlhmqimlexrsqaebklmhqamatliamftvmtxlumthloajvajtqq
+ndrestedonmyshouldershehadthefaceandbeardwhichiass
+
+evjtimojiatxtqqshjtxubkkiamfehrmhfkehjliamktiimhqe
+ociatewithanassyrianbulltheformerfloridthelatterso
+
+uktvctqtkreqiieatwmtqbqgjvjexefukbmqgtlmqatgmltxlh
+blackasalmosttohaveasuspicionofbluespadeshapedandr
+
+jggkjxnleoxewmhajqvamqiiamatjhotqgmvbkjthgktqimhml
+ipplingdownoverhischestthehairwaspeculiarplastered
+
+leoxjxfhexijxtkexnvbhwjxnojqgewmhajqrtqqjwmfehmamt
+downinfrontinalongcurvingwispoverhismassiveforehea
+
+liammsmqomhmukbmnhtsbxlmhnhmtiuktvcibfiqwmhsvkmthw
+dtheeyeswerebluegrayundergreatblacktuftsveryclearv
+
+mhsvhjijvtktxlwmhsrtqimhfbktabnmqghmtlefqaebklmhqt
+erycriticalandverymasterfulahugespreadofshouldersa
+
+xltvamqikjcmtuthhmkomhmiameiamhgthiqefajroajvatggm
+ndachestlikeabarrelweretheotherpartsofhimwhichappe
+
+thmltuewmiamitukmqtwmfehioemxehrebqatxlqvewmhmloji
+aredabovethetablesavefortwoenormoushandscoveredwit
+
+akexnuktvcatjhiajqtxltumkkeojxnhethjxnhbrukjxnwejv
+hlongblackhairthisandabellowingroaringrumblingvoic
+
+mrtlmbgrsfjhqijrghmqqjexefiamxeiehjebqghefmqqehvat
+emadeupmyfirstimpressionofthenotoriousprofessorcha
+
+kkmxnmh
+llenger
+
+====================================================
+\end{comment}
+

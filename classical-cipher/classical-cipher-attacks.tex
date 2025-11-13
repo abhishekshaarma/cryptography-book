@@ -1,0 +1,34 @@
+\sectionthree{Attacks}
+\begin{python0}
+from solutions import *; clear()
+\end{python0}
+
+We know that a algorithm consists of two algorithms: the encryption function $E_k$ and the decryption function $D_k$, both indexed by a secret key~$k$.  When Alice wants to send a plaintext message~$m$ to Bob, she computes
+\[
+  c = E_k(m)
+\]
+and transmits the ciphertext~$c$ .  Bob then recovers the original message by computing
+\[
+  D_k(c) \;=\; D_k\bigl(E_k(m)\bigr)\;=\;m.
+\]
+
+An adversary (we’ll call her Eve) observing this exchange might try to learn either:
+\begin{description}
+  \item[Ciphertext-only] Eve sees one or more ciphertexts
+  \[
+    c_1, c_2, \dots, c_n
+  \]
+  and her goal is to learn either~$m_i$ or $k$ from them alone.
+
+  \item[Known-plaintext] Eve obtains pairs
+  \[
+    (m_1, c_1), (m_2, c_2), \dots, (m_t, c_t),
+  \]
+  where each $c_i = E_k(m_i)$.  Using these she attempts to recover~$k$.
+
+  \item[Chosen-plaintext] Eve can submit any plaintexts~$m'$ and the she will get the correspondings~$E_k(m')$.  She then tries to infer $k$ (or decrypt other ciphertexts).
+
+  \item[Chosen-ciphertext] Eve may submit arbitrary ciphertexts~$c'$ to decrypt and obtain $D_k(c')$.  From these responses she attempts to recover $k$ (or to learn decryptions of other ciphertexts).
+\end{description}
+
+\noindent\textbf{Why these distinctions matter.}  It is important to understanf the different types of attacka and the increase in the strength of the attacks. Later Eve will have a lot new tool that she can use to attack.

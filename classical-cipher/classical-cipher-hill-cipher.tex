@@ -1,0 +1,52 @@
+\sectionthree{Hill cipher}
+\begin{python0}
+from solutions import *; clear()
+\end{python0}
+
+\defone{Hill's cipher}
+ Hill cipher, introduced by Lester S. Hill in 1929, represents an important advancement in cryptography by applying linear algebra to encryption. Rather than encrypting letters one at a time, it processes blocks of size $n$ via matrix multiplication.
+
+\subsection*{Encryption Process}
+For an $n\times n$ key matrix $K$ and plaintext vector $\mathbf{x}$ (converted A=0,\dots,Z=25),
+\[
+\mathbf{c} = K\mathbf{x} \bmod 26.
+\]
+
+A 3×3 example: $K = \begin{pmatrix}6 &24 &1 \\
+13 &16 &10 \\
+20 &17 &15\end{pmatrix}$, $\mathbf{x}=\begin{pmatrix}2 \\
+17 \\
+24\end{pmatrix}$ ("CRY").
+\[
+K\mathbf{x}=\begin{pmatrix}444 \\
+538 \\
+689\end{pmatrix}\equiv\begin{pmatrix}2 \\
+18 \\
+13\end{pmatrix}\bmod26
+= \begin{pmatrix}C \\
+S \\
+N\end{pmatrix}.
+\]
+
+\subsection*{Decryption via Matrix Inversion}
+Requires $K^{-1}$ in mod 26: compute $\det(K)$, adjugate, then multiply by $\det(K)^{-1}\bmod26$. Exists only if $\gcd(\det(K),26)=1$.
+
+\subsection*{Key Requirements}
+\begin{itemize}
+  \item $K$ must be square and invertible mod 26.
+  \item $\det(K)$ must be coprime with 26.
+\end{itemize}
+
+\subsection*{Small Example (2×2)}
+Key $K=\begin{pmatrix}9 &4\\5 &7\end{pmatrix}$, "LINEAR"→ numeric blocks [11,8], [13,4], [0,17]. First block:
+\[
+K\begin{pmatrix}11\\8\end{pmatrix}=\begin{pmatrix}131\\111\end{pmatrix}\equiv\begin{pmatrix}1\\7\end{pmatrix}\bmod26=B,H.
+\]
+Results: "LINEAR"→"BHYCRX".
+
+\subsection*{Advantages and Vulnerabilities}
+\begin{itemize}
+  \item Obscures single-letter frequencies via block processing.
+  \item Vulnerable to known-plaintext attacks (solve for $K$ with pairs).
+  \item Precursor to modern block ciphers.
+\end{itemize}

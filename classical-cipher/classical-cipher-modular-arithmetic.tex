@@ -1,0 +1,504 @@
+\sectionthree{Modular arithmetic}
+\begin{python0}
+from solutions import *; clear()
+\end{python0}
+
+Number thoery studies whole numbers and thier nature but is not limited to them. Infact, it is only a very small part of  number theory.
+Number theory is huge in CS and is one of the most important topics. The problem statements might seem simple and easy enough to understand however the proof, concpepts and techniques requrie intense knowledge of mathematics.
+
+Gaus said `Math is the queen of science and number theory is the queen of mathemactics`
+
+We will cover Elementary Number Theory. The name sounds misleading and the topic is not elementary at all. We only will study a small portion of number theory. The part we will cover will involve the part of whole numbers(integers)
+
+However, in research in number thoery requires real numbers, complex numbers , geometry, complex analysis etc.
+
+Let's look at  modular arthematic. Modular Arthematic is used in cyptography, data compression and error correction codes.
+In modular arithmetic, we perform calculations within a fixed range of numbers, where the result "wraps around" when it exceeds that range. It's often described as "clock arithmetic" because it behaves similarly to how hours wrap around on a 12-hour clock (after 12 comes 1, not 13).
+
+The set of integers $\{..., -3, -2, -1, 0, 1, 2, 3, ...\}$
+denoted $\Z$ has two operations $+$ and $\cdot$.
+In terms of the algebraic structure (i.e. the operations), $\Z$ is known as
+a \textbf{commutative ring}.
+Basically a commutative ring is a set of \lq\lq things'' with
+two operations, addition and multiplication, with rules that
+look like the addition and multiplication rules for $\Z$.
+For instance one such rule in $\Z$ is
+\[
+  a (b + c) = ab + ac
+\]
+This same rule holds true for $\Q$, $\R$, $\C$ and polynomials with coefficients in $\Z$.
+
+$\Z$ is known as a  communtative ring.
+
+Think of it in this way, as a function that would work for the argument it takes. 
+
+You can think of $\Z, \Q, \R, \C$ as subclasses of \verb!CommutativeRing!.
+Therefore if you have a function
+\begin{console}
+// Base abstract class
+class CommutativeRing
+{
+public:
+    virtual CommutativeRing* add(const CommutativeRing& other) = 0;
+    virtual CommutativeRing* multiply(const CommutativeRing& other) = 0;
+    virtual bool equals(const CommutativeRing& other) = 0;
+    virtual CommutativeRing* additiveInverse() = 0;
+};
+
+class Z : public CommutativeRing {
+private:
+    int value;
+public:
+    // Implementation of ring operations for integers
+};
+
+class Q : public CommutativeRing
+{
+private:
+    int numerator;
+    int denominator;
+public:
+    // Implementation of ring operations for rationals
+ 
+};
+
+\end{console}
+\begin{console}
+class Field : public CommutativeRing {
+public:
+    virtual Field* multiplicativeInverse() = 0;
+    // A field has multiplicative inverses for non-zero elements
+};
+
+// Q, R, and C would inherit from Field instead of CommutativeRing
+\end{console}
+
+
+then \verb!f! can work with \verb!x! if \verb!x! is a object of $\Z, \Q, \R, \C$.
+
+Another way we can talk about commutative ring. Let's talk about an example for a ring, Let's say we have a set $X$ such that $X$ has elements $a$ and $b$.
+$X$ is a ring that satisfies the condition,
+$a - b$ $=$ $a + b$
+
+this means that if there is a element $c$ such that $c \in X$ then $c$ will satisfy the condition.
+On a real note, we know that the only numbers that would statisfy that condition is 0.
+
+
+The idea is to create an abstract general solution that we can apply to the whole set or the whole ring.
+
+
+
+A \textbf{commutatative ring} $R$ 
+\sidenote{
+Example: the integer $\Z$,...$+$ and $\cdot$ of $\Z$ ...
+}
+is a set of \lq\lq things''
+with two operations abstractly denoted by 
+$\oplus$ and $\odot$ (\lq\lq addition'' and \lq\lq multiplication'')
+Furthermore there are two special \lq\lq things'' in $R$ which we will call
+$0_R$ and $1_R$.
+The properties satisfied by $R,0_R,1_R,\oplus,\odot$ 
+\sidebar{
+0 and 1 of $\Z$ ...
+}
+(of course there must be
+something satisfied by them!) are as follows.
+For $\oplus$ the properties are:
+\begin{myenum}
+\item $r \oplus s$ is in $R$ for all $r,s$ in $R$
+\sidebar{$i + j$ is in $\Z$ for integers $i$, $j$, ...}
+\item 
+$(r \oplus s) \oplus t
+=
+r \oplus (s \oplus t)$
+for all $r,s,t$ in $R$
+\sidebar{
+$(i + j) + k = i + (j + k)$
+for integers $i,j,k$ ...
+}
+\item
+$r \oplus 0_R = r = 0_R \oplus r$ 
+for all
+$r$ in $R$
+\sidebar{
+$i + 0 = i = 0 + i$
+for integer $i$ ...
+}
+\item For 
+\sidebar{
+If $i$ is an integer, then $-i$ is also an integer and 
+$i + (-i)= 0 =$
+$(-i)+ i$.
+}
+all $r$ in $R$ there is something in $R$ which we will call $r'$
+such that $r \oplus r' =$ $0_R = r' \oplus r$
+\end{myenum}
+For $\odot$ the properties are:
+\begin{myenum}
+\item $r \odot s$ is in $R$ for all $r, s$ in $R$
+\sidebar{$ij = ji$ for integer $i,j$,...}
+\item $(r \odot s) \odot t = r \odot (s \odot t)$ for all $r,s,t$ in $R$
+\sidebar{
+$(ij)k = i(jk)$ for integers $i,j,k$
+}
+\item $r \odot 1_R = r = 1_R \odot r$ for all $r$ in $R$
+\sidebar{
+$i1 = i = 1i$ for integer $i$ ...
+}
+\item $r \odot s = s \odot r$ for all $r,s$ in $R$ 
+\sidebar{
+$ij = ji$ for integers $i,j$
+}
+\end{myenum}
+The property involving both $\oplus$ and $\odot$ is
+\begin{myenum}
+\item 
+$r \odot (s \oplus t) =$
+$r \odot s \oplus r\odot t$
+\sidebar{
+$i(j + k) = ij + ik$ for integers $i,j,k$.
+So $\Z$ is a commutative ring.
+}
+\end{myenum}
+
+\noindent\textbf{Commutative ring} $(R,+,\cdot,0,1)$ satisfies:
+\begin{itemize}[nosep]
+  \item $(R,+)$ is an abelian group.
+  \item $(R,\cdot)$ is a commutative monoid.
+  \item Distributivity: $r\,(s+t)=r\,s + r\,t$.
+\end{itemize}
+
+\noindent\textbf{Example:} $\mathbb{Z}$ under usual $+$ and $\times$.
+
+\bigskip
+
+\noindent\textbf{Residue ring} $\mathbb{Z}/n\mathbb{Z}$:
+\[
+x\equiv y\pmod n \iff n\mid(x-y),
+\quad
+\{0,1,\dots,n-1\},
+\]
+operations performed in $\mathbb{Z}$ then reduced mod $n$.
+
+\bigskip
+
+\noindent\textbf{Case $n=26$:}
+\[
+\{0,\dots,25\},\quad
+3+25=28\equiv2,\quad
+7\cdot4=28\equiv2\pmod{26}.
+\]
+(\(\mathbb{Z}/26\mathbb{Z}\) is not a field.)
+
+\bigskip
+
+\noindent\textbf{Caesar cipher:}
+\[
+a\mapsto0,\dots,z\mapsto25,
+\quad
+E(p)=(p+k)\bmod26,
+\quad
+D(c)=(c-k)\bmod26.
+\]
+
+
+\noindent\textbf{Commutative ring} $(R,+,\cdot,0,1)$ satisfies:
+\begin{itemize}[nosep]
+  \item $(R,+)$ is an abelian group.
+  \item $(R,\cdot)$ is a commutative monoid.
+  \item Distributivity: $r\,(s+t)=r\,s + r\,t$.
+\end{itemize}
+
+\noindent\textbf{Example:} $\mathbb{Z}$ under usual $+$ and $\times$.
+
+\bigskip
+
+\noindent\textbf{Residue ring} $\mathbb{Z}/n\mathbb{Z}$:
+\[
+x\equiv y\pmod n \iff n\mid(x-y),
+\quad
+\{0,1,\dots,n-1\},
+\]
+operations performed in $\mathbb{Z}$ then reduced mod $n$.
+
+\bigskip
+
+\noindent\textbf{Case $n=26$:}
+\[
+\{0,\dots,25\},\quad
+3+25=28\equiv2,\quad
+7\cdot4=28\equiv2\pmod{26}.
+\]
+(\(\mathbb{Z}/26\mathbb{Z}\) is not a field.)
+
+\bigskip
+
+\noindent\textbf{Caesar cipher:}
+\[
+a\mapsto0,\dots,z\mapsto25,
+\quad
+E(p)=(p+k)\bmod26,
+\quad
+D(c)=(c-k)\bmod26.
+\]
+
+
+\noindent\textbf{Commutative ring} $(R,+,\cdot,0,1)$ satisfies:
+\begin{itemize}[nosep]
+  \item $(R,+)$ is an abelian group.
+  \item $(R,\cdot)$ is a commutative monoid.
+  \item Distributivity: $r\,(s+t)=r\,s + r\,t$.
+\end{itemize}
+
+\noindent\textbf{Example:} $\mathbb{Z}$ under usual $+$ and $\times$.
+
+\bigskip
+
+\noindent\textbf{Residue ring} $\mathbb{Z}/n\mathbb{Z}$:
+\[
+x\equiv y\pmod n \iff n\mid(x-y),
+\quad
+\{0,1,\dots,n-1\},
+\]
+operations performed in $\mathbb{Z}$ then reduced mod $n$.
+
+\bigskip
+
+\noindent\textbf{Case $n=26$:}
+\[
+\{0,\dots,25\},\quad
+3+25=28\equiv2,\quad
+7\cdot4=28\equiv2\pmod{26}.
+\]
+(\(\mathbb{Z}/26\mathbb{Z}\) is not a field.)
+
+\bigskip
+
+\noindent\textbf{Caesar cipher:}
+\[
+a\mapsto0,\dots,z\mapsto25,
+\quad
+E(p)=(p+k)\bmod26,
+\quad
+D(c)=(c-k)\bmod26.
+\]
+
+
+\noindent\textbf{Commutative ring} $(R,+,\cdot,0,1)$ satisfies:
+\begin{itemize}[nosep]
+  \item $(R,+)$ is an abelian group.
+  \item $(R,\cdot)$ is a commutative monoid.
+  \item Distributivity: $r\,(s+t)=r\,s + r\,t$.
+\end{itemize}
+
+\noindent\textbf{Example:} $\mathbb{Z}$ under usual $+$ and $\times$.
+
+\bigskip
+
+\noindent\textbf{Residue ring} $\mathbb{Z}/n\mathbb{Z}$:
+\[
+x\equiv y\pmod n \iff n\mid(x-y),
+\quad
+\{0,1,\dots,n-1\},
+\]
+operations performed in $\mathbb{Z}$ then reduced mod $n$.
+
+
+
+\input{exercises/exercise-0/main.tex}
+\input{exercises/exercise-1/main.tex}
+\input{exercises/exercise-2/main.tex}
+\input{exercises/exercise-3/main.tex}
+\begin{enumerate}
+\item[1.3.2]
+\begin{enumerate}
+\item Simplify $100 \pmod{26}$.
+$100 = 26 \cdot 3 + 22$
+Therefore, $100 \equiv 22 \pmod{26}$
+
+\item Simplify $131246845 \pmod{26}$ using basic operations.
+$131246845 \div 26 = 5047955.57...$
+So $131246845 = 26 \cdot 5047955 + 15$
+Therefore, $131246845 \equiv 15 \pmod{26}$
+
+\item Simplify $33 \pmod{26}$.
+$33 = 26 \cdot 1 + 7$
+Therefore, $33 \equiv 7 \pmod{26}$
+
+\item Solve $2x + 1 \equiv 0 \pmod{26}$ by brute force.
+\begin{verbatim}
+for x in range(26):
+    if (2*x + 1) % 26 == 0:
+        print(f"Solution: x = {x}")
+\end{verbatim}
+The solution is $x = 13$ because $2 \cdot 13 + 1 = 27 \equiv 1 \pmod{26}$
+
+\item Solve $10x + 20 \equiv 4x + 78 \pmod{26}$ by brute force.
+\begin{verbatim}
+for x in range(26):
+    if (10*x + 20) % 26 == (4*x + 78) % 26:
+        print(f"Solution: x = {x}")
+\end{verbatim}
+The solution is $x = 1$.
+
+\item Simplify $10x + 20 \equiv 4x + 78 \pmod{26}$ first, then solve.\\
+$10x - 4x \equiv 78 - 20 \pmod{26}$\\
+$6x \equiv 58 \pmod{26}$\\
+$6x \equiv 6 \pmod{26}$ (since $58 = 26 \cdot 2 + 6$)\\
+$x \equiv 1 \pmod{26}$\\
+So $x = 1$ is the solution, which matches the brute force approach.
+
+\item Solve $42x^5 + 10x + 1 \equiv 73 \pmod{3}$.\\
+$42 \equiv 0 \pmod{3}$, $10 \equiv 1 \pmod{3}$, $1 \equiv 1 \pmod{3}$, $73 \equiv 1 \pmod{3}$\\
+The equation becomes: $0 \cdot x^5 + 1 \cdot x + 1 \equiv 1 \pmod{3}$\\
+$x + 1 \equiv 1 \pmod{3}$\\
+$x \equiv 0 \pmod{3}$\\
+Therefore $x = 0$ is the solution.
+
+\item Solve $(1000000x + 2)^3 \equiv 2 \pmod{3}$.\\
+$1000000 \equiv 1 \pmod{3}$, so $(1000000x + 2) \equiv (x + 2) \pmod{3}$\\
+We need to solve $(x + 2)^3 \equiv 2 \pmod{3}$ true
+For $x = 0$: $(0 + 2)^3 = 8 \equiv 2 \pmod{3}$  false
+For $x = 1$: $(1 + 2)^3 = 27 \equiv 0 \pmod{3}$ false
+For $x = 2$: $(2 + 2)^3 = 64 \equiv 1 \pmod{3}$ 
+Therefore $x = 0$ is the solution.
+\end{enumerate}
+
+\item[1.3.3]
+\begin{enumerate}
+\item If $x \equiv 1 \pmod{7}$ and $x \equiv 5 \pmod{13}$, then $x = 7k + 1 = 13m + 5$ for some integers $k$ and $m$.
+
+\item By the Chinese Remainder Theorem, there is a unique solution modulo $7 \cdot 13 = 91$.\\
+$x \equiv 1 \cdot 13 \cdot (13^{-1} \pmod{7}) + 5 \cdot 7 \cdot (7^{-1} \pmod{13}) \pmod{91}$\\
+$13^{-1} \pmod{7} = 6$ and $7^{-1} \pmod{13} = 2$\\
+$x \equiv 1 \cdot 13 \cdot 6 + 5 \cdot 7 \cdot 2 \pmod{91} \equiv 78 + 70 \equiv 57 \pmod{91}$
+
+\item If $x \equiv 2 \pmod{91}$ where $91 = 7 \cdot 13$, then:\\
+$x \equiv 2 \pmod{7}$ and $x \equiv 2 \pmod{13}$
+
+\item False. $x^3 \not\equiv x^0 \pmod{3}$ in general.\\
+For instance, if $x = 2$, then $2^3 = 8 \equiv 2 \pmod{3}$ while $2^0 = 1 \pmod{3}$.
+
+\item In $\mathbb{Z}$, $(x + y)^2 = x^2 + 2xy + y^2 \neq x^2 + y^2$ in general.\\
+For example, $(1 + 2)^2 = 9 \neq 1^2 + 2^2 = 5$.
+
+\item In $\mathbb{Z}/2\mathbb{Z}$, let's try all values:\\
+$(0 + 0)^2 \equiv 0^2 + 0^2 \equiv 0 \pmod{2}$ t
+$(0 + 1)^2 \equiv 1^2 + 0^2 \equiv 1 \pmod{2}$t
+$(1 + 0)^2 \equiv 1^2 + 0^2 \equiv 1 \pmod{2}$ f
+$(1 + 1)^2 \equiv 0^2 + 1^2 \equiv 1 \pmod{2}$ t
+So it's not true that $(x + y)^2 \equiv x^2 + y^2 \pmod{2}$ for all values.
+
+\item In $\mathbb{Z}$, $(x + y)^3 = x^3 + 3x^2y + 3xy^2 + y^3 \neq x^3 + y^3$ in general.\\
+For example, $(1 + 1)^3 = 8 \neq 1^3 + 1^3 = 2$.
+
+\item In $\mathbb{Z}/3\mathbb{Z}$, $(x + y)^3 \equiv x^3 + y^3 \pmod{3}$ is true.\\
+$(x + y)^3 = x^3 + 3x^2y + 3xy^2 + y^3 \equiv x^3 + 0 + 0 + y^3 \equiv x^3 + y^3 \pmod{3}$
+
+\item In $\mathbb{Z}/n\mathbb{Z}$, $(x + y)^n \equiv x^n + y^n \pmod{n}$ is true.\\
+From binomial theorem: $(x + y)^n = \sum_{k=0}^{n} \binom{n}{k} x^{n-k} y^k$\\
+For $1 \leq k \leq n-1$, $\binom{n}{k}$ is divisible by $n$\\
+Therefore, $(x + y)^n \equiv x^n + y^n \pmod{n}$
+\end{enumerate}
+
+\item[1.3.4] Tables for modular arithmetic mod 26:
+
+Addition: $a + b \equiv (a + b) \pmod{26}$
+
+Negation: $-a \equiv 26 - a \pmod{26}$
+
+Multiplication: $a \cdot b \equiv (a \cdot b) \pmod{26}$
+
+Multiplicative inverse mod 26:
+$1^{-1} \equiv 1 \pmod{26}$
+$3^{-1} \equiv 9 \pmod{26}$
+$5^{-1} \equiv 21 \pmod{26}$
+$7^{-1} \equiv 15 \pmod{26}$
+$9^{-1} \equiv 3 \pmod{26}$
+$11^{-1} \equiv 19 \pmod{26}$
+$15^{-1} \equiv 7 \pmod{26}$
+$17^{-1} \equiv 23 \pmod{26}$
+$19^{-1} \equiv 11 \pmod{26}$
+$21^{-1} \equiv 5 \pmod{26}$
+$23^{-1} \equiv 17 \pmod{26}$
+$25^{-1} \equiv 25 \pmod{26}$
+For all other values of $a$, $a^{-1} \equiv$ None $\pmod{26}$
+\end{enumerate}
+\input{exercises/exercise-4/main.tex}
+\input{exercises/exercise-5/main.tex}
+\input{exercises/exercise-6/main.tex}
+\input{exercises/exercise-7/main.tex}
+\input{exercises/exercise-8/main.tex}
+\input{exercises/exercise-9/main.tex}
+\input{exercises/exercise-10/main.tex}
+\input{exercises/exercise-11/main.tex}
+\input{exercises/exercise-12/main.tex}
+\input{exercises/exercise-13/main.tex}
+\input{exercises/exercise-14/main.tex}
+\input{exercises/exercise-15/main.tex}
+\input{exercises/exercise-16/main.tex}
+\input{exercises/exercise-17/main.tex}
+\input{exercises/exercise-18/main.tex}
+\input{exercises/exercise-19/main.tex}
+\input{exercises/exercise-20/main.tex}
+\input{exercises/exercise-21/main.tex}
+\input{exercises/exercise-22/main.tex}
+\input{exercises/exercise-23/main.tex}
+\input{exercises/exercise-24/main.tex}
+\input{exercises/exercise-25/main.tex}
+\input{exercises/exercise-26/main.tex}
+\begin{enumerate}
+\item[1.3.19]
+$\begin{aligned}
+(a) & 10 \equiv 1 \pmod{3} \\
+(b) & 100 \equiv 1 \pmod{3} \\
+(c) & 1000 \equiv 1 \pmod{3} \\
+(d) & 5342 \equiv 2 \pmod{3} \\
+(e) & 534603142235187 \equiv 1 \pmod{3}
+\end{aligned}$
+
+(f) For powers of 10: $10^n \equiv 1 \pmod{3}$ for all $n \geq 1$. In general, the sum of digits of a number divided by 3 gives the same remainder as the number itself mod 3.
+
+\item[1.3.20]
+$\begin{aligned}
+(a) & 10 \equiv 1 \pmod{9} \\
+(b) & 100 \equiv 1 \pmod{9} \\
+(c) & 1000 \equiv 1 \pmod{9} \\
+(d) & 9142 \equiv 7 \pmod{9} \\
+(e) & 96331420351887 \equiv 1 \pmod{9}
+\end{aligned}$
+
+(f) For powers of 10: $10^n \equiv 1 \pmod{9}$ for all $n \geq 1$. In general, the sum of digits of a number divided by 9 gives the same remainder as the number itself mod 9.
+
+\item[1.3.21]
+$\begin{aligned}
+(a) & 10 \equiv 10 \pmod{11} \\
+(b) & 100 \equiv 1 \pmod{11} \\
+(c) & 1000 \equiv 10 \pmod{11} \\
+(d) & 9142 \equiv 1 \pmod{11} \\
+(e) & 80432440556787 \equiv 0 \pmod{11}
+\end{aligned}$
+
+(f) For powers of 10: $10^{2k} \equiv 1 \pmod{11}$ and $10^{2k+1} \equiv 10 \pmod{11}$ for integers $k \geq 0$. In general, alternating sum of digits (with appropriate weights) gives the remainder mod 11.
+
+\item[1.3.22]
+The statement $xy \equiv 0 \pmod{N} \Rightarrow x \equiv 0 \pmod{N}$ or $y \equiv 0 \pmod{N}$ holds true if and only if $N$ is prime.
+
+For non-prime $N$, we can find counterexamples. For $N=26$: Let $x=13$ and $y=2$. Then $13 \cdot 2 \equiv 0 \pmod{26}$, but neither $13 \equiv 0 \pmod{26}$ nor $2 \equiv 0 \pmod{26}$.
+
+\item[1.3.26]
+(a-d) In $\mathbb{Z}/p\mathbb{Z}$ where $p$ is prime, all non-zero elements have multiplicative inverses.
+
+(e) When the modulus is prime, all non-zero elements have multiplicative inverses.
+
+(f-i) In $\mathbb{Z}/n\mathbb{Z}$ where $n$ is composite, an element $a$ has a multiplicative inverse if and only if $\gcd(a,n) = 1$, i.e., $a$ is coprime to $n$.
+
+\item[1.3.27]
+(a) The function $h(n) = (2n + 5) \bmod 256$ has a cycle of length 128. Starting with seed 1: $1 \to 7 \to 19 \to 43 \to 91 \to 187 \to 123 \to \ldots$ This function can only generate 128 distinct values (the even numbers + 5).
+
+(b) This is not a good hash function as it only covers half the range.
+
+(c) Different seeds with the same parity will generate the same cycle.
+
+(d) A function of the form $h(n) = (an + b) \bmod 256$ can cover the entire range if and only if $\gcd(a, 256) = 1$, e.g., $h(n) = (3n + 7) \bmod 256$.
+\end{enumerate}

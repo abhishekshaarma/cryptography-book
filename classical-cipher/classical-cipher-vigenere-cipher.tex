@@ -1,0 +1,148 @@
+\sectionthree{Vigenere cipher}
+\begin{python0}
+from solutions import *; clear()
+\end{python0}
+
+
+
+The shift cipher and the substitution cipher map each letter using a single alphabet: they are \emph{monoalphabetic}. A polyalphabetic cipher uses multiple alphabets to encrypt.
+
+The Vigen\`ere Cipher is a sequence of shifts determined by a key vector. Given a key vector $\{k_1,k_2,\dots,k_t\}$, each plaintext letter $x_i$ is shifted by $k_{((i-1)\bmod t)+1}$:
+\[
+c_i = x_i + k_{((i-1)\bmod t)+1} \pmod{26}.
+\]
+
+\subsection*{Example}
+Key: $\{4,5,6,7,8\}$; Plaintext: "HELLO WORLD"
+\begin{itemize}
+  \item H shifts by 4
+  \item E shifts by 5
+  \item L shifts by 6
+  \item L shifts by 7
+  \item O shifts by 8
+  \item (space remains unchanged)
+  \item W shifts by 4 (key restarts)
+  \item O shifts by 5
+  \item R shifts by 6
+  \item L shifts by 7
+  \item D shifts by 8
+\end{itemize}
+Notice that repeated letters receive different shifts: the two L’s in "HELLO" shift by 6 then 7.
+
+\subsection*{Key Properties}
+\begin{itemize}
+  \item Period $t$ equal to key length.
+  \item Security improves with longer, random keys.
+  \item Encryption and decryption both use the same key sequence.
+\end{itemize}
+\input{exercises/vigenere-1/main.tex}
+\input{exercises/vigenere-2/main.tex}
+\input{exercises/vigenere-3/main.tex}
+\input{exercises/vigenere-4/main.tex}
+\input{exercises/vigenere-5/main.tex}
+
+\input{exercises/vigenere-6/main.tex}
+\input{exercises/vigenere-7/main.tex}
+
+\input{exercises/vigenere-8/main.tex}
+
+\input{exercises/vigenere-9/main.tex}
+\input{exercises/vigenere-10/main.tex}
+\input{exercises/vigenere-11/main.tex}
+
+\begin{enumerate}
+\item[1.7.2]
+Function to count occurrences of substrings of different lengths:
+
+\begin{verbatim}
+function substringCount(s):
+    counts = {}
+    for length in range(1, len(s)):
+        for i in range(len(s) - length + 1):
+            substring = s[i:i+length]
+            counts[substring] = counts.get(substring, 0) + 1
+    return counts
+\end{verbatim}
+
+\item[1.7.3]
+Function to find index positions of substrings:
+
+\begin{verbatim}
+function substringPositions(s):
+    positions = {}
+    for length in range(1, len(s)):
+        for i in range(len(s) - length + 1):
+            substring = s[i:i+length]
+            if substring not in positions:
+                positions[substring] = []
+            positions[substring].append(i)
+    return positions
+\end{verbatim}
+
+\item[1.7.4]
+Function to guess Vigenere key length using repeated substring analysis:
+
+\begin{verbatim}
+function guessKeyLength(ciphertext):
+    positions = substringPositions(ciphertext)
+    distances = []
+    
+    # Look for repeated substrings of length 3 or more
+    for substring, pos_list in positions.items():
+        if len(substring) >= 3 and len(pos_list) > 1:
+            # Calculate distances between occurrences
+            for i in range(len(pos_list) - 1):
+                distances.append(pos_list[i+1] - pos_list[i])
+    
+    # Find the GCD of these distances
+    if distances:
+        return findGCD(distances)
+    return 0
+\end{verbatim}
+
+\item[1.7.5]
+To approximate Index of Coincidence $I(s) = \frac{\sum_{i=0}^{25} f_i(f_i-1)}{n(n-1)}$:
+
+\begin{verbatim}
+function indexOfCoincidence(text):
+    n = len(text)
+    freqs = [0] * 26
+    
+    for char in text:
+        freqs[ord(char) - ord('a')] += 1
+    
+    sum_fi_fi_minus_1 = sum(f * (f - 1) for f in freqs)
+    return sum_fi_fi_minus_1 / (n * (n - 1))
+\end{verbatim}
+
+\item[1.7.6]
+For a random string, each letter has probability $p_i = 1/26$, so:
+$I(s) = \sum_{i=0}^{25} \frac{f_i(f_i-1)}{n(n-1)} = \sum_{i=0}^{25} \frac{f_i}{n} \cdot \frac{f_i-1}{n-1}$
+
+For large $n$, $\frac{f_i}{n} \approx \frac{1}{26}$ and $\frac{f_i-1}{n-1} \approx \frac{1}{26}$
+
+Therefore, $I(s) \approx \sum_{i=0}^{25} \frac{1}{26} \cdot \frac{1}{26} = \frac{26}{26^2} = \frac{1}{26} \approx 0.0385$
+
+\item[1.7.7]
+Function to calculate index of coincidence:
+
+\begin{verbatim}
+function indexOfCoincidence(input):
+    n = len(input)
+    if n <= 1:
+        return 0
+    
+    # Handle both string and list input
+    if isinstance(input[0], str):
+        freqs = [0] * 26
+        for char in input:
+            freqs[ord(char.lower()) - ord('a')] += 1
+    else:  # list of numbers
+        freqs = [0] * 26
+        for num in input:
+            freqs[num] += 1
+    
+    sum_fi_fi_minus_1 = sum(f * (f - 1) for f in freqs)
+    return sum_fi_fi_minus_1 / (n * (n - 1))
+\end{verbatim}
+\end{enumerate}

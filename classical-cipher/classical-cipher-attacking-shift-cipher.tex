@@ -1,0 +1,77 @@
+\sectionthree{Attacking the Shift Cipher}
+
+The shift cipher encrypts a letter $x$ by shifting it by a key $k$ (with $0 \le k \le 25$) in the alphabet:
+\begin{align*}
+E_k(x) &\equiv (x + k) \bmod 26,  \
+D_k(x) &\equiv (x - k) \bmod 26.
+\end{align*}
+Since there are only 26 possible keys, a brute‑force attack tries all decryptions $D_0,\dots,D_{25}$.
+
+However, frequency analysis offers a more efficient method:
+\begin{itemize}
+\item Compute the frequency of each ciphertext character.
+\item Assume the most frequent symbol corresponds to “e.”
+\item Derive the candidate key and perform decryption.
+\item Verify by checking readability or further statistics.
+\end{itemize}
+This heuristic can fail if “e” isn’t the most common symbol in the sample.
+
+Here are some useful statistics for English:
+
+3-gram Probabilities:
+\begin{itemize}
+\item \texttt{the}: 0.0181  \quad \texttt{and}: 0.0073  \quad \texttt{ing}: 0.0072
+\item \texttt{ent}: 0.0042  \quad \texttt{ion}: 0.0042  \quad \texttt{her}: 0.0036
+\item \texttt{for}: 0.0034  \quad \texttt{tha}: 0.0033  \quad \texttt{nth}: 0.0033
+\item \texttt{int}: 0.0032  \quad \texttt{ere}: 0.0031  \quad \texttt{tio}: 0.0031
+\item \texttt{ter}: 0.0030  \quad \texttt{est}: 0.0028  \quad \texttt{ers}: 0.0028
+\item \texttt{ati}: 0.0026  \quad \texttt{hat}: 0.0026  \quad \texttt{ate}: 0.0025
+\item \texttt{all}: 0.0025  \quad \texttt{eth}: 0.0024  \quad \texttt{hes}: 0.0024
+\item \texttt{ver}: 0.0024  \quad \texttt{his}: 0.0024  \quad \texttt{oft}: 0.0022
+\item \texttt{ith}: 0.0021  \quad \texttt{fth}: 0.0021  \quad \texttt{sth}: 0.0021
+\item \texttt{oth}: 0.0021  \quad \texttt{res}: 0.0021  \quad \texttt{ont}: 0.0020
+\end{itemize}
+
+4-gram Probabilities:
+\begin{itemize}
+\item \texttt{tion}: 0.31  \quad \texttt{nthe}: 0.27  \quad \texttt{ther}: 0.24
+\item \texttt{that}: 0.21  \quad \texttt{ofth}: 0.19  \quad \texttt{fthe}: 0.19
+\item \texttt{thes}: 0.18  \quad \texttt{with}: 0.18  \quad \texttt{inth}: 0.17
+\item \texttt{atio}: 0.17  \quad \texttt{othe}: 0.16  \quad \texttt{tthe}: 0.16
+\item \texttt{dthe}: 0.15  \quad \texttt{ingt}: 0.15  \quad \texttt{ethe}: 0.15
+\item \texttt{sand}: 0.14  \quad \texttt{sthe}: 0.14  \quad \texttt{here}: 0.13
+\item \texttt{thec}: 0.13  \quad \texttt{ment}: 0.12  \quad \texttt{them}: 0.12
+\item \texttt{rthe}: 0.12  \quad \texttt{thep}: 0.11  \quad \texttt{from}: 0.10
+\item \texttt{this}: 0.10  \quad \texttt{ting}: 0.10  \quad \texttt{thei}: 0.10
+\item \texttt{ngth}: 0.10  \quad \texttt{ions}: 0.10  \quad \texttt{andt}: 0.10
+\end{itemize}
+
+\begin{itemize}
+\item Use scoring functions (e.g. log‑likelihood) to rank key candidates quickly.
+\item Compare ciphertext n‑gram distributions against language models.
+\item Apply hill‑climbing or genetic algorithms to search the key space efficiently.
+\item Combine frequency analysis with n‑gram scoring for robust results.
+\end{itemize}
+
+\input{exercises/exercise-20/main.tex}
+\input{exercises/exercise-21/main.tex}
+\begin{enumerate}
+\item[1.5.1]
+$\begin{aligned}
+(a) & 10 \equiv 10 \pmod{11} \\
+(b) & 100 \equiv 1 \pmod{11} \\
+(c) & 1000 \equiv 10 \pmod{11} \\
+(d) & 9142 \equiv 1 \pmod{11} \\
+(e) & 80432440556787 \equiv 0 \pmod{11}
+\end{aligned}$
+
+(f) For powers of 10: $10^{2k} \equiv 1 \pmod{11}$ and $10^{2k+1} \equiv 10 \pmod{11}$ for integers $k \geq 0$. 
+In general, we can use a digit-by-digit computation where each digit position has a weight based on its place value modulo 11.
+
+\item[1.5.2]
+The statement $xy \equiv 0 \pmod{N} \Rightarrow x \equiv 0 \pmod{N}$ or $y \equiv 0 \pmod{N}$ holds true if and only if $N$ is prime.
+
+For non-prime $N$, we can find counterexamples. For $N=26$: Let $x=13$ and $y=2$. Then $13 \cdot 2 \equiv 0 \pmod{26}$, but neither $13 \equiv 0 \pmod{26}$ nor $2 \equiv 0 \pmod{26}$.
+
+The pattern is that in modular arithmetic modulo $N$, the implication holds if and only if $N$ is prime. For composite $N$, we can always find factors $a$ and $b$ of $N$ where $a < N$ and $b < N$ such that $ab \equiv 0 \pmod{N}$, but neither $a \equiv 0 \pmod{N}$ nor $b \equiv 0 \pmod{N}$.
+\end{enumerate}

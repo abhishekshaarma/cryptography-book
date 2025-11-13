@@ -1,0 +1,53 @@
+\sectionthree{Linear feedback shift register}
+\begin{python0}
+from solutions import *; clear()
+\end{python0}
+
+LFSRs are efficient mechanisms for generating pseudorandom bit sequences. They operate by using the current state to deterministically calculate the next bit in a sequence.
+
+\subsection*{Basic Concept}
+\begin{enumerate}
+  \item Start with an initial bit sequence (seed).
+  \item Apply a linear function (XOR) to selected bits.
+  \item Shift the register and append the new bit.
+\end{enumerate}
+
+\subsection*{Mathematical Foundation}
+Exclusive-OR (XOR) in modulo 2 arithmetic:
+\[
+0 \oplus 0 = 0,\quad 0 \oplus 1 = 1,\quad 1 \oplus 0 = 1,\quad 1 \oplus 1 = 0.
+\]
+
+\subsection*{Example}
+Consider a 4-bit LFSR with initial state $\mathbf{x}^{(0)}=(0,1,1,1)$ and feedback rule:
+\[
+x_{n+4} = x_n \oplus x_{n+2} \pmod{2}.
+\]
+Compute:
+\[
+\begin{aligned}
+x_4 &= x_0 \oplus x_2 = 0 \oplus 1 = 1,\\
+x_5 &= x_1 \oplus x_3 = 1 \oplus 1 = 0,\\
+x_6 &= x_2 \oplus x_4 = 1 \oplus 1 = 0,\\
+x_7 &= x_3 \oplus x_5 = 1 \oplus 0 = 1,\\
+x_8 &= x_4 \oplus x_6 = 1 \oplus 0 = 1,\\
+\end{aligned}\]
+sequence continues similarly. The output stream begins:
+\[
+0111\,1001\,1001\,1\dots
+\]
+This register has period 7 (less than the maximum $2^4-1=15$).
+
+\subsection*{Applications in Cryptography}
+\begin{itemize}
+  \item Generate pseudorandom sequences efficiently with minimal resources.
+  \item Implementable in hardware or software.
+  \item Certain feedback polynomials yield maximal period $2^n-1$.
+  \item Vulnerable if the structure and output bits are known (solvable via linear algebra).
+\end{itemize}
+\input{exercises/lfsr-0/main.tex}
+\input{exercises/lfsr-1/main.tex}
+\input{exercises/lfsr-2/main.tex}
+\input{exercises/lfsr-3/main.tex}
+\input{exercises/lfsr-4/main.tex}
+\input{exercises/lfsr-5/main.tex}

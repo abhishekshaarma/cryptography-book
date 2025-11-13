@@ -1,0 +1,136 @@
+\sectionthree{Shift cipher}
+\begin{python0}
+from solutions import *; clear()
+\end{python0}
+
+\section*{Shift Cipher and the Caesar Cipher}
+
+A \defone{shift cipher} encrypts each letter of the plaintext by moving it forward in the alphabet by a fixed number $k$, called the \defone{key}, with $0\le k<26$.  In particular:
+
+\begin{defn}
+The \defone{Caesar cipher} is the shift cipher with key $k=3$.  Under this cipher, encryption replaces each letter by the one three positions later, wrapping around from $z$ to $a$, and decryption reverses the process.
+\end{defn}
+
+For example, with $k=3$ we have
+\[
+a \mapsto d,\quad
+b \mapsto e,\quad
+c \mapsto f,\quad
+\ldots
+\]
+and because the alphabet “goes in a circle,” also
+\[
+x \mapsto a,\quad
+y \mapsto b,\quad
+z \mapsto c.
+\]
+Thus the word
+\[
+\texttt{hello}
+\]
+encrypts to
+\[
+\texttt{khoor}.
+\]
+
+In code, a single‐character encryption function can be written as follows:
+
+\begin{console}[fontsize=\footnotesize]
+def E(x):
+    i = ord(x) - ord('a')
+    i = (i + 3) % 26
+    return chr(ord('a') + i)
+\end{console}
+
+and equivalently in C++:
+
+\begin{console}[fontsize=\footnotesize]
+char E(char x)
+{
+    return (x - 'a' + 3) % 26 + 'a';
+}
+\end{console}
+
+Because shifting by 26 positions returns each letter to itself, the only meaningful keys are
+\[
+K = \{0,1,2,\dots,25\}.
+\]
+
+Let $P$ and $C$ be two sets.  A
+\defone{cipher}
+consists of two maps
+\[
+E \colon P \to C
+\quad\text{and}\quad
+D \colon C \to P
+\]
+called the \defone{encryption} and \defone{decryption} respectively, satisfying
+\[
+D\bigl(E(x)\bigr) = x
+\quad\text{for every }x\in P.
+\]
+Here, elements of $P$ are called \defone{plaintexts} and elements of $C$ are called \defone{ciphertexts}.  
+
+\begin{defn}
+A \defone{symmetric cipher} (or \defone{private-key cipher}) is given by
+two functions
+\[
+E \colon K \times P \to C,
+\quad
+D \colon K \times C \to P,
+\]
+such that for each key $k\in K$ one has
+\[
+D\bigl(k,\;E(k,x)\bigr) = x
+\quad\text{for all }x\in P.
+\]
+In other notation one often writes $E_k(x)$ for $E(k,x)$ and $D_k(y)$ for $D(k,y)$.
+\end{defn}
+
+A symmetric cipher uses the same secret key for both encryption and decryption.  By contrast:
+
+\begin{defn}
+An \defone{asymmetric cipher} (or \defone{public-key cipher}) employs a pair of distinct keys,
+an \defone{encryption key} $k$ and a \defone{decryption key} $k'$.  Its maps
+\[
+E \colon P \to C
+\quad\text{and}\quad
+D \colon C \to P
+\]
+must satisfy
+\[
+D\bigl(E(x)\bigr) = x
+\quad\text{for all }x\in P,
+\]
+when using $E$ with the public key $k$ and $D$ with the private key $k'$.  That is,
+\[
+D_{k'}\bigl(E_k(x)\bigr) = x.
+\]
+Here $E_k$ may be shared openly, while $k'$ remains confidential.
+\end{defn}
+
+Kerckhoffs’ principle tells us that the security of a cipher should rest solely on the secrecy of the key, not on the obscurity of the algorithm.  Modern cryptography follows this by publishing algorithms and relying on rigorous analysis to ensure that only possession of the key allows decryption.
+
+\vspace{1em}
+\noindent
+As a concrete example, the classical \defone{shift cipher} (also known as the Caesar cipher) is a symmetric cipher where
+\[
+K = \{0,1,2,\dots,25\},
+\quad
+P = C = \{0,1,2,\dots,25\},
+\]
+and for each key $k\in K$ we define
+\[
+E_k(x) \;=\; x + k \;(\bmod\,26),
+\qquad
+D_k(y) \;=\; y - k \;(\bmod\,26).
+\]
+It is immediate that
+\[
+D_k\bigl(E_k(x)\bigr) \equiv x \pmod{26},
+\]
+so decryption inverts encryption exactly.
+
+\bigskip
+In particular, choosing $k=3$ yields the traditional Caesar cipher:  encryption shifts each letter forward by three positions, and decryption shifts backward by three.
+```
