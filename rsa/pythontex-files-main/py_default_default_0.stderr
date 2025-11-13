@@ -1,8 +1,0 @@
-Traceback (most recent call last):
-  File "/home/student/ciss451/ciss451-book-project-student/rsa/py_default_default.py", line 1, in <module>
-    from solutions import *; clear()
-                             ^^^^^^^
-  File "/usr/lib64/python3.12/site-packages/solutions.py", line 27, in clear
-    writefile(filename, '')
-    ^^^^^^^^^
-NameError: name 'writefile' is not defined
