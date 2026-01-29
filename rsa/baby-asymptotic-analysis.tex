@@ -1,0 +1,23 @@
+\sectionthree{Baby Asymptotic Analysis}
+\begin{python0}
+from solutions import *; clear()
+\end{python0}
+
+Asymptotic analysis studies algorithms by their time or space usage as a function of input size $n$, independent of hardware.
+
+For example, sorting 10 elements with bubble sort might be as fast as merge sort, but on very large inputs (e.g., $500\times10^{12}$ elements), merge sort is much faster.
+
+
+\begin{itemize}
+  \item \textbf{Big-O:} $T(n)=O(f(n))$ means there exist constants $c>0$ and $n_0$ such that for all $n\ge n_0$, 
+  \[T(n)\le c\,f(n).\]
+  \item \textbf{Big-\(\Omega\):} $T(n)=\Omega(f(n))$ means there exist constants $c>0$ and $n_0$ such that for all $n\ge n_0$, 
+  \[T(n)\ge c\,f(n).\]
+  \item \textbf{Big-\(\Theta\):} $T(n)=\Theta(f(n))$ means $T(n)=O(f(n))$ and $T(n)=\Omega(f(n))$, i.e., there exist constants $c_1,c_2>0$ and $n_0$ such that for all $n\ge n_0$, 
+  \[c_1\,f(n)\le T(n)\le c_2\,f(n).\]
+\end{itemize}
+
+\newpage
+
+
+

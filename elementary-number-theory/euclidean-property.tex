@@ -1,0 +1,168 @@
+\chapter{Euclidean property}
+\begin{python0}
+from solutions import *; clear()
+\end{python0}
+\textbf{Thm 2.4.1}: (Euclidean property) If $a, b \in Z$ with $b \neq 0$, then $\exists$ integers $q,r$ s.t.
+$a = bq + r, 0 \leq |r| < |b|$
+
+\textbf{Thm 2.4.2}: (Euclidean property 2) If $a, b \in Z$ with $b \neq 0$, then $\exists$ integers $q,r$ s.t.
+$a = bq + r, 0 \leq r < |b|$
+
+\textbf{Thm 2.4.3}: (Euclidean property 3) If $a, b \in Z$ with $a \geq 0, b > 0$, then $\exists$ integers $q \geq 0, r \geq 0$ s.t.
+$a = bq + r, 0 \leq r < b$
+
+$q$ = quotient, $r$ = remainder, both unique. Computing $a,b \rightarrow q,r$ is division algorithm.
+
+Python example:
+\begin{verbatim}
+a = 25
+b = 8
+q, r = divmod(25, 8)
+print("%s = %s * %s + %s" % (a, b, q, r))
+# Output: 25 = 8 * 3 + 1
+\end{verbatim}
+
+If $a > 0, b > 0$: $q = \lfloor a/b \rfloor, r = a - bq$
+
+Also: $a = b \cdot (a/b) + (a\%b)$ in programming terms.
+
+To prove Euclidean property, we use Well-ordering principle:
+
+\textbf{WOP for $\mathbb{N}$}: If $X \subseteq \mathbb{N}$ is non-empty, then $X$ has least element.
+
+\textbf{WOP for $Z$}: If $X \subseteq Z$ is non-empty and bounded below, then $X$ has least element.
+
+Note: $\mathbb{R}$ doesn't satisfy this. E.g., $(0,1)$ has no minimum.
+
+\textbf{Proof of Thm 2.4.3}:
+Assume $b > 0$. Let $X = \{a-bx | x \in Z, a-bx \geq 0\} \subseteq \mathbb{N} \cup \{0\}$. $X$ non-empty since $a = a-b \cdot 0 \geq 0$ is in $X$. $X$ is bounded below by 0. By WOP, $X$ has minimal element $r$. So $r \in \mathbb{N} \cup \{0\}$ and $r = a - bq$ for some $q \in Z$.
+
+Thus $a = bq + r, 0 \leq r$
+
+Now prove $r < b$: Suppose $r \geq b$. Then $0 \leq r-b$ and:
+$a = bq + r = bq + (r-b+b) = b(q+1) + (r-b)$
+
+Therefore $a - b(q+1) = (r-b) < r$
+
+This means $a - b(q+1) \in X$ and smaller than $a-bq$, contradicting minimality of $a-bq$.
+
+Also $q \geq 0$, otherwise $q < 0 \Rightarrow bq + r \leq b(-1) + r < 0$ since $r < b$.
+
+\textbf{Prop 2.4.1}: The $q,r$ in Thm 2.4.3 are unique.
+
+\textbf{Proof}: If $a = bq + r = bq' + r'$ with $0 \leq r,r' < |b|$, then either $q = q'$ (thus $r = r'$) or assume $q > q'$. This gives $r' = b(q-q') + r > b + r \geq b$, contradicting $r' < b$.
+
+\textbf{Proof of Thm 2.4.1}:
+Use Thm 2.4.3 for general case. Need to handle $a < 0$. Let $u = \pm 1$ so $ua \geq 0$ and $v = \pm 1$ so $vb > 0$. Note $u^{-1} = u, v^{-1} = v$. Let $a' = ua, b' = vb$.
+
+By Thm 2.4.3, $\exists q' \geq 0, r'$ s.t. $a' = b'q' + r', 0 \leq r' < b'$, i.e.,
+$ua = vbq' + r', 0 \leq r' < vb = |b|$
+
+Multiply by $u^{-1}$: $a = uvbq' + ur', 0 \leq r' < vb = |b|$
+
+Therefore $a = b(uvq') + ur', 0 \leq |ur'| < |b|$
+
+With $q = uvq', r = ur'$, we get $a = bq + r, 0 \leq |r| < |b|$
+
+\textbf{Exercises}:
+\begin{itemize}
+\item Ex 2.4.1: Prove Thm 2.4.3 using induction.
+\item Ex 2.4.2: Prove: If $a,b \in Z, b \neq 0$, then $\exists$ unique $q,r$ s.t. $a = bq + r, b \leq r < 2b$.
+\item Ex 2.4.3: Prove every integer is congruent to 0, 1, 2, or 3 mod 4.
+\item Ex 2.4.4: Prove squares are 0 or 1 mod 4.
+\item Ex 2.4.5: Solve $4x^3 + y^2 = 5z^2 + 6$ in $Z$.
+\item Ex 2.4.6: Prove 11, 111, 1111,... are not perfect squares.
+\item Ex 2.4.7: How many of 3, 23, 123, 1123,... are perfect squares?
+\end{itemize}
+
+\textbf{Solution to Ex 2.4.1}:
+Prove by induction. Fix $b > 0$. Let $P(n)$ be: $\exists q,r$ s.t. $n = bq + r, 0 \leq r < b$
+
+Base case $P(0)$: Set $q=0,r=0 \Rightarrow 0 = b \cdot 0 + 0, 0 \leq 0 < b$
+
+Inductive step: Assume $P(n)$ holds, so $n = bq + r, 0 \leq r < b$. Then $n+1 = bq + r + 1$.
+
+Case 1: $r = b-1$. Then $n+1 = bq + (b-1) + 1 = b(q+1) + 0$. Set $q' = q+1, r' = 0$.
+
+Case 2: $r < b-1$. Then $n+1 = bq + (r+1)$ with $0 \leq r+1 < b$. Set $q' = q, r' = r+1$.
+
+Therefore $P(n+1)$ holds in all cases. By induction, $P(n)$ holds for all $n \geq 0$.
+%\input{exercises/nt-00/main.tex}
+%\input{exercises/nt-01/main.tex}
+%\input{exercises/nt-02/main.tex}
+%\input{exercises/nt-03/main.tex}
+%\input{exercises/nt-04/main.tex}
+%\input{exercises/nt-05/main.tex}
+
+\begin{enumerate}
+\item[202.4.1]
+To prove: For $a, b \in \mathbb{Z}$ with $b \neq 0$, there exist unique integers $q, r$ such that $a = bq + r$ and $b \leq r < 2b$.
+
+Existence: By the standard division algorithm, we can find $q_0, r_0$ such that $a = bq_0 + r_0$ with $0 \leq r_0 < |b|$.
+If $r_0 \geq b$, then we already have $b \leq r_0 < 2b$, so set $q = q_0$ and $r = r_0$.
+If $r_0 < b$, then set $q = q_0 - 1$ and $r = r_0 + b$. 
+Then $a = b(q_0-1) + (r_0+b) = bq_0 + r_0 = a$, and $b \leq r_0 + b < 2b$.
+
+Uniqueness: Suppose $a = bq_1 + r_1 = bq_2 + r_2$ with $b \leq r_1, r_2 < 2b$.
+Then $b(q_1 - q_2) = r_2 - r_1$. Both $r_1$ and $r_2$ are between $b$ and $2b$, so $|r_2 - r_1| < b$.
+Since $b$ divides $r_2 - r_1$ and $|r_2 - r_1| < b$, we must have $r_2 - r_1 = 0$, which implies $r_2 = r_1$ and $q_1 = q_2$.
+
+\item[202.4.2]
+To prove: Every integer is congruent to 0, 1, 2, or 3 modulo 4.
+
+By the division algorithm, for any integer $n$, there exist integers $q$ and $r$ such that $n = 4q + r$ with $0 \leq r < 4$.
+This means $r \in \{0, 1, 2, 3\}$, so $n \equiv r \pmod{4}$.
+Therefore, every integer is congruent to either 0, 1, 2, or 3 modulo 4.
+
+\item[202.4.3]
+To prove: If $a \in \mathbb{Z}$, then $a^2 \equiv 0$ or $1 \pmod{4}$.
+
+Any integer $a$ is congruent to 0, 1, 2, or 3 modulo 4. Let's check each case:
+If $a \equiv 0 \pmod{4}$, then $a^2 \equiv 0^2 \equiv 0 \pmod{4}$.
+If $a \equiv 1 \pmod{4}$, then $a^2 \equiv 1^2 \equiv 1 \pmod{4}$.
+If $a \equiv 2 \pmod{4}$, then $a^2 \equiv 2^2 \equiv 4 \equiv 0 \pmod{4}$.
+If $a \equiv 3 \pmod{4}$, then $a^2 \equiv 3^2 \equiv 9 \equiv 1 \pmod{4}$.
+
+Therefore, any square is congruent to either 0 or 1 modulo 4.
+
+\item[202.4.4]
+To solve: $4x^3 + y^2 = 5z^2 + 6$ in $\mathbb{Z}$.
+
+Taking modulo 4:
+$4x^3 + y^2 \equiv 5z^2 + 6 \pmod{4}$
+$0 + y^2 \equiv z^2 + 2 \pmod{4}$
+$y^2 \equiv z^2 + 2 \pmod{4}$
+
+From the previous exercise, $z^2 \equiv 0$ or $1 \pmod{4}$, so:
+If $z^2 \equiv 0 \pmod{4}$, then $y^2 \equiv 2 \pmod{4}$
+If $z^2 \equiv 1 \pmod{4}$, then $y^2 \equiv 3 \pmod{4}$
+
+But we proved that $y^2 \equiv 0$ or $1 \pmod{4}$, which contradicts both cases.
+Therefore, the equation has no integer solutions.
+
+\item[202.4.6]
+To determine which of $3, 23, 123, 1123, 11123, 111123, 1111123, ...$ are perfect squares.
+
+Let's denote $T_n = 3$ if $n = 1$ and $T_n = \underbrace{11...1}_{n-1 \text{ digits}}3$ for $n \geq 2$.
+
+
+The numbers in our sequence are:
+$T_1 = 3$
+$T_2 = 13$
+$T_3 = 113$
+$T_4 = 1113$
+...
+
+None of these numbers end with 9, so none are perfect squares.
+
+Alternatively, we can check modulo 4. For $n \geq 2$, we have:
+$T_n = 10^{n-1} + 10^{n-2} + ... + 10 + 3$
+
+For odd $n$, $T_n \equiv 1 + 1 + ... + 1 + 3 \equiv 3 \pmod{4}$ (odd number of 1's)
+For even $n$, $T_n \equiv 1 + 1 + ... + 1 + 3 \equiv 0 \pmod{4}$ (even number of 1's)
+
+When $n$ is odd, $T_n \equiv 3 \pmod{4}$, which cannot be a perfect square.
+When $n$ is even, $T_n \equiv 0 \pmod{4}$, so we need to check if $T_n/4$ is a perfect square.
+
+\end{enumerate}
+

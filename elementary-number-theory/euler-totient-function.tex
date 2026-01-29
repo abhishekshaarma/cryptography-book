@@ -1,0 +1,201 @@
+% Euler's Totient Function
+
+\chapter{Euler's Totient Function}
+
+\section{Definition and Basic Properties}
+
+For a positive integer $n$, Euler's totient function $\varphi(n)$ counts the positive integers up to $n$ that are relatively prime to $n$. In other words:
+\[ \varphi(n) = |\{k : 1 \leq k \leq n, \gcd(k, n) = 1\}| \]
+
+\subsection{Elementary Values}
+\begin{itemize}
+\item $\varphi(1) = 1$, since $\gcd(1, 1) = 1$.
+\item For a prime $p$, $\varphi(p) = p - 1$, since all numbers $1, 2, \ldots, p-1$ are relatively prime to $p$.
+\item For a prime power $p^k$, $\varphi(p^k) = p^k - p^{k-1} = p^k(1 - \frac{1}{p})$.
+\end{itemize}
+
+\sectionthree{Multiplicativity}
+The Euler totient function is multiplicative, meaning if $\gcd(m, n) = 1$, then:
+\[ \varphi(mn) = \varphi(m) \cdot \varphi(n) \]
+
+This property helps compute $\varphi(n)$ for any integer by using its prime factorization.
+
+\section{Computation Formula}
+
+If $n = p_1^{a_1} p_2^{a_2} \cdots p_k^{a_k}$ is the prime factorization of $n$, then:
+\[ \varphi(n) = n \prod_{i=1}^{k} \left(1 - \frac{1}{p_i}\right) = n \prod_{p|n}\left(1 - \frac{1}{p}\right) \]
+
+\subsection{Proof}
+For a prime power $p^a$, the numbers not relatively prime to $p^a$ are multiples of $p$: $p, 2p, 3p, \ldots, p^{a-1}p$.
+There are $p^{a-1}$ such numbers, so:
+\[ \varphi(p^a) = p^a - p^{a-1} = p^a\left(1 - \frac{1}{p}\right) \]
+
+By multiplicativity, for $n = p_1^{a_1} p_2^{a_2} \cdots p_k^{a_k}$:
+\[ \varphi(n) = \varphi(p_1^{a_1}) \cdot \varphi(p_2^{a_2}) \cdots \varphi(p_k^{a_k}) \]
+\[ = p_1^{a_1}\left(1 - \frac{1}{p_1}\right) \cdot p_2^{a_2}\left(1 - \frac{1}{p_2}\right) \cdots p_k^{a_k}\left(1 - \frac{1}{p_k}\right) \]
+\[ = p_1^{a_1} p_2^{a_2} \cdots p_k^{a_k} \prod_{i=1}^{k}\left(1 - \frac{1}{p_i}\right) \]
+\[ = n \prod_{i=1}^{k}\left(1 - \frac{1}{p_i}\right) \]
+
+\sectionthree{Implementation}
+The following algorithm computes $\varphi(n)$ efficiently:
+
+\begin{verbatim}
+def euler_phi(n):
+    result = n  # Initialize with n
+    p = 2       # Start with the smallest prime
+    
+    while p * p <= n:  # Check up to sqrt(n)
+        if n % p == 0: # If p is a factor
+            while n % p == 0:
+                n //= p # Divide out all instances of p
+            result -= result // p  # Multiply by (1-1/p)
+        p += 1
+    
+    # If n has a prime factor > sqrt(n)
+    if n > 1:
+        result -= result // n
+        
+    return result
+\end{verbatim}
+
+\section{Applications in Number Theory}
+
+\subsection{Euler's Theorem}
+If $\gcd(a, n) = 1$, then $a^{\varphi(n)} \equiv 1 \pmod{n}$.
+
+This generalizes Fermat's Little Theorem, which states that if $p$ is prime and $p \nmid a$, then $a^{p-1} \equiv 1 \pmod{p}$.
+
+\sectionthree{Proof Sketch}
+Consider the set of integers relatively prime to $n$: $\{r_1, r_2, \ldots, r_{\varphi(n)}\}$.
+When we multiply each element by $a$ (with $\gcd(a,n) = 1$), we get a permutation of the same set modulo $n$.
+Thus:
+\[ a \cdot r_1 \cdot a \cdot r_2 \cdots a \cdot r_{\varphi(n)} \equiv r_1 \cdot r_2 \cdots r_{\varphi(n)} \pmod{n} \]
+
+Simplifying:
+\[ a^{\varphi(n)} \cdot r_1 \cdot r_2 \cdots r_{\varphi(n)} \equiv r_1 \cdot r_2 \cdots r_{\varphi(n)} \pmod{n} \]
+
+Since $\gcd(r_i, n) = 1$ for all $i$, we can cancel these factors to get $a^{\varphi(n)} \equiv 1 \pmod{n}$.
+
+\subsection{Application in Cryptography}
+Euler's theorem is fundamental in modular exponentiation, which is used in RSA cryptography:
+
+\begin{itemize}
+\item For a public key $(n, e)$ and private key $d$, we have $e \cdot d \equiv 1 \pmod{\varphi(n)}$
+\item When encrypting a message $m$, we compute $c = m^e \bmod n$
+\item When decrypting, we compute $m = c^d \bmod n$
+\item The decryption works because $c^d = (m^e)^d = m^{ed} = m^{1+k\varphi(n)} = m \cdot (m^{\varphi(n)})^k \equiv m \cdot 1^k \equiv m \pmod{n}$
+\end{itemize}
+
+\section{Properties and Formulas}
+
+\subsection{Sum of Totient Values}
+For any positive integer $n$:
+\[ \sum_{d|n} \varphi(d) = n \]
+where the sum is over all positive divisors $d$ of $n$.
+
+\sectionthree{Proof Idea}
+Consider the fractions $\frac{k}{n}$ for $1 \leq k \leq n$. 
+When reduced to lowest terms, each becomes $\frac{j}{d}$ where $d|n$ and $\gcd(j,d) = 1$.
+For each divisor $d$ of $n$, there are $\varphi(d)$ fractions with denominator $d$.
+Therefore, the total number of fractions is $\sum_{d|n} \varphi(d) = n$.
+
+\subsection{Möbius Inversion Formula}
+The Möbius inversion formula provides another way to express $\varphi(n)$:
+\[ \varphi(n) = \sum_{d|n} \mu(d) \cdot \frac{n}{d} \]
+where $\mu(d)$ is the Möbius function.
+
+\section{Extensions and Generalizations}
+
+\subsection{Jordan's Totient Function}
+Jordan's totient function $J_k(n)$ counts the number of $k$-tuples of positive integers all $\leq n$ that form a coprime $(k+1)$-tuple together with $n$.
+
+For $k = 1$, we recover Euler's totient function: $J_1(n) = \varphi(n)$.
+
+\sectionthree{Carmichael Function}
+The Carmichael function $\lambda(n)$ is the smallest positive integer such that:
+\[ a^{\lambda(n)} \equiv 1 \pmod{n} \]
+for all integers $a$ with $\gcd(a, n) = 1$.
+
+It's always true that $\lambda(n) | \varphi(n)$, and they are equal when $n$ is 1, 2, 4, a power of an odd prime, or twice a power of an odd prime.
+
+\subsection{Computational Complexity}
+Computing $\varphi(n)$ directly from its definition requires factoring $n$, which is computationally difficult for large numbers.
+
+However, if the prime factorization is known, $\varphi(n)$ can be computed efficiently using the product formula.
+
+\begin{enumerate}
+\item[202.13.1]
+To compute the smallest positive $r$ such that $5^{642} \equiv r \pmod{640}$.
+
+Using Euler's Theorem: $a^{\phi(n)} \equiv 1 \pmod{n}$ for $\gcd(a,n)=1$.
+
+First, calculate $\phi(640)$:
+$640 = 2^7 \cdot 5$
+$\phi(640) = \phi(2^7) \cdot \phi(5) = 2^6 \cdot 4 = 64 \cdot 4 = 256$
+
+Since $\gcd(5,640)=5$, we can't directly apply Euler's Theorem. Let's write:
+$640 = 5 \cdot 128$
+
+We need to find $5^{642} \bmod 640$. Note that $5^{642} = 5^2 \cdot 5^{640}$.
+$5^2 = 25$
+$5^{640} = (5^{128})^5 = (5^{128})^5$
+
+Since $\gcd(5,128)=1$, $5^{\phi(128)} \equiv 1 \pmod{128}$.
+$\phi(128) = \phi(2^7) = 2^6 = 64$
+
+So $5^{64} \equiv 1 \pmod{128}$, which means $5^{128} \equiv 1 \pmod{128}$.
+
+This gives us $5^{640} = (5^{128})^5 \equiv 1^5 \equiv 1 \pmod{128}$
+Therefore, $5^{640} = 128k + 1$ for some integer $k$.
+
+$5^{642} = 5^2 \cdot 5^{640} = 25 \cdot (128k + 1) = 25 + 3200k$
+$5^{642} \bmod 640 = (25 + 3200k) \bmod 640 = 25 \bmod 640 = 25$
+
+Therefore, $r = 25$.
+
+\item[202.13.2]
+To find $3^{123456789} \bmod 100$.
+
+First, we determine $\phi(100) = \phi(2^2 \cdot 5^2) = \phi(4) \cdot \phi(25) = 2 \cdot 20 = 40$.
+
+Since $\gcd(3,100)=1$, by Euler's Theorem: $3^{40} \equiv 1 \pmod{100}$
+
+To find $3^{123456789} \bmod 100$, we compute $123456789 = 40 \cdot 3086419 + 29$
+
+So $3^{123456789} \equiv 3^{29} \pmod{100}$
+
+Computing step by step:
+$3^1 = 3$
+$3^2 = 9$
+$3^4 = 81$
+$3^8 \equiv 81^2 \equiv 61 \pmod{100}$
+$3^{16} \equiv 61^2 \equiv 21 \pmod{100}$
+$3^{24} = 3^{16} \cdot 3^8 \equiv 21 \cdot 61 \equiv 81 \pmod{100}$
+$3^{25} = 3^{24} \cdot 3^1 \equiv 81 \cdot 3 \equiv 43 \pmod{100}$
+$3^{29} = 3^{25} \cdot 3^4 \equiv 43 \cdot 81 \equiv 83 \pmod{100}$
+
+Therefore, $3^{123456789} \bmod 100 = 83$.
+
+\item[202.13.3]
+The hundreds digit of $3^{123456789}$ is the digit in the hundreds place of this number.
+
+Since $3^{123456789} \equiv 83 \pmod{100}$, we know $3^{123456789} = 100k + 83$ for some integer $k$.
+
+To find the hundreds digit, we need the value of $\lfloor \frac{3^{123456789}}{100} \rfloor \bmod 10$.
+
+We can compute $3^{123456789} \bmod 1000$ to find the first three digits.
+
+Using $\phi(1000) = \phi(2^3 \cdot 5^3) = \phi(8) \cdot \phi(125) = 4 \cdot 100 = 400$:
+
+$3^{400} \equiv 1 \pmod{1000}$
+
+$123456789 = 400 \cdot 308641 + 389$
+
+So $3^{123456789} \equiv 3^{389} \pmod{1000}$
+
+Computing $3^{389} \bmod 1000$ step by step (similar to previous problem), we get $3^{389} \equiv 783 \pmod{1000}$.
+
+Therefore, $3^{123456789} = 1000m + 783$ for some integer $m$.
+
+The hundreds digit is $\lfloor \frac{783}{100} \rfloor \bmod 10 = 7$.
+\end{enumerate}

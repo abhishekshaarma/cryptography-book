@@ -1,0 +1,210 @@
+\chapter{B\'ezout's identity and the Extended Euclidean Algorithm}
+
+\begin{python0}
+from solutions import *; clear()
+\end{python0}
+
+% Bézout's Identity and Extended Euclidean Algorithm
+
+\textbf{Definition of GCD}
+Let $a, b \in \mathbb{Z}$ s.t. not both $a, b$ are 0.
+$d \in \mathbb{Z}, d \neq 0$ is common divisor of $a, b$ if $d \mid a$ and $d \mid b$.
+$g \in \mathbb{Z}$ is greatest common divisor (gcd) of $a, b$ if $g$ is common divisor and largest among all common divisors.
+Note: If $a = b = 0$, gcd not defined (all integers are common divisors).
+
+\textbf{Bézout's Identity}
+If $a, b \in \mathbb{Z}$ not both zero, then $\exists x, y \in \mathbb{Z}$ s.t.
+$\gcd(a, b) = ax + by$
+
+$x, y$ called Bézout coefficients (not unique).
+
+\textbf{Proof:}
+Let $(a, b) = \{ax + by \mid x, y \in \mathbb{Z}\}$ be linear combinations of $a, b$.
+Let $(g) = \{gx \mid x \in \mathbb{Z}\}$ be linear combinations of $g$.
+
+Step 1: Show $\exists g > 0$ s.t. $(a, b) = (g)$
+
+If $b = 0$, then $(a, 0) = (a)$ and done.
+
+If $b \neq 0$, let $u$ be unit s.t. $ub > 0$. 
+The set $X = \{ax + by \mid x, y \in \mathbb{Z}, ax + by > 0\} \subseteq \mathbb{N}$ 
+is non-empty (contains $0 \cdot a + ub$). By WOP, $X$ has least element $g$.
+
+Since $g \in X \subseteq (a, b)$, we have $(g) \subseteq (a, b)$.
+
+To prove $(a, b) \subseteq (g)$, let $c \in (a, b)$, i.e., $c = ax + by$ for some $x, y \in \mathbb{Z}$. 
+By Euclidean property, $\exists q, r \in \mathbb{Z}$ s.t. $c = gq + r, 0 \leq |r| < |g|$. 
+Since $g > 0$, $0 \leq |r| < g$.
+
+Need to show $r = 0$. Let $u$ be unit s.t. $ur \geq 0$. Thus $0 \leq ur < g$ and $uc = ugq + ur$.
+
+Suppose $r \neq 0 \Rightarrow ur > 0$. Then $ur = uc - ugq \in (a, b)$ since $c, g \in (a, b)$. 
+Hence $ur \in X$ with $ur < g$, contradiction to minimality of $g$. Thus $r = 0$, so $c = gq \in (g)$.
+
+Therefore $(a, b) = (g)$.
+
+Step 2: Show $g = \gcd(a, b)$
+
+Since $(a, b) = (g)$, $a \in (g)$ so $g \mid a$. Similarly $g \mid b$, so $g$ is common divisor.
+
+Since $(g) = (a, b)$, $g = ax_0 + by_0$ for some $x_0, y_0 \in \mathbb{Z}$. 
+If $d \mid a$ and $d \mid b$, then $d \mid g$ by linearity. 
+Thus $|d| \leq g$, making $g$ the largest common divisor.
+
+\textbf{Extended Euclidean Algorithm}
+To find $x, y$ s.t. $\gcd(a, b) = ax + by$:
+
+Example: Compute $\gcd(514, 24)$ and coefficients.
+\begin{align}
+514 &= 21 \cdot 24 + 10\\
+24 &= 2 \cdot 10 + 4\\
+10 &= 2 \cdot 4 + 2\\
+4 &= 2 \cdot 2 + 0
+\end{align}
+
+From $10 = 514 - 21 \cdot 24$, obtain $514 \cdot 1 + 24 \cdot (-21) = 10$.
+
+From $4 = 24 - 2 \cdot 10 = 24 - 2(514 - 21 \cdot 24) = 514 \cdot (-2) + 24 \cdot 43$.
+
+From $2 = 10 - 2 \cdot 4 = (514 - 21 \cdot 24) - 2(514 \cdot (-2) + 24 \cdot 43) = 514 \cdot 5 + 24 \cdot (-107)$.
+
+Therefore $\gcd(514, 24) = 2 = 514 \cdot 5 + 24 \cdot (-107)$.
+
+\textbf{Systematic Algorithm}
+Recursive process using remainders $r_i$:
+\begin{align}
+r_0 &= q_1 r_1 + r_2 \quad (r_0 = a, r_1 = b)\\
+r_1 &= q_2 r_2 + r_3\\
+&\vdots\\
+r_{n-2} &= q_{n-1} r_{n-1} + r_n\\
+r_{n-1} &= q_n r_n + 0
+\end{align}
+
+With backward substitution, track coefficients for $r_0$ and $r_1$.
+
+\textbf{Python Implementation}
+\begin{verbatim}
+def EEA(a, b):
+    """Extended Euclidean Algorithm
+    Returns (r, c, d) where r = gcd(a, b) = c*a + d*b"""
+    a0, b0 = a, b
+    d0, d = 0, 1
+    c0, c = 1, 0
+    q = a0 // b0
+    r = a0 - q * b0
+    while r > 0:
+        d, d0 = d0 - q * d, d
+        c, c0 = c0 - q * c, c
+        a0, b0 = b0, r
+        q = a0 // b0
+        r = a0 - q * b0
+    r = b0
+    return r, c, d
+\end{verbatim}
+
+\textbf{Exercise Solutions}
+
+\textbf{Exercise 2.5.5} - Computing gcd and Bézout's coefficients:
+
+1. $\gcd(0, 10) = 10$ since any non-zero integer divides 0.
+   Bézout coefficients: $0 \cdot 0 + 1 \cdot 10 = 10$, so $x=0, y=1$.
+
+2. $\gcd(10, 0) = 10$ similarly.
+   Bézout coefficients: $1 \cdot 10 + 0 \cdot 0 = 10$, so $x=1, y=0$.
+
+3. $\gcd(10, 1) = 1$ since 1 divides any integer.
+   \begin{align}
+   10 &= 10 \cdot 1 + 0
+   \end{align}
+   Bézout coefficients: $0 \cdot 10 + 1 \cdot 1 = 1$, so $x=0, y=1$.
+
+4. $\gcd(10, 10) = 10$.
+   \begin{align}
+   10 &= 1 \cdot 10 + 0
+   \end{align}
+   Bézout coefficients: $1 \cdot 10 + 0 \cdot 10 = 10$, so $x=1, y=0$.
+
+5. $\gcd(107, 5) = 1$.
+   \begin{align}
+   107 &= 21 \cdot 5 + 2\\
+   5 &= 2 \cdot 2 + 1\\
+   2 &= 2 \cdot 1 + 0
+   \end{align}
+   From $5 = 2 \cdot 2 + 1$, get $1 = 5 - 2 \cdot 2$.
+   From $107 = 21 \cdot 5 + 2$, get $2 = 107 - 21 \cdot 5$.
+   Substituting: $1 = 5 - 2 \cdot (107 - 21 \cdot 5) = 5 - 2 \cdot 107 + 42 \cdot 5 = 43 \cdot 5 - 2 \cdot 107$.
+   So $x=-2, y=43$.
+
+6. $\gcd(107, 26) = 1$.
+   \begin{align}
+   107 &= 4 \cdot 26 + 3\\
+   26 &= 8 \cdot 3 + 2\\
+   3 &= 1 \cdot 2 + 1\\
+   2 &= 2 \cdot 1 + 0
+   \end{align}
+   From $3 = 1 \cdot 2 + 1$, get $1 = 3 - 1 \cdot 2$.
+   From $26 = 8 \cdot 3 + 2$, get $2 = 26 - 8 \cdot 3$.
+   Substituting: $1 = 3 - 1 \cdot (26 - 8 \cdot 3) = 9 \cdot 3 - 1 \cdot 26$.
+   From $107 = 4 \cdot 26 + 3$, get $3 = 107 - 4 \cdot 26$.
+   Substituting: $1 = 9 \cdot (107 - 4 \cdot 26) - 1 \cdot 26 = 9 \cdot 107 - 37 \cdot 26$.
+   So $x=9, y=-37$.
+
+\textbf{Exercise 2.5.6}: Prove that if $a \mid c$, $b \mid c$, and $\gcd(a, b) = 1$, then $ab \mid c$.
+
+\textbf{Proof}: 
+Since $\gcd(a, b) = 1$, by Bézout's identity, $\exists x, y \in \mathbb{Z}$ s.t. $ax + by = 1$.
+Multiply both sides by $c$: $axc + byc = c$.
+Since $a \mid c$, $\exists m \in \mathbb{Z}$ s.t. $c = am$. So $axc = ax(am) = a^2xm$.
+Since $b \mid c$, $\exists n \in \mathbb{Z}$ s.t. $c = bn$. So $byc = by(bn) = b^2yn$.
+Thus $c = axc + byc = a^2xm + b^2yn$.
+
+Now, since $\gcd(a, b) = 1$, we know $a$ and $b$ share no common factors.
+Since $a \mid c$ and $b \mid c$, by fundamental properties of divisibility in a unique factorization domain, we must have $ab \mid c$.
+This can also be seen because $\text{lcm}(a, b) = \frac{ab}{\gcd(a, b)} = ab$ when $\gcd(a, b) = 1$.
+
+\textbf{Exercise 2.5.7}: Prove that if $a \mid c$, $b \mid c$, then $\frac{ab}{\gcd(a, b)} \mid c$.
+
+\textbf{Proof}:
+Let $d = \gcd(a, b)$. Then $a = da'$ and $b = db'$ where $\gcd(a', b') = 1$.
+Since $a \mid c$, $\exists m \in \mathbb{Z}$ s.t. $c = am = da'm$.
+Since $b \mid c$, $\exists n \in \mathbb{Z}$ s.t. $c = bn = db'n$.
+
+So $a' \mid \frac{c}{d}$ and $b' \mid \frac{c}{d}$.
+Since $\gcd(a', b') = 1$, by Exercise 2.5.6, $a'b' \mid \frac{c}{d}$.
+
+Thus $\exists k \in \mathbb{Z}$ s.t. $\frac{c}{d} = a'b'k$, which gives $c = da'b'k = \frac{ab}{d}k$.
+Therefore $\frac{ab}{\gcd(a, b)} \mid c$.
+
+\textbf{Exercise 2.5.2}: Using Extended Euclidean Algorithm, compute $x, y$ such that $210x + 78y = \gcd(210, 78)$.
+
+\begin{align}
+210 &= 2 \cdot 78 + 54\\
+78 &= 1 \cdot 54 + 24\\
+54 &= 2 \cdot 24 + 6\\
+24 &= 4 \cdot 6 + 0
+\end{align}
+
+So $\gcd(210, 78) = 6$.
+
+From $54 = 210 - 2 \cdot 78$, we get $210 \cdot 1 + 78 \cdot (-2) = 54$.
+From $24 = 78 - 1 \cdot 54 = 78 - 1 \cdot (210 - 2 \cdot 78) = 78 - 210 + 2 \cdot 78 = 210 \cdot (-1) + 78 \cdot 3$.
+From $6 = 54 - 2 \cdot 24 = (210 - 2 \cdot 78) - 2 \cdot (210 \cdot (-1) + 78 \cdot 3) = 210 - 2 \cdot 78 - 2 \cdot (-210) - 2 \cdot 3 \cdot 78 = 210 \cdot 3 + 78 \cdot (-8)$.
+
+Therefore, $\gcd(210, 78) = 6 = 210 \cdot 3 + 78 \cdot (-8)$, so $x = 3$ and $y = -8$.
+
+\textbf{Exercise 2.5.4} (Water Jug Problem):
+Given jugs with capacities $a$ and $b$, determine if target $c$ is measurable.
+
+\textbf{Solution}:
+$c$ is measurable if and only if:
+1. $c \leq \max(a, b)$ (cannot measure more than largest jug)
+2. $c$ is a multiple of $\gcd(a, b)$ (can only measure multiples of gcd)
+
+This is because by Bézout's identity, we can find $x, y$ such that $ax + by = \gcd(a, b)$.
+By repeating operations, we can measure any multiple of $\gcd(a, b)$ up to the capacity of the largest jug.
+
+If $c > a + b$, it's impossible as we can't hold more than the combined capacity of both jugs.
+%\input{exercises/nt-55/main.tex}
+%\input{exercises/nt-56/main.tex}
+%\input{exercises/nt-57/main.tex}
+%\input{exercises/nt-58/main.tex}

@@ -1,0 +1,128 @@
+Multiplying two $n$-digit integers via the classical grade-school method takes $O(n^2)$ single-digit multiplications. Karatsuba’s insight reduces this to approximately $O(n^{1.585})$.
+
+\subsection*{1. High-Level Idea}
+\begin{itemize}
+  \item Let $x$ and $y$ be two nonnegative integers each of at most $n$ digits in base $T$ (e.g., $T=10$ or $T=2^{16}$).
+  \item Write
+    \[x = a\,T^{m} + b, \quad y = c\,T^{m} + d,\]
+    where $m = \lceil n/2 \rceil$, and $a,b,c,d$ are roughly half-size.
+  \item Observe the product:
+    \[x\,y = a\,c\,T^{2m} + (a\,d + b\,c)\,T^{m} + b\,d.\]
+  \item Instead of computing the four products $ac$, $ad$, $bc$, and $bd$, Karatsuba shows we need only three:
+    \begin{enumerate}
+      \item $A = a\,c$
+      \item $B = b\,d$
+      \item $C = (a + b)\,(c + d)$
+    \end{enumerate}
+  \item Then $a\,d + b\,c = C - A - B$.  Recombine:
+    \[x\,y = A\,T^{2m} + (C - A - B)\,T^{m} + B.
+    \]
+  \item Each recursion halves the digit-length, leading to the recurrence
+    \[T(n) = 3\,T\bigl(\lceil n/2\rceil\bigr) + O(n).\]
+\end{itemize}
+
+\subsection*{2. Complexity Analysis}
+\begin{itemize}
+  \item Solve $T(n) = 3T(n/2) + cn$ by the Master Theorem:
+    $$T(n) = \Theta\bigl(n^{\log_{2}3}\bigr) \approx \Theta(n^{1.585}).$$
+  \item For large $n$, this outperforms $\Theta(n^2)$.  In practice, a cutoff to classical multiplication is used for small sizes to minimize overhead.
+  \item Typical base threshold: when $n \le 32$ (or machine-word size), revert to $O(n^2)$ multiply.
+\end{itemize}
+
+\subsection*{3. Pseudocode}
+\begin{verbatim}
+function Karatsuba(x, y):
+    if x < T or y < T:
+        return x * y            # base-case single-digit
+    m = ceil(max(len(x), len(y)) / 2)
+    (a, b) = split_at(x, m)
+    (c, d) = split_at(y, m)
+    A = Karatsuba(a, c)
+    B = Karatsuba(b, d)
+    C = Karatsuba(a + b, c + d)
+    return A * T^(2*m) + (C - A - B) * T^m + B
+\end{verbatim}
+
+\subsection*{4. Threshold and Practical Tips}
+\begin{itemize}
+  \item \emph{Threshold Choice:} Recursive overhead outweighs savings below a certain digit count.  Benchmark on target hardware.
+  \item \emph{Base Case Multiply:} For $n < n_0$, perform schoolbook $O(n^2)$ multiply directly.
+  \item \emph{Balanced Splits:} Use $m = \lceil n/2 \rceil$ to handle odd lengths.
+  \item \emph{Efficient Addition:} Recombining requires only two additions and one subtraction of $O(n)$ cost.
+  \item \emph{Radix Selection:} Use a large base $T=2^{16}$ or $2^{32}$ if implementing on binary machines to reduce recursion depth.
+\end{itemize}
+
+\section*{5. Code Examples}
+
+Below are full implementations in three languages, using base $T=10$ for simplicity.  In real code, choose $T$ as a power of 2.
+
+\subsection*{Python}
+\begin{verbatim}
+def karatsuba(x, y):
+    # Base case: single-digit
+    if x < 10 or y < 10:
+        return x * y
+    # Determine split size m
+    n = max(len(str(x)), len(str(y)))
+    m = (n + 1) // 2
+    # Split x and y
+    high1, low1 = divmod(x, 10**m)
+    high2, low2 = divmod(y, 10**m)
+    # Three recursive calls
+    A = karatsuba(high1, high2)
+    B = karatsuba(low1, low2)
+    C = karatsuba(high1 + low1, high2 + low2)
+    # Combine results
+    return A * 10**(2*m) + (C - A - B) * 10**m + B
+\end{verbatim}
+
+\subsection*{C++}
+\begin{verbatim}
+#include <string>
+#include <cmath>
+using ll = long long;
+
+ll karatsuba(ll x, ll y) {
+    if (x < 10 || y < 10)
+        return x * y;
+    int n = std::max(std::to_string(x).size(),
+                     std::to_string(y).size());
+    int m = (n + 1) / 2;
+    ll p = 10;
+    ll a = x / std::pow(p, m);
+    ll b = x % (ll)std::pow(p, m);
+    ll c = y / std::pow(p, m);
+    ll d = y % (ll)std::pow(p, m);
+    ll A = karatsuba(a, c);
+    ll B = karatsuba(b, d);
+    ll C = karatsuba(a + b, c + d);
+    ll D = C - A - B;
+    return A * std::pow(p, 2*m)
+         + D * std::pow(p, m)
+         + B;
+}
+\end{verbatim}
+
+\subsection*{Java}
+\begin{verbatim}
+public static long karatsuba(long x, long y) {
+    if (x < 10 || y < 10)
+        return x * y;
+    String sx = Long.toString(x);
+    String sy = Long.toString(y);
+    int n = Math.max(sx.length(), sy.length());
+    int m = (n + 1) / 2;
+    long base = 10;
+    long a = x / (long)Math.pow(base, m);
+    long b = x % (long)Math.pow(base, m);
+    long c = y / (long)Math.pow(base, m);
+    long d = y % (long)Math.pow(base, m);
+    long A = karatsuba(a, c);
+    long B = karatsuba(b, d);
+    long C = karatsuba(a + b, c + d);
+    long D = C - A - B;
+    return A * (long)Math.pow(base, 2*m)
+         + D * (long)Math.pow(base, m)
+         + B;
+}
+\end{verbatim}

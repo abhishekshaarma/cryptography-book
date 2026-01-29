@@ -1,0 +1,157 @@
+
+
+
+
+# longint.py
+"""
+Long integer arithmetic package implementing
+Karatsuba multiplication.
+"""
+
+BASE = 10  # base 10 digits
+THRESHOLD = 32  # below this, use grade-school multiplication
+
+
+def _trim(a):
+    """Remove leading zeros from little-endian digit list."""
+    while len(a) > 1 and a[-1] == 0:
+        a.pop()
+    return a
+
+
+def add(a, b):
+    """
+    Add two integers represented as little-endian digit lists.
+    Returns a new digit list.
+    """
+    n = max(len(a), len(b))
+    res = []
+    carry = 0
+    for i in range(n):
+        ai = a[i] if i < len(a) else 0
+        bi = b[i] if i < len(b) else 0
+        s = ai + bi + carry
+        res.append(s % BASE)
+        carry = s // BASE
+    if carry:
+        res.append(carry)
+    return _trim(res)
+
+
+def sub(a, b):
+    """
+    Subtract b from a (a >= b), both little-endian digit lists.
+    Returns new digit list.
+    """
+    res = []
+    borrow = 0
+    for i in range(len(a)):
+        ai = a[i]
+        bi = b[i] if i < len(b) else 0
+        s = ai - bi - borrow
+        if s < 0:
+            s += BASE
+            borrow = 1
+        else:
+            borrow = 0
+        res.append(s)
+    return _trim(res)
+
+
+def naive_mul(a, b):
+    """
+    Grade-school multiplication of two little-endian digit lists.
+    """
+    res = [0] * (len(a) + len(b))
+    for i, ai in enumerate(a):
+        carry = 0
+        for j, bj in enumerate(b):
+            res[i + j] += ai * bj + carry
+            carry = res[i + j] // BASE
+            res[i + j] %= BASE
+        res[i + len(b)] += carry
+    return _trim(res)
+
+
+def karatsuba(a, b):
+    """
+    Multiply two little-endian digit lists using Karatsuba.
+    """
+    # base case
+    if len(a) < THRESHOLD or len(b) < THRESHOLD:
+        return naive_mul(a, b)
+    n = max(len(a), len(b))
+    m = n // 2
+    # split
+    a_low = a[:m]
+    a_high = a[m:]
+    b_low = b[:m]
+    b_high = b[m:]
+    # three recursive multiplications
+    z0 = karatsuba(a_low, b_low)
+    z2 = karatsuba(a_high, b_high)
+    sum_a = add(a_low, a_high)
+    sum_b = add(b_low, b_high)
+    z1 = karatsuba(sum_a, sum_b)
+    # z1 = z1 - z2 - z0
+    z1 = sub(z1, z2)
+    z1 = sub(z1, z0)
+    # assemble result: z2 * BASE^(2*m) + z1 * BASE^m + z0
+    res = add(add(_trim(z0), [0]*m + _trim(z1)), [0]*(2*m) + _trim(z2))
+    return _trim(res)
+
+
+class LongInt:
+    """
+    Arbitrary-length integer with Karatsuba multiplication.
+    """
+    def __init__(self, value):
+        if isinstance(value, str):
+            s = value.lstrip('0') or '0'
+            self.digits = [int(ch) for ch in reversed(s)]
+        elif isinstance(value, int):
+            if value == 0:
+                self.digits = [0]
+            else:
+                self.digits = []
+                v = abs(value)
+                while v:
+                    self.digits.append(v % BASE)
+                    v //= BASE
+                if value < 0:
+                    raise ValueError("Negative values not supported")
+        elif isinstance(value, list):
+            self.digits = _trim(value[:])
+        else:
+            raise TypeError("Unsupported type for LongInt init")
+
+    def __str__(self):
+        return ''.join(str(d) for d in reversed(self.digits))
+
+    def __add__(self, other):
+        if not isinstance(other, LongInt):
+            other = LongInt(other)
+        return LongInt(add(self.digits, other.digits))
+
+    def __sub__(self, other):
+        if not isinstance(other, LongInt):
+            other = LongInt(other)
+        return LongInt(sub(self.digits, other.digits))
+
+    def __mul__(self, other):
+        if not isinstance(other, LongInt):
+            other = LongInt(other)
+        prod = karatsuba(self.digits, other.digits)
+        return LongInt(prod)
+
+    def __eq__(self, other):
+        if not isinstance(other, LongInt):
+            other = LongInt(other)
+        return self.digits == other.digits
+
+
+# Example usage:
+if __name__ == '__main__':
+    x = LongInt('12345678901234567890')
+    y = LongInt('98765432109876543210')
+    print(x * y)  # should compute product with Karatsuba

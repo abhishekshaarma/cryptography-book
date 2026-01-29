@@ -1,0 +1,56 @@
+\sectionthree{RSA security}
+\begin{python0}
+from solutions import *; clear()
+\end{python0}
+
+ \textbf{Fundamental Security Basis:}
+  \begin{itemize}
+    \item RSA security relies on the difficulty of factoring large composites ($n=pq$).
+    \item As of 2025, the largest factored RSA modulus was 829 bits (RSA-250, factored in 2020).
+    \item Current minimum recommended key size is 2048 bits.
+  \end{itemize}
+
+  \textbf{Key Factoring Algorithms:}
+  \begin{itemize}
+    \item General Number Field Sieve (GNFS): fastest known, runtime
+      \(e^{O\bigl((\ln n)^{1/3}(\ln\ln n)^{2/3}\bigr)}\).
+    \item Fermat Factorization: only efficient if the two primes are very close.
+  \end{itemize}
+
+   \textbf{Critical Vulnerabilities:}
+  \begin{itemize}
+    \item Small private exponent ($d < n^{0.292}$): Wiener's attack.
+    \item Textbook RSA (no padding): malleable, chosen‐ciphertext attacks.
+    \item Side‐channels (timing, power, faults) can leak keys.
+    \item Poor RNG leads to weak or repeated keys.
+  \end{itemize}
+
+  \textbf{Quantum Threat:}
+  \begin{itemize}
+    \item Shor’s algorithm breaks RSA in polynomial time.
+    \item 2048‐bit RSA needs millions of logical qubits.
+    \item 2025 quantum hardware has only thousands of noisy qubits.
+  \end{itemize}
+
+  \textbf{Security Levels \& Key Sizes:}
+  \begin{itemize}
+    \item 2048 bits: \(\approx 112\)-bit security (minimum).
+    \item 3072 bits: \(\approx 128\)-bit security.
+    \item 7680 bits: \(\approx 192\)-bit security.
+    \item 15360 bits: \(\approx 256\)-bit security.
+  \end{itemize}
+
+ \textbf{Implementation Best Practices:}
+  \begin{itemize}
+    \item Use standard padding (OAEP for encryption, PSS for signatures).
+    \item Choose $p,q$ of similar—but not too similar—size.
+    \item Write constant‐time code; apply blinding.
+    \item Store keys securely with proper access controls.
+  \end{itemize}
+
+ \textbf{Future‐Proofing:}
+  \begin{itemize}
+    \item Plan migration to post-quantum algorithms.
+    \item Consider hybrid RSA + PQ schemes.
+    \item For 10–15+ year security, evaluate alternatives now.
+  \end{itemize}

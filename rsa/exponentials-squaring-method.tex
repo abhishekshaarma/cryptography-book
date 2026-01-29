@@ -1,0 +1,193 @@
+\sectionthree{Exponentiation: the squaring method}
+\begin{python0}
+from solutions import *; clear()
+\end{python0}
+
+We have a common challenge in RSA cryptography - computing extremely large powers efficiently. When we need to calculate $a^n$ for $n > 0$.
+\begin{equation}
+a^n = a^{n-1} \cdot a
+\end{equation}
+
+This method requires us to perform $n-1$ multiplications, giving us a runtime of $O(n)$ (actually $\Theta(n)$). When working in modular arithmetic with modulus $N$, we must take the modulus after each multiplication to keep our intermediate values manageable:
+
+\begin{equation}
+a^k = a^{k-1} \cdot a \pmod{N}
+\end{equation}
+We can use recursion
+
+\begin{equation}
+a^n =
+\begin{cases}
+1 & n = 0 \\
+(a^{n/2})^2 & n > 0 \text{ and } n \text{ is even} \\
+a \cdot (a^{(n-1)/2})^2 & n > 0 \text{ and } n \text{ is odd}
+\end{cases}
+\end{equation}
+
+Let us walk through two examples to illustrate how this recursive approach works:
+
+\textbf{Example 1:} Computing $2^{27}$
+\begin{enumerate}
+\item $2^{27} = 2 \cdot (2^{13})^2$
+\item $2^{13} = 2 \cdot (2^6)^2$
+\item $2^6 = (2^3)^2$
+\item $2^3 = 2 \cdot (2^1)^2$
+\item $2^1 = 2 \cdot (2^0)^2 = 2 \cdot (1)^2 = 2$
+\item Working backwards: $2^1 = 2$, $2^3 = 2 \cdot 2^2 = 2 \cdot 4 = 8$
+\item $2^6 = 8^2 = 64$
+\item $2^{13} = 2 \cdot 64^2 = 2 \cdot 4096 = 8192$
+\item $2^{27} = 2 \cdot 8192^2 = 2 \cdot 67108864 = 134217728$
+\end{enumerate}
+
+\textbf{Example 2:} Computing $3^{20}$ (using the fact that 20 is even)
+\begin{enumerate}
+\item $3^{20} = (3^{10})^2$
+\item $3^{10} = (3^5)^2$
+\item $3^5 = 3 \cdot (3^2)^2$
+\item $3^2 = (3^1)^2$
+\item $3^1 = 3 \cdot (3^0)^2 = 3 \cdot 1 = 3$
+\item Working backwards: $3^1 = 3$, $3^2 = 3^2 = 9$
+\item $3^5 = 3 \cdot 9^2 = 3 \cdot 81 = 243$
+\item $3^{10} = 243^2 = 59049$
+\item $3^{20} = 59049^2 = 3486784401$
+\end{enumerate}
+
+Let us now present an algorithm that implements this recursive approach:
+
+\begin{verbatim}
+ALGORITHM: power
+INPUTS: a, n where n >= 0
+if n == 0:
+    return 1
+else:
+    if n is even:
+        x = power(a, n / 2)
+        return x * x
+    else:
+        x = power(a, (n - 1) / 2)
+        return a * x * x
+\end{verbatim}
+
+We can see number of recursions is $O(\log n)$,  recursion step costing one or two multiplications.
+We can rewrite this recursive algorithm using a loop, which often provides better performance in practice.
+
+
+To compute $a^x$, we first write $x$ as a binary number:
+
+\begin{equation}
+x = (x_k \cdots x_0)_2 = x_k 2^k + \ldots + x_1 2^1 + x_0 2^0
+\end{equation}
+
+where each $x_i$ is either 0 or 1. 
+
+For example, if we take $x = 27 = (11011)_2 = 1 \cdot 2^4 + 1 \cdot 2^3 + 0 \cdot 2^2 + 1 \cdot 2^1 + 1 \cdot 2^0$, then:
+
+\begin{equation}
+a^{27} \equiv a^{1\cdot 2^4 + 1\cdot 2^3 + 0\cdot 2^2 + 1\cdot 2^1 + 1\cdot 2^0} \equiv a^{2^4} \cdot a^{2^3} \cdot a^{2^1} \cdot a^{2^0}
+\end{equation}
+
+Notice that the computation of $a^{27}$ depends on powers of the form $a^{2^i}$ where bit $i$ in the binary representation of 27 is 1. In general, $a^{2^{i+1}} = (a^{2^i})^2$, which allows us to efficiently compute these powers with repeated squaring.
+
+As another example, let us calculate $5^{42}$ using this binary method:
+\begin{align}
+42 &= (101010)_2 = 1 \cdot 2^5 + 0 \cdot 2^4 + 1 \cdot 2^3 + 0 \cdot 2^2 + 1 \cdot 2^1 + 0 \cdot 2^0 \\
+5^{42} &= 5^{2^5} \cdot 5^{2^3} \cdot 5^{2^1}
+\end{align}
+
+We compute these powers as follows:
+\begin{align}
+5^{2^0} &= 5 \\
+5^{2^1} &= (5^{2^0})^2 = 5^2 = 25 \\
+5^{2^2} &= (5^{2^1})^2 = 25^2 = 625 \\
+5^{2^3} &= (5^{2^2})^2 = 625^2 = 390625 \\
+5^{2^4} &= (5^{2^3})^2 = 390625^2 = 152587890625 \\
+5^{2^5} &= (5^{2^4})^2 = 152587890625^2 = 23283064365386962890625
+\end{align}
+
+Therefore:
+\begin{align}
+5^{42} &= 5^{2^5} \cdot 5^{2^3} \cdot 5^{2^1} \\
+&= 23283064365386962890625 \cdot 390625 \cdot 25 \\
+&= 227373675443232059478759765625
+\end{align}
+
+ now present the iterative algorithm that implements this binary method:
+
+\begin{verbatim}
+ALGORITHM: power
+INPUTS: a, n where n >= 0
+OUTPUT: a^n
+p = 1
+b = a
+while n is not 0:
+    bit = n % 2
+    n = n / 2 (integer division)
+    if bit == 1:
+        p = p * b
+    b = b * b
+return p
+\end{verbatim}
+
+This algorithm is quite elegant and efficient. Let us trace through it step by step for the simple example of computing $3^7$:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+Iteration & n & bit & p & b & Operation \\
+\hline
+Initial & 7 & - & 1 & 3 & - \\
+\hline
+1 & 7 & 1 & 3 & 9 & p = p * b, b = b * b \\
+\hline
+2 & 3 & 1 & 27 & 81 & p = p * b, b = b * b \\
+\hline
+3 & 1 & 1 & 2187 & 6561 & p = p * b, b = b * b \\
+\hline
+4 & 0 & - & 2187 & - & return p \\
+\hline
+\end{tabular}
+\end{center}
+
+For exponentiation in modular arithmetic, take the modulus as frequently as possible to keep intermediate values manageable:
+
+\begin{verbatim}
+ALGORITHM: power-mod
+INPUTS: a, n, N where n >= 0 and N is the modulus
+OUTPUT: (a^n) % N
+p = 1
+b = a % N
+while n is not 0:
+    if n % 2 == 1:
+        p = (p * b) % N
+    n = n // 2
+    b = (b * b) % N
+return p
+\end{verbatim}
+
+For the case of negative exponents, when $a$ is a real number:
+\begin{equation}
+a^{-n} = (a^{-1})^n
+\end{equation}
+
+And for modular arithmetic, if $a$ is invertible in $\mathbb{Z}/N$ (meaning $\gcd(a,N)=1$):
+\begin{equation}
+a^{-n} \equiv (a^{-1})^n \pmod{N}
+\end{equation}
+
+where $a^{-1}$ represents the modular multiplicative inverse of $a$ modulo $N$, which can be computed efficiently using the Extended Euclidean Algorithm.
+
+\section{Applications in Cryptography}
+
+This squaring method for exponentiation is fundamental to many cryptographic systems, including:
+
+\begin{itemize}
+\item \textbf{RSA Encryption and Decryption:} Both encryption ($c = m^e \bmod n$) and decryption ($m = c^d \bmod n$) operations in RSA require modular exponentiation with very large exponents.
+\item \textbf{Diffie-Hellman Key Exchange:} Computing $g^a \bmod p$ and $g^b \bmod p$ efficiently.
+\item \textbf{ElGamal Cryptosystem:} Similar to RSA, requires efficient modular exponentiation.
+\item \textbf{Digital Signature Algorithms:} Many signature schemes rely on modular exponentiation operations.
+\end{itemize}
+
+\input{exercises/rsa-15/main.tex}
+\input{exercises/rsa-16/main.tex}
+\input{exercises/rsa-17/main.tex}
+
