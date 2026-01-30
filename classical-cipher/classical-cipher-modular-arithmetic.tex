@@ -305,125 +305,99 @@ operations performed in $\mathbb{Z}$ then reduced mod $n$.
 
 
 
+
 \input{exercises/exercise-0/main.tex}
 \input{exercises/exercise-1/main.tex}
 \input{exercises/exercise-2/main.tex}
 \input{exercises/exercise-3/main.tex}
+
 \begin{enumerate}
+
 \item[1.3.2]
 \begin{enumerate}
-\item Simplify $100 \pmod{26}$.
-$100 = 26 \cdot 3 + 22$
-Therefore, $100 \equiv 22 \pmod{26}$
+    \item Simplify $100 \pmod{26}$.\\
+    $100 = 26 \cdot 3 + 22 \implies 100 \equiv 22 \pmod{26}$
 
-\item Simplify $131246845 \pmod{26}$ using basic operations.
-$131246845 \div 26 = 5047955.57...$
-So $131246845 = 26 \cdot 5047955 + 15$
-Therefore, $131246845 \equiv 15 \pmod{26}$
+    \item Simplify $131246845 \pmod{26}$ using basic operations.\\
+    $131246845 = 26 \cdot 5047955 + 15 \implies 131246845 \equiv 15 \pmod{26}$
 
-\item Simplify $33 \pmod{26}$.
-$33 = 26 \cdot 1 + 7$
-Therefore, $33 \equiv 7 \pmod{26}$
+    \item Simplify $33 \pmod{26}$.\\
+    $33 = 26 \cdot 1 + 7 \implies 33 \equiv 7 \pmod{26}$
 
-\item Solve $2x + 1 \equiv 0 \pmod{26}$ by brute force.
-\begin{verbatim}
+    \item Solve $2x + 1 \equiv 0 \pmod{26}$ by brute force.\\
+    \begin{verbatim}
 for x in range(26):
     if (2*x + 1) % 26 == 0:
         print(f"Solution: x = {x}")
-\end{verbatim}
-The solution is $x = 13$ because $2 \cdot 13 + 1 = 27 \equiv 1 \pmod{26}$
+    \end{verbatim}
+    Solution: $x = 13$ (since $2 \cdot 13 + 1 = 27 \equiv 1 \pmod{26}$)
 
-\item Solve $10x + 20 \equiv 4x + 78 \pmod{26}$ by brute force.
-\begin{verbatim}
+    \item Solve $10x + 20 \equiv 4x + 78 \pmod{26}$ by brute force.\\
+    \begin{verbatim}
 for x in range(26):
     if (10*x + 20) % 26 == (4*x + 78) % 26:
         print(f"Solution: x = {x}")
-\end{verbatim}
-The solution is $x = 1$.
+    \end{verbatim}
+    Solution: $x = 1$
 
-\item Simplify $10x + 20 \equiv 4x + 78 \pmod{26}$ first, then solve.\\
-$10x - 4x \equiv 78 - 20 \pmod{26}$\\
-$6x \equiv 58 \pmod{26}$\\
-$6x \equiv 6 \pmod{26}$ (since $58 = 26 \cdot 2 + 6$)\\
-$x \equiv 1 \pmod{26}$\\
-So $x = 1$ is the solution, which matches the brute force approach.
+    \item Solve $10x + 20 \equiv 4x + 78 \pmod{26}$ algebraically.\\
+    $10x - 4x \equiv 78 - 20 \pmod{26} \implies 6x \equiv 58 \pmod{26} \implies 6x \equiv 6 \pmod{26}$\\
+    $\implies x \equiv 1 \pmod{26}$
 
-\item Solve $42x^5 + 10x + 1 \equiv 73 \pmod{3}$.\\
-$42 \equiv 0 \pmod{3}$, $10 \equiv 1 \pmod{3}$, $1 \equiv 1 \pmod{3}$, $73 \equiv 1 \pmod{3}$\\
-The equation becomes: $0 \cdot x^5 + 1 \cdot x + 1 \equiv 1 \pmod{3}$\\
-$x + 1 \equiv 1 \pmod{3}$\\
-$x \equiv 0 \pmod{3}$\\
-Therefore $x = 0$ is the solution.
+    \item Solve $42x^5 + 10x + 1 \equiv 73 \pmod{3}$.\\
+    Reduce coefficients modulo 3: $42 \equiv 0$, $10 \equiv 1$, $1 \equiv 1$, $73 \equiv 1$\\
+    Equation becomes: $x + 1 \equiv 1 \pmod{3} \implies x \equiv 0 \pmod{3}$
 
-\item Solve $(1000000x + 2)^3 \equiv 2 \pmod{3}$.\\
-$1000000 \equiv 1 \pmod{3}$, so $(1000000x + 2) \equiv (x + 2) \pmod{3}$\\
-We need to solve $(x + 2)^3 \equiv 2 \pmod{3}$ true
-For $x = 0$: $(0 + 2)^3 = 8 \equiv 2 \pmod{3}$  false
-For $x = 1$: $(1 + 2)^3 = 27 \equiv 0 \pmod{3}$ false
-For $x = 2$: $(2 + 2)^3 = 64 \equiv 1 \pmod{3}$ 
-Therefore $x = 0$ is the solution.
+    \item Solve $(1000000x + 2)^3 \equiv 2 \pmod{3}$.\\
+    $1000000 \equiv 1 \pmod{3} \implies (x + 2)^3 \equiv 2 \pmod{3}$\\
+    Checking $x = 0,1,2$ gives solution: $x = 0$.
 \end{enumerate}
 
 \item[1.3.3]
 \begin{enumerate}
-\item If $x \equiv 1 \pmod{7}$ and $x \equiv 5 \pmod{13}$, then $x = 7k + 1 = 13m + 5$ for some integers $k$ and $m$.
+    \item If $x \equiv 1 \pmod{7}$ and $x \equiv 5 \pmod{13}$, then $x = 7k + 1 = 13m + 5$ for some integers $k, m$.
 
-\item By the Chinese Remainder Theorem, there is a unique solution modulo $7 \cdot 13 = 91$.\\
-$x \equiv 1 \cdot 13 \cdot (13^{-1} \pmod{7}) + 5 \cdot 7 \cdot (7^{-1} \pmod{13}) \pmod{91}$\\
-$13^{-1} \pmod{7} = 6$ and $7^{-1} \pmod{13} = 2$\\
-$x \equiv 1 \cdot 13 \cdot 6 + 5 \cdot 7 \cdot 2 \pmod{91} \equiv 78 + 70 \equiv 57 \pmod{91}$
+    \item Using the Chinese Remainder Theorem: \\
+    $x \equiv 1 \cdot 13 \cdot (13^{-1} \pmod{7}) + 5 \cdot 7 \cdot (7^{-1} \pmod{13}) \pmod{91}$\\
+    $13^{-1} \pmod{7} = 6$, $7^{-1} \pmod{13} = 2$\\
+    $\implies x \equiv 78 + 70 \equiv 57 \pmod{91}$
 
-\item If $x \equiv 2 \pmod{91}$ where $91 = 7 \cdot 13$, then:\\
-$x \equiv 2 \pmod{7}$ and $x \equiv 2 \pmod{13}$
+    \item If $x \equiv 2 \pmod{91}$, then $x \equiv 2 \pmod{7}$ and $x \equiv 2 \pmod{13}$
 
-\item False. $x^3 \not\equiv x^0 \pmod{3}$ in general.\\
-For instance, if $x = 2$, then $2^3 = 8 \equiv 2 \pmod{3}$ while $2^0 = 1 \pmod{3}$.
+    \item False. $x^3 \not\equiv x^0 \pmod{3}$ in general. Example: $x = 2$.
 
-\item In $\mathbb{Z}$, $(x + y)^2 = x^2 + 2xy + y^2 \neq x^2 + y^2$ in general.\\
-For example, $(1 + 2)^2 = 9 \neq 1^2 + 2^2 = 5$.
+    \item $(x + y)^2 \neq x^2 + y^2$ in general. Example: $(1 + 2)^2 = 9 \neq 5$
 
-\item In $\mathbb{Z}/2\mathbb{Z}$, let's try all values:\\
-$(0 + 0)^2 \equiv 0^2 + 0^2 \equiv 0 \pmod{2}$ t
-$(0 + 1)^2 \equiv 1^2 + 0^2 \equiv 1 \pmod{2}$t
-$(1 + 0)^2 \equiv 1^2 + 0^2 \equiv 1 \pmod{2}$ f
-$(1 + 1)^2 \equiv 0^2 + 1^2 \equiv 1 \pmod{2}$ t
-So it's not true that $(x + y)^2 \equiv x^2 + y^2 \pmod{2}$ for all values.
+    \item In $\mathbb{Z}/2\mathbb{Z}$, $(x + y)^2 \equiv x^2 + y^2$ is **not true** for all $x, y$
 
-\item In $\mathbb{Z}$, $(x + y)^3 = x^3 + 3x^2y + 3xy^2 + y^3 \neq x^3 + y^3$ in general.\\
-For example, $(1 + 1)^3 = 8 \neq 1^3 + 1^3 = 2$.
+    \item $(x + y)^3 \neq x^3 + y^3$ in general. Example: $(1 + 1)^3 = 8 \neq 2$
 
-\item In $\mathbb{Z}/3\mathbb{Z}$, $(x + y)^3 \equiv x^3 + y^3 \pmod{3}$ is true.\\
-$(x + y)^3 = x^3 + 3x^2y + 3xy^2 + y^3 \equiv x^3 + 0 + 0 + y^3 \equiv x^3 + y^3 \pmod{3}$
+    \item In $\mathbb{Z}/3\mathbb{Z}$, $(x + y)^3 \equiv x^3 + y^3$ is true (binomial coefficients divisible by 3)
 
-\item In $\mathbb{Z}/n\mathbb{Z}$, $(x + y)^n \equiv x^n + y^n \pmod{n}$ is true.\\
-From binomial theorem: $(x + y)^n = \sum_{k=0}^{n} \binom{n}{k} x^{n-k} y^k$\\
-For $1 \leq k \leq n-1$, $\binom{n}{k}$ is divisible by $n$\\
-Therefore, $(x + y)^n \equiv x^n + y^n \pmod{n}$
+    \item In $\mathbb{Z}/n\mathbb{Z}$, $(x + y)^n \equiv x^n + y^n \pmod{n}$ (binomial theorem argument)
 \end{enumerate}
 
-\item[1.3.4] Tables for modular arithmetic mod 26:
+\item[1.3.4]
+\textbf{Modular arithmetic tables mod 26:}
 
-Addition: $a + b \equiv (a + b) \pmod{26}$
+\begin{itemize}
+    \item Addition: $a + b \equiv (a + b) \pmod{26}$
+    \item Negation: $-a \equiv 26 - a \pmod{26}$
+    \item Multiplication: $a \cdot b \equiv (a \cdot b) \pmod{26}$
+\end{itemize}
 
-Negation: $-a \equiv 26 - a \pmod{26}$
+\textbf{Multiplicative inverses modulo 26:}
+\[
+\begin{aligned}
+1^{-1} &\equiv 1, & 3^{-1} &\equiv 9, & 5^{-1} &\equiv 21, & 7^{-1} &\equiv 15, \\
+9^{-1} &\equiv 3, & 11^{-1} &\equiv 19, & 15^{-1} &\equiv 7, & 17^{-1} &\equiv 23, \\
+19^{-1} &\equiv 11, & 21^{-1} &\equiv 5, & 23^{-1} &\equiv 17, & 25^{-1} &\equiv 25
+\end{aligned}
+\]
+For all other values of $a$, $a^{-1}$ does not exist modulo 26.
 
-Multiplication: $a \cdot b \equiv (a \cdot b) \pmod{26}$
-
-Multiplicative inverse mod 26:
-$1^{-1} \equiv 1 \pmod{26}$
-$3^{-1} \equiv 9 \pmod{26}$
-$5^{-1} \equiv 21 \pmod{26}$
-$7^{-1} \equiv 15 \pmod{26}$
-$9^{-1} \equiv 3 \pmod{26}$
-$11^{-1} \equiv 19 \pmod{26}$
-$15^{-1} \equiv 7 \pmod{26}$
-$17^{-1} \equiv 23 \pmod{26}$
-$19^{-1} \equiv 11 \pmod{26}$
-$21^{-1} \equiv 5 \pmod{26}$
-$23^{-1} \equiv 17 \pmod{26}$
-$25^{-1} \equiv 25 \pmod{26}$
-For all other values of $a$, $a^{-1} \equiv$ None $\pmod{26}$
 \end{enumerate}
+
 \input{exercises/exercise-4/main.tex}
 \input{exercises/exercise-5/main.tex}
 \input{exercises/exercise-6/main.tex}
@@ -447,58 +421,50 @@ For all other values of $a$, $a^{-1} \equiv$ None $\pmod{26}$
 \input{exercises/exercise-24/main.tex}
 \input{exercises/exercise-25/main.tex}
 \input{exercises/exercise-26/main.tex}
+
 \begin{enumerate}
-\item[1.3.19]
-$\begin{aligned}
-(a) & 10 \equiv 1 \pmod{3} \\
-(b) & 100 \equiv 1 \pmod{3} \\
-(c) & 1000 \equiv 1 \pmod{3} \\
-(d) & 5342 \equiv 2 \pmod{3} \\
-(e) & 534603142235187 \equiv 1 \pmod{3}
-\end{aligned}$
+\item[1.3.19] Remainders modulo 3:
+\[
+\begin{aligned}
+10 &\equiv 1, & 100 &\equiv 1, & 1000 &\equiv 1, \\
+5342 &\equiv 2, & 534603142235187 &\equiv 1
+\end{aligned}
+\]
+Sum-of-digits rule applies for powers of 10.
 
-(f) For powers of 10: $10^n \equiv 1 \pmod{3}$ for all $n \geq 1$. In general, the sum of digits of a number divided by 3 gives the same remainder as the number itself mod 3.
+\item[1.3.20] Remainders modulo 9:
+\[
+\begin{aligned}
+10 &\equiv 1, & 100 &\equiv 1, & 1000 &\equiv 1, \\
+9142 &\equiv 7, & 96331420351887 &\equiv 1
+\end{aligned}
+\]
+Sum-of-digits rule applies for powers of 10.
 
-\item[1.3.20]
-$\begin{aligned}
-(a) & 10 \equiv 1 \pmod{9} \\
-(b) & 100 \equiv 1 \pmod{9} \\
-(c) & 1000 \equiv 1 \pmod{9} \\
-(d) & 9142 \equiv 7 \pmod{9} \\
-(e) & 96331420351887 \equiv 1 \pmod{9}
-\end{aligned}$
+\item[1.3.21] Remainders modulo 11:
+\[
+\begin{aligned}
+10 &\equiv 10, & 100 &\equiv 1, & 1000 &\equiv 10, \\
+9142 &\equiv 1, & 80432440556787 &\equiv 0
+\end{aligned}
+\]
+Alternating-sum-of-digits rule applies.
 
-(f) For powers of 10: $10^n \equiv 1 \pmod{9}$ for all $n \geq 1$. In general, the sum of digits of a number divided by 9 gives the same remainder as the number itself mod 9.
+\item[1.3.22] $xy \equiv 0 \pmod{N} \implies x \equiv 0 \text{ or } y \equiv 0$ is true **iff $N$ is prime**. Example for $N=26$: $13 \cdot 2 \equiv 0 \pmod{26}$ but neither factor is 0 mod 26.
 
-\item[1.3.21]
-$\begin{aligned}
-(a) & 10 \equiv 10 \pmod{11} \\
-(b) & 100 \equiv 1 \pmod{11} \\
-(c) & 1000 \equiv 10 \pmod{11} \\
-(d) & 9142 \equiv 1 \pmod{11} \\
-(e) & 80432440556787 \equiv 0 \pmod{11}
-\end{aligned}$
+\item[1.3.26] Multiplicative inverses:
+\begin{itemize}
+    \item If $p$ is prime, all nonzero elements of $\mathbb{Z}/p\mathbb{Z}$ have inverses.
+    \item If $n$ is composite, $a$ has an inverse modulo $n$ iff $\gcd(a,n) = 1$.
+\end{itemize}
 
-(f) For powers of 10: $10^{2k} \equiv 1 \pmod{11}$ and $10^{2k+1} \equiv 10 \pmod{11}$ for integers $k \geq 0$. In general, alternating sum of digits (with appropriate weights) gives the remainder mod 11.
+\item[1.3.27] Linear hash $h(n) = (2n + 5) \bmod 256$:
+\begin{itemize}
+    \item (a) Cycle length: 128 values.
+    \item (b) Not a good hash (only covers half range).
+    \item (c) Seeds with same parity generate same cycle.
+    \item (d) Full coverage requires $\gcd(a, 256) = 1$, e.g., $h(n) = (3n + 7) \bmod 256$.
+\end{itemize}
 
-\item[1.3.22]
-The statement $xy \equiv 0 \pmod{N} \Rightarrow x \equiv 0 \pmod{N}$ or $y \equiv 0 \pmod{N}$ holds true if and only if $N$ is prime.
-
-For non-prime $N$, we can find counterexamples. For $N=26$: Let $x=13$ and $y=2$. Then $13 \cdot 2 \equiv 0 \pmod{26}$, but neither $13 \equiv 0 \pmod{26}$ nor $2 \equiv 0 \pmod{26}$.
-
-\item[1.3.26]
-(a-d) In $\mathbb{Z}/p\mathbb{Z}$ where $p$ is prime, all non-zero elements have multiplicative inverses.
-
-(e) When the modulus is prime, all non-zero elements have multiplicative inverses.
-
-(f-i) In $\mathbb{Z}/n\mathbb{Z}$ where $n$ is composite, an element $a$ has a multiplicative inverse if and only if $\gcd(a,n) = 1$, i.e., $a$ is coprime to $n$.
-
-\item[1.3.27]
-(a) The function $h(n) = (2n + 5) \bmod 256$ has a cycle of length 128. Starting with seed 1: $1 \to 7 \to 19 \to 43 \to 91 \to 187 \to 123 \to \ldots$ This function can only generate 128 distinct values (the even numbers + 5).
-
-(b) This is not a good hash function as it only covers half the range.
-
-(c) Different seeds with the same parity will generate the same cycle.
-
-(d) A function of the form $h(n) = (an + b) \bmod 256$ can cover the entire range if and only if $\gcd(a, 256) = 1$, e.g., $h(n) = (3n + 7) \bmod 256$.
 \end{enumerate}
+

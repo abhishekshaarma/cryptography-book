@@ -1,43 +1,8 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.8)  29 JAN 2026 13:02
-=======
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Fedora 40) (preloaded format=pdflatex 2024.7.15)  29 JAN 2026 11:06
->>>>>>> 9e9e6be059f0f04f3d631ffd996a63a3ce698a7b
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Fedora 40) (preloaded format=pdflatex 2024.7.15)  29 JAN 2026 13:43
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-<<<<<<< HEAD
-**./main.tex
-(main.tex
-LaTeX2e <2025-06-01> patch level 1
-L3 programming layer <2025-10-09>
-(thispreamble.tex
-
-! LaTeX Error: File `mybookpreamble.tex' not found.
-
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: tex)
-
-Enter file name: 
-thispreamble.tex:2: Emergency stop.
-<read *> 
-         
-l.2 \input{mybookpreamble.tex}
-                              ^^M
-*** (cannot \read from terminal in nonstop modes)
-
- 
-Here is how much of TeX's memory you used:
- 26 strings out of 468080
- 650 string characters out of 5425772
- 433722 words of memory out of 5000000
- 28793 multiletter control sequences out of 15000+600000
- 627721 words of font info for 40 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 21i,0n,29p,93b,20s stack positions out of 10000i,1000n,20000p,200000b,200000s
-thispreamble.tex:2:  ==> Fatal error occurred, no output PDF file produced!
-=======
 **main.tex
 (./main.tex
 LaTeX2e <2022-11-01> patch level 1
@@ -1356,8 +1321,14 @@ exclude:
 LaTeX Info: Redefining \bf on input line 5.
 ))
 (/usr/share/texlive/texmf-local/tex/latex/yliow/author/yliow.tex)
-(./thistitle.tex) (./thispackages.tex) (./thismacros.tex)
-No file main.aux.
+(./thistitle.tex) (./thispackages.tex) (./thismacros.tex) (./main.aux
+
+LaTeX Warning: Label `ex:exercise-20' multiply defined.
+
+
+LaTeX Warning: Label `ex:exercise-21' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
@@ -1388,8 +1359,10 @@ Package scrbase Info: activating english \listfigurename on input line 14.
 Package scrbase Info: activating english \listtablename on input line 14.
 Package scrbase Info: activating english \bibname on input line 14.
 Package scrbase Info: activating english \indexname on input line 14.
+
 Couldn't patch \deferred@thm@head!
 Package hyperref Info: Link coloring ON on input line 14.
+(./main.out) (./main.out)
 \@outlinefile=\write12
 \openout12 = `main.out'.
 
@@ -1401,6 +1374,7 @@ Class scrbook Info: loading recommended package `bookmark'.
 (scrbook)           you can avoid this message adding:
 (scrbook)             \usepackage{bookmark}
 (scrbook)           before \begin{document} on input line 14.
+
 (/usr/share/texlive/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
 
@@ -1517,102 +1491,102 @@ LaTeX Font Warning: Font shape `OT1/cmss/bx/sc' undefined
 number indent by \l@... (toc, 0):  0.0pt
 text indent by \l@... (toc, 0):  17.62482pt
 number indent by parent (toc, 0):  0.0pt
-text indent calculated (toc, 0): 17.62482pt
+text indent calculated (toc, 0): 13.20007pt
 number indent calculated (toc, 0): 0.0pt
 number indent by \l@... (toc, 1):  17.62482pt
 text indent by \l@... (toc, 1):  27.02475pt
-number indent by parent (toc, 1):  17.62482pt
-text indent calculated (toc, 1): 27.02475pt
-number indent calculated (toc, 1): 17.62482pt
+number indent by parent (toc, 1):  13.20007pt
+text indent calculated (toc, 1): 26.76361pt
+number indent calculated (toc, 1): 13.20007pt
 number indent by \l@... (toc, 1):  17.62482pt
 text indent by \l@... (toc, 1):  27.02475pt
-number indent by parent (toc, 1):  17.62482pt
-text indent calculated (toc, 1): 27.02475pt
-number indent calculated (toc, 1): 17.62482pt
+number indent by parent (toc, 1):  13.20007pt
+text indent calculated (toc, 1): 26.76361pt
+number indent calculated (toc, 1): 13.20007pt
 number indent by \l@... (toc, 1):  17.62482pt
 text indent by \l@... (toc, 1):  27.02475pt
-number indent by parent (toc, 1):  17.62482pt
-text indent calculated (toc, 1): 27.02475pt
-number indent calculated (toc, 1): 17.62482pt
+number indent by parent (toc, 1):  13.20007pt
+text indent calculated (toc, 1): 26.76361pt
+number indent calculated (toc, 1): 13.20007pt
 number indent by \l@... (toc, 1):  17.62482pt
 text indent by \l@... (toc, 1):  27.02475pt
-number indent by parent (toc, 1):  17.62482pt
-text indent calculated (toc, 1): 27.02475pt
-number indent calculated (toc, 1): 17.62482pt
+number indent by parent (toc, 1):  13.20007pt
+text indent calculated (toc, 1): 26.76361pt
+number indent calculated (toc, 1): 13.20007pt
 number indent by \l@... (toc, 1):  17.62482pt
 text indent by \l@... (toc, 1):  27.02475pt
-number indent by parent (toc, 1):  17.62482pt
-text indent calculated (toc, 1): 27.02475pt
-number indent calculated (toc, 1): 17.62482pt
+number indent by parent (toc, 1):  13.20007pt
+text indent calculated (toc, 1): 26.76361pt
+number indent calculated (toc, 1): 13.20007pt
 number indent by \l@... (toc, 1):  17.62482pt
 text indent by \l@... (toc, 1):  27.02475pt
-number indent by parent (toc, 1):  17.62482pt
-text indent calculated (toc, 1): 27.02475pt
-number indent calculated (toc, 1): 17.62482pt
+number indent by parent (toc, 1):  13.20007pt
+text indent calculated (toc, 1): 26.76361pt
+number indent calculated (toc, 1): 13.20007pt
 number indent by \l@... (toc, 1):  17.62482pt
 text indent by \l@... (toc, 1):  27.02475pt
-number indent by parent (toc, 1):  17.62482pt
-text indent calculated (toc, 1): 27.02475pt
-number indent calculated (toc, 1): 17.62482pt
+number indent by parent (toc, 1):  13.20007pt
+text indent calculated (toc, 1): 26.76361pt
+number indent calculated (toc, 1): 13.20007pt
 number indent by \l@... (toc, 1):  17.62482pt
 text indent by \l@... (toc, 1):  27.02475pt
-number indent by parent (toc, 1):  17.62482pt
-text indent calculated (toc, 1): 27.02475pt
-number indent calculated (toc, 1): 17.62482pt
+number indent by parent (toc, 1):  13.20007pt
+text indent calculated (toc, 1): 26.76361pt
+number indent calculated (toc, 1): 13.20007pt
 number indent by \l@... (toc, 1):  17.62482pt
 text indent by \l@... (toc, 1):  27.02475pt
-number indent by parent (toc, 1):  17.62482pt
-text indent calculated (toc, 1): 27.02475pt
-number indent calculated (toc, 1): 17.62482pt
+number indent by parent (toc, 1):  13.20007pt
+text indent calculated (toc, 1): 26.76361pt
+number indent calculated (toc, 1): 13.20007pt
 number indent by \l@... (toc, 1):  17.62482pt
 text indent by \l@... (toc, 1):  27.02475pt
-number indent by parent (toc, 1):  17.62482pt
-text indent calculated (toc, 1): 27.02475pt
-number indent calculated (toc, 1): 17.62482pt
+number indent by parent (toc, 1):  13.20007pt
+text indent calculated (toc, 1): 26.76361pt
+number indent calculated (toc, 1): 13.20007pt
 number indent by \l@... (toc, 1):  17.62482pt
 text indent by \l@... (toc, 1):  27.02475pt
-number indent by parent (toc, 1):  17.62482pt
-text indent calculated (toc, 1): 27.02475pt
-number indent calculated (toc, 1): 17.62482pt
+number indent by parent (toc, 1):  13.20007pt
+text indent calculated (toc, 1): 26.76361pt
+number indent calculated (toc, 1): 13.20007pt
 number indent by \l@... (toc, 1):  17.62482pt
 text indent by \l@... (toc, 1):  27.02475pt
-number indent by parent (toc, 1):  17.62482pt
-text indent calculated (toc, 1): 27.02475pt
-number indent calculated (toc, 1): 17.62482pt
+number indent by parent (toc, 1):  13.20007pt
+text indent calculated (toc, 1): 26.76361pt
+number indent calculated (toc, 1): 13.20007pt
 number indent by \l@... (toc, 2):  44.64957pt
 text indent by \l@... (toc, 2):  37.59956pt
-number indent by parent (toc, 2):  44.64957pt
-text indent calculated (toc, 2): 37.59956pt
-number indent calculated (toc, 2): 44.64957pt
+number indent by parent (toc, 2):  39.96368pt
+text indent calculated (toc, 2): 35.9024pt
+number indent calculated (toc, 2): 39.96368pt
 number indent by \l@... (toc, 2):  44.64957pt
 text indent by \l@... (toc, 2):  37.59956pt
-number indent by parent (toc, 2):  44.64957pt
-text indent calculated (toc, 2): 37.59956pt
-number indent calculated (toc, 2): 44.64957pt
+number indent by parent (toc, 2):  39.96368pt
+text indent calculated (toc, 2): 35.9024pt
+number indent calculated (toc, 2): 39.96368pt
 number indent by \l@... (toc, 2):  44.64957pt
 text indent by \l@... (toc, 2):  37.59956pt
-number indent by parent (toc, 2):  44.64957pt
-text indent calculated (toc, 2): 37.59956pt
-number indent calculated (toc, 2): 44.64957pt
+number indent by parent (toc, 2):  39.96368pt
+text indent calculated (toc, 2): 35.9024pt
+number indent calculated (toc, 2): 39.96368pt
 number indent by \l@... (toc, 2):  44.64957pt
 text indent by \l@... (toc, 2):  37.59956pt
-number indent by parent (toc, 2):  44.64957pt
-text indent calculated (toc, 2): 37.59956pt
-number indent calculated (toc, 2): 44.64957pt
+number indent by parent (toc, 2):  39.96368pt
+text indent calculated (toc, 2): 35.9024pt
+number indent calculated (toc, 2): 39.96368pt
 number indent by \l@... (toc, 1):  17.62482pt
 text indent by \l@... (toc, 1):  27.02475pt
-number indent by parent (toc, 1):  17.62482pt
-text indent calculated (toc, 1): 27.02475pt
-number indent calculated (toc, 1): 17.62482pt
+number indent by parent (toc, 1):  13.20007pt
+text indent calculated (toc, 1): 26.76361pt
+number indent calculated (toc, 1): 13.20007pt
 number indent by \l@... (toc, 0):  0.0pt
 text indent by \l@... (toc, 0):  17.62482pt
 number indent by parent (toc, 0):  0.0pt
-text indent calculated (toc, 0): 17.62482pt
+text indent calculated (toc, 0): 13.20007pt
 number indent calculated (toc, 0): 0.0pt
 number indent by \l@... (toc, 0):  0.0pt
 text indent by \l@... (toc, 0):  17.62482pt
 number indent by parent (toc, 0):  0.0pt
-text indent calculated (toc, 0): 17.62482pt
+text indent calculated (toc, 0): 13.20007pt
 number indent calculated (toc, 0): 0.0pt
 )
 \tf@toc=\write13
@@ -1638,9 +1612,6 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 13.
 
 
-LaTeX Warning: Reference `LastPage' on page 4 undefined on input line 13.
-
-
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 13.
 
@@ -1651,13 +1622,19 @@ Processing 'python0' comment.
  Comment 'python0' writing to comment.cut.
 runsystem(python comment.cut > comment.out 2> comment.err)...executed.
 
+Package marginnote Info: Margin note 5.1 is on absolute page 5 on input line 8.
+
 Package marginnote Info: right page because not two side mode on input line 8.
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 8.
+Package marginnote Info: xpos seems to be 160.24744pt on input line 8.
+Package marginnote Info: Margin note 5.2 is on absolute page 5 on input line 8.
+
 Package marginnote Info: right page because not two side mode on input line 8.
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 8.
+Package marginnote Info: xpos seems to be 349.22954pt on input line 8.
+Package marginnote Info: Margin note 5.3 is on absolute page 5 on input line 11
+.
 Package marginnote Info: right page because not two side mode on input line 11.
 
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 11.
+Package marginnote Info: xpos seems to be 286.01315pt on input line 11.
 
 Underfull \hbox (badness 10000) in paragraph at lines 38--44
 
@@ -1681,46 +1658,65 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 55.
 
 
-LaTeX Warning: Reference `LastPage' on page 5 undefined on input line 55.
-
-
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 55.
 
 [5]
+Package marginnote Info: Margin note 6.1 is on absolute page 6 on input line 61
+.
 Package marginnote Info: right page because not two side mode on input line 61.
 
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 61.
+Package marginnote Info: xpos seems to be 261.27289pt on input line 61.
+Package marginnote Info: Margin note 6.2 is on absolute page 6 on input line 67
+.
 Package marginnote Info: right page because not two side mode on input line 67.
 
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 67.
+Package marginnote Info: xpos seems to be 192.76245pt on input line 67.
+Package marginnote Info: Margin note 6.3 is on absolute page 6 on input line 67
+.
 Package marginnote Info: right page because not two side mode on input line 67.
 
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 67.
+Package marginnote Info: xpos seems to be 282.57468pt on input line 67.
+Package marginnote Info: Margin note 6.4 is on absolute page 6 on input line 72
+.
 Package marginnote Info: right page because not two side mode on input line 72.
 
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 72.
+Package marginnote Info: xpos seems to be 299.39287pt on input line 72.
+Package marginnote Info: Margin note 6.5 is on absolute page 6 on input line 72
+.
 Package marginnote Info: right page because not two side mode on input line 72.
 
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 72.
+Package marginnote Info: xpos seems to be 128.05333pt on input line 72.
+Package marginnote Info: Margin note 6.6 is on absolute page 6 on input line 75
+.
 Package marginnote Info: right page because not two side mode on input line 75.
 
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 75.
+Package marginnote Info: xpos seems to be 294.30688pt on input line 75.
+Package marginnote Info: Margin note 6.7 is on absolute page 6 on input line 75
+.
 Package marginnote Info: right page because not two side mode on input line 75.
 
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 75.
+Package marginnote Info: xpos seems to be 421.3002pt on input line 75.
+Package marginnote Info: Margin note 6.8 is on absolute page 6 on input line 93
+.
 Package marginnote Info: right page because not two side mode on input line 93.
 
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 93.
+Package marginnote Info: xpos seems to be 301.36421pt on input line 93.
+Package marginnote Info: Margin note 6.9 is on absolute page 6 on input line 93
+.
 Package marginnote Info: right page because not two side mode on input line 93.
 
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 93.
+Package marginnote Info: xpos seems to be 420.61064pt on input line 93.
+Package marginnote Info: Margin note 6.10 is on absolute page 6 on input line 9
+4.
 Package marginnote Info: right page because not two side mode on input line 94.
 
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 94.
+Package marginnote Info: xpos seems to be 301.51517pt on input line 94.
+Package marginnote Info: Margin note 6.11 is on absolute page 6 on input line 9
+4.
 Package marginnote Info: right page because not two side mode on input line 94.
 
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 94.
+Package marginnote Info: xpos seems to be 437.68384pt on input line 94.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
@@ -1733,18 +1729,17 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 113.
-
-
-LaTeX Warning: Reference `LastPage' on page 6 undefined on input line 113.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 113.
 
 [6]
+Package marginnote Info: Margin note 7.1 is on absolute page 7 on input line 11
+6.
 Package marginnote Info: right page because not two side mode on input line 116
 .
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 116.
+Package marginnote Info: xpos seems to be 333.85004pt on input line 116.
 )
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
@@ -1757,9 +1752,6 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 14.
-
-
-LaTeX Warning: Reference `LastPage' on page 7 undefined on input line 14.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
@@ -1790,9 +1782,6 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 75.
 
 
-LaTeX Warning: Reference `LastPage' on page 8 undefined on input line 75.
-
-
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 75.
 
@@ -1810,46 +1799,65 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 91.
 
 
-LaTeX Warning: Reference `LastPage' on page 9 undefined on input line 91.
-
-
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 91.
 
 [9]
+Package marginnote Info: Margin note 10.1 is on absolute page 10 on input line 
+95.
 Package marginnote Info: right page because not two side mode on input line 95.
 
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 95.
+Package marginnote Info: xpos seems to be 215.90788pt on input line 95.
+Package marginnote Info: Margin note 10.2 is on absolute page 10 on input line 
+104.
 Package marginnote Info: right page because not two side mode on input line 104
 .
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 104.
+Package marginnote Info: xpos seems to be 167.11559pt on input line 104.
+Package marginnote Info: Margin note 10.3 is on absolute page 10 on input line 
+110.
 Package marginnote Info: right page because not two side mode on input line 110
 .
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 110.
+Package marginnote Info: xpos seems to be 250.48778pt on input line 110.
+Package marginnote Info: Margin note 10.4 is on absolute page 10 on input line 
+119.
 Package marginnote Info: right page because not two side mode on input line 119
 .
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 119.
+Package marginnote Info: xpos seems to be 319.2373pt on input line 119.
+Package marginnote Info: Margin note 10.5 is on absolute page 10 on input line 
+127.
 Package marginnote Info: right page because not two side mode on input line 127
 .
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 127.
+Package marginnote Info: xpos seems to be 279.49817pt on input line 127.
+Package marginnote Info: Margin note 10.6 is on absolute page 10 on input line 
+133.
 Package marginnote Info: right page because not two side mode on input line 133
 .
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 133.
+Package marginnote Info: xpos seems to be 123.61842pt on input line 133.
+Package marginnote Info: Margin note 10.7 is on absolute page 10 on input line 
+140.
 Package marginnote Info: right page because not two side mode on input line 140
 .
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 140.
+Package marginnote Info: xpos seems to be 250.48778pt on input line 140.
+Package marginnote Info: Margin note 10.8 is on absolute page 10 on input line 
+144.
 Package marginnote Info: right page because not two side mode on input line 144
 .
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 144.
+Package marginnote Info: xpos seems to be 319.2373pt on input line 144.
+Package marginnote Info: Margin note 10.9 is on absolute page 10 on input line 
+148.
 Package marginnote Info: right page because not two side mode on input line 148
 .
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 148.
+Package marginnote Info: xpos seems to be 279.49817pt on input line 148.
+Package marginnote Info: Margin note 10.10 is on absolute page 10 on input line
+ 152.
 Package marginnote Info: right page because not two side mode on input line 152
 .
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 152.
+Package marginnote Info: xpos seems to be 253.63364pt on input line 152.
+Package marginnote Info: Margin note 10.11 is on absolute page 10 on input line
+ 162.
 Package marginnote Info: right page because not two side mode on input line 162
 .
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 162.
+Package marginnote Info: xpos seems to be 240.84167pt on input line 162.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
@@ -1862,9 +1870,6 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 202.
-
-
-LaTeX Warning: Reference `LastPage' on page 10 undefined on input line 202.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
@@ -1884,15 +1889,14 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 272.
 
 
-LaTeX Warning: Reference `LastPage' on page 11 undefined on input line 272.
-
-
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 272.
 
 [11] (./exercises/exercise-0/main.tex (./exercises/exercise-0/question.tex
+Package marginnote Info: Margin note 12.1 is on absolute page 12 on input line 
+2.
 Package marginnote Info: right page because not two side mode on input line 2.
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
+Package marginnote Info: xpos seems to be 162.16444pt on input line 2.
 )
 
 LaTeX Warning: Hyper reference `sol:exercise-0' on page 12 undefined on input l
@@ -1910,8 +1914,10 @@ runsystem(python comment.cut > comment.out 2> comment.err)...executed.
 
 )
 (./exercises/exercise-1/main.tex (./exercises/exercise-1/question.tex
+Package marginnote Info: Margin note 12.2 is on absolute page 12 on input line 
+2.
 Package marginnote Info: right page because not two side mode on input line 2.
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
+Package marginnote Info: xpos seems to be 162.16444pt on input line 2.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
@@ -1924,9 +1930,6 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 8.
-
-
-LaTeX Warning: Reference `LastPage' on page 12 undefined on input line 8.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
@@ -1949,8 +1952,10 @@ runsystem(python comment.cut > comment.out 2> comment.err)...executed.
 
 )
 (./exercises/exercise-2/main.tex (./exercises/exercise-2/question.tex
+Package marginnote Info: Margin note 13.1 is on absolute page 13 on input line 
+2.
 Package marginnote Info: right page because not two side mode on input line 2.
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
+Package marginnote Info: xpos seems to be 162.16444pt on input line 2.
 
 Overfull \hbox (5.72963pt too wide) in paragraph at lines 6--9
 []$\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 ^^Q \OT1/cmr/m/n/12 2([]7 \OMS/cmsy/m/n/
@@ -1975,8 +1980,10 @@ runsystem(python comment.cut > comment.out 2> comment.err)...executed.
 
 )
 (./exercises/exercise-3/main.tex (./exercises/exercise-3/question.tex
+Package marginnote Info: Margin note 13.2 is on absolute page 13 on input line 
+2.
 Package marginnote Info: right page because not two side mode on input line 2.
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
+Package marginnote Info: xpos seems to be 160.48503pt on input line 2.
 \openout8 = `main.py'.
 
 \openout9 = `latex.py'.
@@ -1999,9 +2006,6 @@ using `OT1/cmr/m/sc' instead on input line 1.
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              
 using `OT1/cmr/m/sc' instead on input line 1.
-
-
-LaTeX Warning: Reference `LastPage' on page 13 undefined on input line 1.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
@@ -2041,9 +2045,6 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 using `OT1/cmr/m/sc' instead on input line 7336.
 
 
-LaTeX Warning: Reference `LastPage' on page 14 undefined on input line 7336.
-
-
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              
 using `OT1/cmr/m/sc' instead on input line 7336.
@@ -2070,9 +2071,6 @@ using `OT1/cmr/m/sc' instead on input line 586.
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              
 using `OT1/cmr/m/sc' instead on input line 586.
-
-
-LaTeX Warning: Reference `LastPage' on page 15 undefined on input line 586.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
@@ -2103,9 +2101,6 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 using `OT1/cmr/m/sc' instead on input line 586.
 
 
-LaTeX Warning: Reference `LastPage' on page 16 undefined on input line 586.
-
-
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              
 using `OT1/cmr/m/sc' instead on input line 586.
@@ -2128,46 +2123,51 @@ runsystem(python comment.cut > comment.out 2> comment.err)...executed.
 )
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 328.
+(Font)              using `OT1/cmr/m/sc' instead on input line 327.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 328.
+(Font)              using `OT1/cmr/m/sc' instead on input line 327.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 328.
-
-
-LaTeX Warning: Reference `LastPage' on page 17 undefined on input line 328.
+(Font)              using `OT1/cmr/m/sc' instead on input line 327.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 328.
+(Font)              using `OT1/cmr/m/sc' instead on input line 327.
 
 [17]
+Underfull \hbox (badness 10000) in paragraph at lines 327--328
 
-LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 391.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 391.
+ []
 
 
-LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 391.
+Underfull \hbox (badness 10000) in paragraph at lines 335--336
 
-
-LaTeX Warning: Reference `LastPage' on page 18 undefined on input line 391.
+ []
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 391.
+(Font)              using `OT1/cmr/m/sc' instead on input line 387.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 387.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 387.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 387.
 
 [18] (./exercises/exercise-4/main.tex (./exercises/exercise-4/question.tex
+Package marginnote Info: Margin note 19.1 is on absolute page 19 on input line 
+2.
 Package marginnote Info: right page because not two side mode on input line 2.
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
+Package marginnote Info: xpos seems to be 162.16444pt on input line 2.
 )
 
 LaTeX Warning: Hyper reference `sol:exercise-4' on page 19 undefined on input l
@@ -2185,27 +2185,26 @@ runsystem(python comment.cut > comment.out 2> comment.err)...executed.
 
 )
 (./exercises/exercise-5/main.tex (./exercises/exercise-5/question.tex
+Package marginnote Info: Margin note 19.2 is on absolute page 19 on input line 
+2.
 Package marginnote Info: right page because not two side mode on input line 2.
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
+Package marginnote Info: xpos seems to be 162.16444pt on input line 2.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 19.
+(Font)              using `OT1/cmr/m/sc' instead on input line 40.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 19.
+(Font)              using `OT1/cmr/m/sc' instead on input line 40.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 19.
-
-
-LaTeX Warning: Reference `LastPage' on page 19 undefined on input line 19.
+(Font)              using `OT1/cmr/m/sc' instead on input line 40.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 19.
+(Font)              using `OT1/cmr/m/sc' instead on input line 40.
 
 [19])
 
@@ -2224,8 +2223,10 @@ runsystem(python comment.cut > comment.out 2> comment.err)...executed.
 
 )
 (./exercises/exercise-6/main.tex (./exercises/exercise-6/question.tex
+Package marginnote Info: Margin note 20.1 is on absolute page 20 on input line 
+2.
 Package marginnote Info: right page because not two side mode on input line 2.
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
+Package marginnote Info: xpos seems to be 162.16444pt on input line 2.
 )
 
 LaTeX Warning: Hyper reference `sol:exercise-6' on page 20 undefined on input l
@@ -2243,8 +2244,10 @@ runsystem(python comment.cut > comment.out 2> comment.err)...executed.
 
 )
 (./exercises/exercise-7/main.tex (./exercises/exercise-7/question.tex
+Package marginnote Info: Margin note 20.2 is on absolute page 20 on input line 
+2.
 Package marginnote Info: right page because not two side mode on input line 2.
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
+Package marginnote Info: xpos seems to be 162.16444pt on input line 2.
 )
 
 LaTeX Warning: Hyper reference `sol:exercise-7' on page 20 undefined on input l
@@ -2262,35 +2265,17 @@ runsystem(python comment.cut > comment.out 2> comment.err)...executed.
 
 )
 (./exercises/exercise-8/main.tex (./exercises/exercise-8/question.tex
+Package marginnote Info: Margin note 20.3 is on absolute page 21 on input line 
+2.
 Package marginnote Info: right page because not two side mode on input line 2.
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
+Package marginnote Info: xpos seems to be 162.16444pt on input line 2.
+)
 
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 5.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 5.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 5.
-
-
-LaTeX Warning: Reference `LastPage' on page 20 undefined on input line 5.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 5.
-
-[20])
-
-LaTeX Warning: Hyper reference `sol:exercise-8' on page 21 undefined on input l
+LaTeX Warning: Hyper reference `sol:exercise-8' on page 20 undefined on input l
 ine 5.
 
 
-LaTeX Warning: Reference `sol:exercise-8' on page 21 undefined on input line 5.
+LaTeX Warning: Reference `sol:exercise-8' on page 20 undefined on input line 5.
 
 
 Processing 'python0' comment.
@@ -2303,7 +2288,24 @@ runsystem(python comment.cut > comment.out 2> comment.err)...executed.
 (./exercises/exercise-9/main.tex (./exercises/exercise-9/question.tex
 Package marginnote Info: right page because not two side mode on input line 2.
 Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
-)
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 14.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 14.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 14.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 14.
+
+[20])
 
 LaTeX Warning: Hyper reference `sol:exercise-9' on page 21 undefined on input l
 ine 5.
@@ -2320,8 +2322,10 @@ runsystem(python comment.cut > comment.out 2> comment.err)...executed.
 
 )
 (./exercises/exercise-10/main.tex (./exercises/exercise-10/question.tex
+Package marginnote Info: Margin note 21.1 is on absolute page 21 on input line 
+2.
 Package marginnote Info: right page because not two side mode on input line 2.
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
+Package marginnote Info: xpos seems to be 168.91444pt on input line 2.
 )
 
 LaTeX Warning: Hyper reference `sol:exercise-10' on page 21 undefined on input 
@@ -2339,38 +2343,36 @@ runsystem(python comment.cut > comment.out 2> comment.err)...executed.
 
 )
 (./exercises/exercise-11/main.tex (./exercises/exercise-11/question.tex
+Package marginnote Info: Margin note 21.2 is on absolute page 21 on input line 
+2.
 Package marginnote Info: right page because not two side mode on input line 2.
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
+Package marginnote Info: xpos seems to be 168.91444pt on input line 2.
+)
 
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 8.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 8.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 8.
-
-
-LaTeX Warning: Reference `LastPage' on page 21 undefined on input line 8.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 8.
-
-[21])
-
-LaTeX Warning: Hyper reference `sol:exercise-11' on page 22 undefined on input 
+LaTeX Warning: Hyper reference `sol:exercise-11' on page 21 undefined on input 
 line 5.
 
 
-LaTeX Warning: Reference `sol:exercise-11' on page 22 undefined on input line 5
+LaTeX Warning: Reference `sol:exercise-11' on page 21 undefined on input line 5
 .
 
-Processing 'python0' comment.
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 7.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 7.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 7.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 7.
+
+[21] Processing 'python0' comment.
 \openout10 = `comment.cut'.
 
  Comment 'python0' writing to comment.cut.
@@ -2378,27 +2380,26 @@ runsystem(python comment.cut > comment.out 2> comment.err)...executed.
 
 )
 (./exercises/exercise-12/main.tex (./exercises/exercise-12/question.tex
+Package marginnote Info: Margin note 22.1 is on absolute page 22 on input line 
+2.
 Package marginnote Info: right page because not two side mode on input line 2.
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
+Package marginnote Info: xpos seems to be 168.91444pt on input line 2.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 82.
+(Font)              using `OT1/cmr/m/sc' instead on input line 93.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 82.
+(Font)              using `OT1/cmr/m/sc' instead on input line 93.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 82.
-
-
-LaTeX Warning: Reference `LastPage' on page 22 undefined on input line 82.
+(Font)              using `OT1/cmr/m/sc' instead on input line 93.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 82.
+(Font)              using `OT1/cmr/m/sc' instead on input line 93.
 
 [22])
 
@@ -2417,27 +2418,26 @@ runsystem(python comment.cut > comment.out 2> comment.err)...executed.
 
 )
 (./exercises/exercise-13/main.tex (./exercises/exercise-13/question.tex
+Package marginnote Info: Margin note 23.1 is on absolute page 23 on input line 
+2.
 Package marginnote Info: right page because not two side mode on input line 2.
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
+Package marginnote Info: xpos seems to be 168.91444pt on input line 2.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 32.
+(Font)              using `OT1/cmr/m/sc' instead on input line 61.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 32.
+(Font)              using `OT1/cmr/m/sc' instead on input line 61.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 32.
-
-
-LaTeX Warning: Reference `LastPage' on page 23 undefined on input line 32.
+(Font)              using `OT1/cmr/m/sc' instead on input line 61.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 32.
+(Font)              using `OT1/cmr/m/sc' instead on input line 61.
 
 [23])
 
@@ -2456,8 +2456,10 @@ runsystem(python comment.cut > comment.out 2> comment.err)...executed.
 
 )
 (./exercises/exercise-14/main.tex (./exercises/exercise-14/question.tex
+Package marginnote Info: Margin note 24.1 is on absolute page 24 on input line 
+2.
 Package marginnote Info: right page because not two side mode on input line 2.
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
+Package marginnote Info: xpos seems to be 170.41508pt on input line 2.
 )
 
 LaTeX Warning: Hyper reference `sol:exercise-14' on page 24 undefined on input 
@@ -2475,8 +2477,10 @@ runsystem(python comment.cut > comment.out 2> comment.err)...executed.
 
 )
 (./exercises/exercise-15/main.tex (./exercises/exercise-15/question.tex
+Package marginnote Info: Margin note 24.2 is on absolute page 24 on input line 
+2.
 Package marginnote Info: right page because not two side mode on input line 2.
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
+Package marginnote Info: xpos seems to be 168.91444pt on input line 2.
 )
 
 LaTeX Warning: Hyper reference `sol:exercise-15' on page 24 undefined on input 
@@ -2494,35 +2498,17 @@ runsystem(python comment.cut > comment.out 2> comment.err)...executed.
 
 )
 (./exercises/exercise-16/main.tex (./exercises/exercise-16/question.tex
+Package marginnote Info: Margin note 24.3 is on absolute page 24 on input line 
+2.
 Package marginnote Info: right page because not two side mode on input line 2.
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
+Package marginnote Info: xpos seems to be 172.9706pt on input line 2.
+)
 
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 19.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 19.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 19.
-
-
-LaTeX Warning: Reference `LastPage' on page 24 undefined on input line 19.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 19.
-
-[24])
-
-LaTeX Warning: Hyper reference `sol:exercise-16' on page 25 undefined on input 
+LaTeX Warning: Hyper reference `sol:exercise-16' on page 24 undefined on input 
 line 5.
 
 
-LaTeX Warning: Reference `sol:exercise-16' on page 25 undefined on input line 5
+LaTeX Warning: Reference `sol:exercise-16' on page 24 undefined on input line 5
 .
 
 Processing 'python0' comment.
@@ -2537,11 +2523,11 @@ Package marginnote Info: right page because not two side mode on input line 2.
 Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
 )
 
-LaTeX Warning: Hyper reference `sol:exercise-17' on page 25 undefined on input 
+LaTeX Warning: Hyper reference `sol:exercise-17' on page 24 undefined on input 
 line 5.
 
 
-LaTeX Warning: Reference `sol:exercise-17' on page 25 undefined on input line 5
+LaTeX Warning: Reference `sol:exercise-17' on page 24 undefined on input line 5
 .
 
 
@@ -2551,7 +2537,23 @@ i-ous ques-tion ... What about $\OML/cmm/m/it/12 a[]\OT1/cmr/m/n/12 ([]\OML/cmm
 /m/it/12 p\OT1/cmr/m/n/12 )$
  []
 
-Processing 'python0' comment.
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 7.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 7.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 7.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 7.
+
+[24] Processing 'python0' comment.
 \openout10 = `comment.cut'.
 
  Comment 'python0' writing to comment.cut.
@@ -2559,8 +2561,10 @@ runsystem(python comment.cut > comment.out 2> comment.err)...executed.
 
 )
 (./exercises/exercise-18/main.tex (./exercises/exercise-18/question.tex
+Package marginnote Info: Margin note 25.1 is on absolute page 25 on input line 
+2.
 Package marginnote Info: right page because not two side mode on input line 2.
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
+Package marginnote Info: xpos seems to be 166.41444pt on input line 2.
 )
 
 LaTeX Warning: Hyper reference `sol:exercise-18' on page 25 undefined on input 
@@ -2578,8 +2582,10 @@ runsystem(python comment.cut > comment.out 2> comment.err)...executed.
 
 )
 (./exercises/exercise-19/main.tex (./exercises/exercise-19/question.tex
+Package marginnote Info: Margin note 25.2 is on absolute page 25 on input line 
+2.
 Package marginnote Info: right page because not two side mode on input line 2.
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
+Package marginnote Info: xpos seems to be 168.91444pt on input line 2.
 )
 
 LaTeX Warning: Hyper reference `sol:exercise-19' on page 25 undefined on input 
@@ -2597,35 +2603,17 @@ runsystem(python comment.cut > comment.out 2> comment.err)...executed.
 
 )
 (./exercises/exercise-20/main.tex (./exercises/exercise-20/question.tex
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 2.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 2.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 2.
-
-
-LaTeX Warning: Reference `LastPage' on page 25 undefined on input line 2.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 2.
-
-[25]
+Package marginnote Info: Margin note 25.3 is on absolute page 25 on input line 
+2.
 Package marginnote Info: right page because not two side mode on input line 2.
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
+Package marginnote Info: xpos seems to be 168.91444pt on input line 2.
 )
 
-LaTeX Warning: Hyper reference `sol:exercise-20' on page 26 undefined on input 
+LaTeX Warning: Hyper reference `sol:exercise-20' on page 25 undefined on input 
 line 5.
 
 
-LaTeX Warning: Reference `sol:exercise-20' on page 26 undefined on input line 5
+LaTeX Warning: Reference `sol:exercise-20' on page 25 undefined on input line 5
 .
 
 Processing 'python0' comment.
@@ -2638,7 +2626,24 @@ runsystem(python comment.cut > comment.out 2> comment.err)...executed.
 (./exercises/exercise-21/main.tex (./exercises/exercise-21/question.tex
 Package marginnote Info: right page because not two side mode on input line 2.
 Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
-)
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 6.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 6.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 6.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 6.
+
+[25])
 
 LaTeX Warning: Hyper reference `sol:exercise-21' on page 26 undefined on input 
 line 5.
@@ -2655,35 +2660,17 @@ runsystem(python comment.cut > comment.out 2> comment.err)...executed.
 
 )
 (./exercises/exercise-22/main.tex (./exercises/exercise-22/question.tex
+Package marginnote Info: Margin note 26.1 is on absolute page 26 on input line 
+2.
 Package marginnote Info: right page because not two side mode on input line 2.
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
+Package marginnote Info: xpos seems to be 168.91444pt on input line 2.
+)
 
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 22.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 22.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 22.
-
-
-LaTeX Warning: Reference `LastPage' on page 26 undefined on input line 22.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 22.
-
-[26])
-
-LaTeX Warning: Hyper reference `sol:exercise-22' on page 27 undefined on input 
+LaTeX Warning: Hyper reference `sol:exercise-22' on page 26 undefined on input 
 line 5.
 
 
-LaTeX Warning: Reference `sol:exercise-22' on page 27 undefined on input line 5
+LaTeX Warning: Reference `sol:exercise-22' on page 26 undefined on input line 5
 .
 
 Processing 'python0' comment.
@@ -2694,9 +2681,28 @@ runsystem(python comment.cut > comment.out 2> comment.err)...executed.
 
 )
 (./exercises/exercise-23/main.tex (./exercises/exercise-23/question.tex
+Package marginnote Info: Margin note 26.2 is on absolute page 26 on input line 
+2.
 Package marginnote Info: right page because not two side mode on input line 2.
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
-)
+Package marginnote Info: xpos seems to be 171.94681pt on input line 2.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 9.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 9.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 9.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 9.
+
+[26])
 
 LaTeX Warning: Hyper reference `sol:exercise-23' on page 27 undefined on input 
 line 5.
@@ -2713,38 +2719,36 @@ runsystem(python comment.cut > comment.out 2> comment.err)...executed.
 
 )
 (./exercises/exercise-24/main.tex (./exercises/exercise-24/question.tex
+Package marginnote Info: Margin note 27.1 is on absolute page 27 on input line 
+2.
 Package marginnote Info: right page because not two side mode on input line 2.
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
+Package marginnote Info: xpos seems to be 168.91444pt on input line 2.
+)
 
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 21.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 21.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 21.
-
-
-LaTeX Warning: Reference `LastPage' on page 27 undefined on input line 21.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 21.
-
-[27])
-
-LaTeX Warning: Hyper reference `sol:exercise-24' on page 28 undefined on input 
+LaTeX Warning: Hyper reference `sol:exercise-24' on page 27 undefined on input 
 line 5.
 
 
-LaTeX Warning: Reference `sol:exercise-24' on page 28 undefined on input line 5
+LaTeX Warning: Reference `sol:exercise-24' on page 27 undefined on input line 5
 .
 
-Processing 'python0' comment.
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 7.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 7.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 7.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 7.
+
+[27] Processing 'python0' comment.
 \openout10 = `comment.cut'.
 
  Comment 'python0' writing to comment.cut.
@@ -2752,8 +2756,10 @@ runsystem(python comment.cut > comment.out 2> comment.err)...executed.
 
 )
 (./exercises/exercise-25/main.tex (./exercises/exercise-25/question.tex
+Package marginnote Info: Margin note 28.1 is on absolute page 28 on input line 
+2.
 Package marginnote Info: right page because not two side mode on input line 2.
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
+Package marginnote Info: xpos seems to be 166.62071pt on input line 2.
 )
 
 LaTeX Warning: Hyper reference `sol:exercise-25' on page 28 undefined on input 
@@ -2771,35 +2777,17 @@ runsystem(python comment.cut > comment.out 2> comment.err)...executed.
 
 )
 (./exercises/exercise-26/main.tex (./exercises/exercise-26/question.tex
+Package marginnote Info: Margin note 28.2 is on absolute page 28 on input line 
+2.
 Package marginnote Info: right page because not two side mode on input line 2.
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
+Package marginnote Info: xpos seems to be 171.01917pt on input line 2.
+)
 
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 10.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 10.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 10.
-
-
-LaTeX Warning: Reference `LastPage' on page 28 undefined on input line 10.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 10.
-
-[28])
-
-LaTeX Warning: Hyper reference `sol:exercise-26' on page 29 undefined on input 
+LaTeX Warning: Hyper reference `sol:exercise-26' on page 28 undefined on input 
 line 5.
 
 
-LaTeX Warning: Reference `sol:exercise-26' on page 29 undefined on input line 5
+LaTeX Warning: Reference `sol:exercise-26' on page 28 undefined on input line 5
 .
 
 Processing 'python0' comment.
@@ -2811,24 +2799,21 @@ runsystem(python comment.cut > comment.out 2> comment.err)...executed.
 )
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 486.
+(Font)              using `OT1/cmr/m/sc' instead on input line 432.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 486.
+(Font)              using `OT1/cmr/m/sc' instead on input line 432.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 486.
-
-
-LaTeX Warning: Reference `LastPage' on page 29 undefined on input line 486.
+(Font)              using `OT1/cmr/m/sc' instead on input line 432.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 486.
+(Font)              using `OT1/cmr/m/sc' instead on input line 432.
 
-[29])
+[28])
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 15.
@@ -2842,13 +2827,10 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 15.
 
 
-LaTeX Warning: Reference `LastPage' on page 30 undefined on input line 15.
-
-
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 15.
 
-[30] (./classical-cipher-attacks.tex (./solutions.tex)
+[29] (./classical-cipher-attacks.tex (./solutions.tex)
 Processing 'python0' comment.
 \openout10 = `comment.cut'.
 
@@ -2869,13 +2851,10 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 16.
 
 
-LaTeX Warning: Reference `LastPage' on page 31 undefined on input line 16.
-
-
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 16.
 
-[31] (./classical-cipher-attacking-shift-cipher.tex (./solutions.tex)
+[30] (./classical-cipher-attacking-shift-cipher.tex (./solutions.tex)
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 44.
@@ -2889,22 +2868,19 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 44.
 
 
-LaTeX Warning: Reference `LastPage' on page 32 undefined on input line 44.
-
-
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 44.
 
-[32] (./exercises/exercise-20/main.tex (./exercises/exercise-20/question.tex
+[31] (./exercises/exercise-20/main.tex (./exercises/exercise-20/question.tex
 Package marginnote Info: right page because not two side mode on input line 2.
 Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
 )
 
-LaTeX Warning: Hyper reference `sol:exercise-20' on page 33 undefined on input 
+LaTeX Warning: Hyper reference `sol:exercise-20' on page 32 undefined on input 
 line 5.
 
 
-LaTeX Warning: Reference `sol:exercise-20' on page 33 undefined on input line 5
+LaTeX Warning: Reference `sol:exercise-20' on page 32 undefined on input line 5
 .
 
 Processing 'python0' comment.
@@ -2919,11 +2895,11 @@ Package marginnote Info: right page because not two side mode on input line 2.
 Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
 )
 
-LaTeX Warning: Hyper reference `sol:exercise-21' on page 33 undefined on input 
+LaTeX Warning: Hyper reference `sol:exercise-21' on page 32 undefined on input 
 line 5.
 
 
-LaTeX Warning: Reference `sol:exercise-21' on page 33 undefined on input line 5
+LaTeX Warning: Reference `sol:exercise-21' on page 32 undefined on input line 5
 .
 
 Processing 'python0' comment.
@@ -2946,13 +2922,10 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 68.
 
 
-LaTeX Warning: Reference `LastPage' on page 33 undefined on input line 68.
-
-
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 68.
 
-[33])
+[32])
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 17.
@@ -2966,13 +2939,10 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 17.
 
 
-LaTeX Warning: Reference `LastPage' on page 34 undefined on input line 17.
-
-
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 17.
 
-[34] (./classical-cipher-affine-cipher.tex (./solutions.tex)
+[33] (./classical-cipher-affine-cipher.tex (./solutions.tex)
 Processing 'python0' comment.
 \openout10 = `comment.cut'.
 
@@ -2993,22 +2963,19 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 55.
 
 
-LaTeX Warning: Reference `LastPage' on page 35 undefined on input line 55.
-
-
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 55.
 
-[35] (./exercises/exercise-30/main.tex (./exercises/exercise-30/question.tex
+[34] (./exercises/exercise-30/main.tex (./exercises/exercise-30/question.tex
 Package marginnote Info: right page because not two side mode on input line 2.
 Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
 )
 
-LaTeX Warning: Hyper reference `sol:exercise-30' on page 36 undefined on input 
+LaTeX Warning: Hyper reference `sol:exercise-30' on page 35 undefined on input 
 line 5.
 
 
-LaTeX Warning: Reference `sol:exercise-30' on page 36 undefined on input line 5
+LaTeX Warning: Reference `sol:exercise-30' on page 35 undefined on input line 5
 .
 
 Processing 'python0' comment.
@@ -3023,11 +2990,11 @@ Package marginnote Info: right page because not two side mode on input line 2.
 Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
 )
 
-LaTeX Warning: Hyper reference `sol:exercise-31' on page 36 undefined on input 
+LaTeX Warning: Hyper reference `sol:exercise-31' on page 35 undefined on input 
 line 5.
 
 
-LaTeX Warning: Reference `sol:exercise-31' on page 36 undefined on input line 5
+LaTeX Warning: Reference `sol:exercise-31' on page 35 undefined on input line 5
 .
 
 Processing 'python0' comment.
@@ -3042,11 +3009,11 @@ Package marginnote Info: right page because not two side mode on input line 2.
 Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
 )
 
-LaTeX Warning: Hyper reference `sol:exercise-33' on page 36 undefined on input 
+LaTeX Warning: Hyper reference `sol:exercise-33' on page 35 undefined on input 
 line 5.
 
 
-LaTeX Warning: Reference `sol:exercise-33' on page 36 undefined on input line 5
+LaTeX Warning: Reference `sol:exercise-33' on page 35 undefined on input line 5
 .
 
 Processing 'python0' comment.
@@ -3061,11 +3028,11 @@ Package marginnote Info: right page because not two side mode on input line 2.
 Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
 )
 
-LaTeX Warning: Hyper reference `sol:affine-0' on page 36 undefined on input lin
+LaTeX Warning: Hyper reference `sol:affine-0' on page 35 undefined on input lin
 e 5.
 
 
-LaTeX Warning: Reference `sol:affine-0' on page 36 undefined on input line 5.
+LaTeX Warning: Reference `sol:affine-0' on page 35 undefined on input line 5.
 
 Processing 'python0' comment.
 \openout10 = `comment.cut'.
@@ -3079,11 +3046,11 @@ Package marginnote Info: right page because not two side mode on input line 2.
 Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
 )
 
-LaTeX Warning: Hyper reference `sol:affine-1' on page 36 undefined on input lin
+LaTeX Warning: Hyper reference `sol:affine-1' on page 35 undefined on input lin
 e 5.
 
 
-LaTeX Warning: Reference `sol:affine-1' on page 36 undefined on input line 5.
+LaTeX Warning: Reference `sol:affine-1' on page 35 undefined on input line 5.
 
 Processing 'python0' comment.
 \openout10 = `comment.cut'.
@@ -3097,11 +3064,11 @@ Package marginnote Info: right page because not two side mode on input line 2.
 Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
 )
 
-LaTeX Warning: Hyper reference `sol:affine-2' on page 36 undefined on input lin
+LaTeX Warning: Hyper reference `sol:affine-2' on page 35 undefined on input lin
 e 5.
 
 
-LaTeX Warning: Reference `sol:affine-2' on page 36 undefined on input line 5.
+LaTeX Warning: Reference `sol:affine-2' on page 35 undefined on input line 5.
 
 Processing 'python0' comment.
 \openout10 = `comment.cut'.
@@ -3115,11 +3082,11 @@ Package marginnote Info: right page because not two side mode on input line 2.
 Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
 )
 
-LaTeX Warning: Hyper reference `sol:affine-3' on page 36 undefined on input lin
+LaTeX Warning: Hyper reference `sol:affine-3' on page 35 undefined on input lin
 e 5.
 
 
-LaTeX Warning: Reference `sol:affine-3' on page 36 undefined on input line 5.
+LaTeX Warning: Reference `sol:affine-3' on page 35 undefined on input line 5.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
@@ -3134,13 +3101,10 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 7.
 
 
-LaTeX Warning: Reference `LastPage' on page 36 undefined on input line 7.
-
-
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 7.
 
-[36] Processing 'python0' comment.
+[35] Processing 'python0' comment.
 \openout10 = `comment.cut'.
 
  Comment 'python0' writing to comment.cut.
@@ -3173,13 +3137,10 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 18.
 
 
-LaTeX Warning: Reference `LastPage' on page 37 undefined on input line 18.
-
-
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 18.
 
-[37] (./classical-cipher-vigenere-cipher.tex (./solutions.tex)
+[36] (./classical-cipher-vigenere-cipher.tex (./solutions.tex)
 Processing 'python0' comment.
 \openout10 = `comment.cut'.
 
@@ -3192,11 +3153,11 @@ Package marginnote Info: right page because not two side mode on input line 2.
 Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
 )
 
-LaTeX Warning: Hyper reference `sol:vigenere-1' on page 38 undefined on input l
+LaTeX Warning: Hyper reference `sol:vigenere-1' on page 37 undefined on input l
 ine 5.
 
 
-LaTeX Warning: Reference `sol:vigenere-1' on page 38 undefined on input line 5.
+LaTeX Warning: Reference `sol:vigenere-1' on page 37 undefined on input line 5.
 
 
 Processing 'python0' comment.
@@ -3211,11 +3172,11 @@ Package marginnote Info: right page because not two side mode on input line 2.
 Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
 )
 
-LaTeX Warning: Hyper reference `sol:vigenere-2' on page 38 undefined on input l
+LaTeX Warning: Hyper reference `sol:vigenere-2' on page 37 undefined on input l
 ine 5.
 
 
-LaTeX Warning: Reference `sol:vigenere-2' on page 38 undefined on input line 5.
+LaTeX Warning: Reference `sol:vigenere-2' on page 37 undefined on input line 5.
 
 
 
@@ -3231,13 +3192,10 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 7.
 
 
-LaTeX Warning: Reference `LastPage' on page 38 undefined on input line 7.
-
-
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 7.
 
-[38] Processing 'python0' comment.
+[37] Processing 'python0' comment.
 \openout10 = `comment.cut'.
 
  Comment 'python0' writing to comment.cut.
@@ -3245,15 +3203,17 @@ runsystem(python comment.cut > comment.out 2> comment.err)...executed.
 
 )
 (./exercises/vigenere-3/main.tex (./exercises/vigenere-3/question.tex
+Package marginnote Info: Margin note 38.1 is on absolute page 38 on input line 
+2.
 Package marginnote Info: right page because not two side mode on input line 2.
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
+Package marginnote Info: xpos seems to be 163.37965pt on input line 2.
 )
 
-LaTeX Warning: Hyper reference `sol:vigenere-3' on page 39 undefined on input l
+LaTeX Warning: Hyper reference `sol:vigenere-3' on page 38 undefined on input l
 ine 5.
 
 
-LaTeX Warning: Reference `sol:vigenere-3' on page 39 undefined on input line 5.
+LaTeX Warning: Reference `sol:vigenere-3' on page 38 undefined on input line 5.
 
 
 Processing 'python0' comment.
@@ -3264,15 +3224,17 @@ runsystem(python comment.cut > comment.out 2> comment.err)...executed.
 
 )
 (./exercises/vigenere-4/main.tex (./exercises/vigenere-4/question.tex
+Package marginnote Info: Margin note 38.2 is on absolute page 39 on input line 
+2.
 Package marginnote Info: right page because not two side mode on input line 2.
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
+Package marginnote Info: xpos seems to be 165.27335pt on input line 2.
 )
 
-LaTeX Warning: Hyper reference `sol:vigenere-4' on page 39 undefined on input l
+LaTeX Warning: Hyper reference `sol:vigenere-4' on page 38 undefined on input l
 ine 5.
 
 
-LaTeX Warning: Reference `sol:vigenere-4' on page 39 undefined on input line 5.
+LaTeX Warning: Reference `sol:vigenere-4' on page 38 undefined on input line 5.
 
 
 Processing 'python0' comment.
@@ -3287,11 +3249,11 @@ Package marginnote Info: right page because not two side mode on input line 2.
 Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
 )
 
-LaTeX Warning: Hyper reference `sol:vigenere-5' on page 39 undefined on input l
+LaTeX Warning: Hyper reference `sol:vigenere-5' on page 38 undefined on input l
 ine 5.
 
 
-LaTeX Warning: Reference `sol:vigenere-5' on page 39 undefined on input line 5.
+LaTeX Warning: Reference `sol:vigenere-5' on page 38 undefined on input line 5.
 
 
 Processing 'python0' comment.
@@ -3306,11 +3268,11 @@ Package marginnote Info: right page because not two side mode on input line 2.
 Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
 )
 
-LaTeX Warning: Hyper reference `sol:vigenere-6' on page 39 undefined on input l
+LaTeX Warning: Hyper reference `sol:vigenere-6' on page 38 undefined on input l
 ine 5.
 
 
-LaTeX Warning: Reference `sol:vigenere-6' on page 39 undefined on input line 5.
+LaTeX Warning: Reference `sol:vigenere-6' on page 38 undefined on input line 5.
 
 
 Processing 'python0' comment.
@@ -3325,11 +3287,11 @@ Package marginnote Info: right page because not two side mode on input line 2.
 Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
 )
 
-LaTeX Warning: Hyper reference `sol:vigenere-7' on page 39 undefined on input l
+LaTeX Warning: Hyper reference `sol:vigenere-7' on page 38 undefined on input l
 ine 5.
 
 
-LaTeX Warning: Reference `sol:vigenere-7' on page 39 undefined on input line 5.
+LaTeX Warning: Reference `sol:vigenere-7' on page 38 undefined on input line 5.
 
 
 Processing 'python0' comment.
@@ -3356,19 +3318,16 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 24.
 
 
-LaTeX Warning: Reference `LastPage' on page 39 undefined on input line 24.
-
-
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 24.
 
-[39])
+[38])
 
-LaTeX Warning: Hyper reference `sol:vigenere-8' on page 40 undefined on input l
+LaTeX Warning: Hyper reference `sol:vigenere-8' on page 39 undefined on input l
 ine 5.
 
 
-LaTeX Warning: Reference `sol:vigenere-8' on page 40 undefined on input line 5.
+LaTeX Warning: Reference `sol:vigenere-8' on page 39 undefined on input line 5.
 
 
 Processing 'python0' comment.
@@ -3379,8 +3338,10 @@ runsystem(python comment.cut > comment.out 2> comment.err)...executed.
 
 )
 (./exercises/vigenere-9/main.tex (./exercises/vigenere-9/question.tex
+Package marginnote Info: Margin note 39.1 is on absolute page 39 on input line 
+2.
 Package marginnote Info: right page because not two side mode on input line 2.
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
+Package marginnote Info: xpos seems to be 163.76443pt on input line 2.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
@@ -3395,53 +3356,48 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 59.
 
 
-LaTeX Warning: Reference `LastPage' on page 40 undefined on input line 59.
+LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 59.
+
+[39]
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 87.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 59.
+(Font)              using `OT1/cmr/m/sc' instead on input line 87.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 87.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 87.
 
 [40]
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 87.
+(Font)              using `OT1/cmr/m/sc' instead on input line 151.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 87.
+(Font)              using `OT1/cmr/m/sc' instead on input line 151.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 87.
-
-
-LaTeX Warning: Reference `LastPage' on page 41 undefined on input line 87.
+(Font)              using `OT1/cmr/m/sc' instead on input line 151.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 87.
+(Font)              using `OT1/cmr/m/sc' instead on input line 151.
 
 [41]
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 151.
+(Font)              using `OT1/cmr/m/sc' instead on input line 206.
 
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 151.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 151.
-
-
-LaTeX Warning: Reference `LastPage' on page 42 undefined on input line 151.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 151.
-
-[42]
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 206.
@@ -3454,20 +3410,13 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 206.
 
+[42])
 
-LaTeX Warning: Reference `LastPage' on page 43 undefined on input line 206.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 206.
-
-[43])
-
-LaTeX Warning: Hyper reference `sol:vigenere-9' on page 44 undefined on input l
+LaTeX Warning: Hyper reference `sol:vigenere-9' on page 43 undefined on input l
 ine 5.
 
 
-LaTeX Warning: Reference `sol:vigenere-9' on page 44 undefined on input line 5.
+LaTeX Warning: Reference `sol:vigenere-9' on page 43 undefined on input line 5.
 
 
 Processing 'python0' comment.
@@ -3482,11 +3431,11 @@ Package marginnote Info: right page because not two side mode on input line 4.
 Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 4.
 
 
-LaTeX Warning: Hyper reference `sol:vigenere-10' on page 44 undefined on input 
+LaTeX Warning: Hyper reference `sol:vigenere-10' on page 43 undefined on input 
 line 5.
 
 
-LaTeX Warning: Reference `sol:vigenere-10' on page 44 undefined on input line 5
+LaTeX Warning: Reference `sol:vigenere-10' on page 43 undefined on input line 5
 .
 
 Processing 'python0' comment.
@@ -3501,11 +3450,11 @@ Package marginnote Info: right page because not two side mode on input line 2.
 Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
 )
 
-LaTeX Warning: Hyper reference `sol:vigenere-11' on page 44 undefined on input 
+LaTeX Warning: Hyper reference `sol:vigenere-11' on page 43 undefined on input 
 line 5.
 
 
-LaTeX Warning: Reference `sol:vigenere-11' on page 44 undefined on input line 5
+LaTeX Warning: Reference `sol:vigenere-11' on page 43 undefined on input line 5
 .
 
 
@@ -3521,13 +3470,10 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 7.
 
 
-LaTeX Warning: Reference `LastPage' on page 44 undefined on input line 7.
-
-
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 7.
 
-[44] Processing 'python0' comment.
+[43] Processing 'python0' comment.
 \openout10 = `comment.cut'.
 
  Comment 'python0' writing to comment.cut.
@@ -3558,13 +3504,10 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 111.
 
 
-LaTeX Warning: Reference `LastPage' on page 45 undefined on input line 111.
-
-
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 111.
 
-[45])
+[44])
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 19.
@@ -3578,13 +3521,10 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 19.
 
 
-LaTeX Warning: Reference `LastPage' on page 46 undefined on input line 19.
-
-
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 19.
 
-[46] (./classical-cipher-substitution-cipher.tex (./solutions.tex)
+[45] (./classical-cipher-substitution-cipher.tex (./solutions.tex)
 Processing 'python0' comment.
 \openout10 = `comment.cut'.
 
@@ -3606,13 +3546,10 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 20.
 
 
-LaTeX Warning: Reference `LastPage' on page 47 undefined on input line 20.
-
-
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 20.
 
-[47] (./classical-cipher-permutation-cipher.tex (./solutions.tex)
+[46] (./classical-cipher-permutation-cipher.tex (./solutions.tex)
 Processing 'python0' comment.
 \openout10 = `comment.cut'.
 
@@ -3641,19 +3578,16 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 27.
 
 
-LaTeX Warning: Reference `LastPage' on page 48 undefined on input line 27.
-
-
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 27.
 
-[48])
+[47])
 
-LaTeX Warning: Hyper reference `sol:permutation-5' on page 49 undefined on inpu
+LaTeX Warning: Hyper reference `sol:permutation-5' on page 48 undefined on inpu
 t line 5.
 
 
-LaTeX Warning: Reference `sol:permutation-5' on page 49 undefined on input line
+LaTeX Warning: Reference `sol:permutation-5' on page 48 undefined on input line
  5.
 
 Processing 'python0' comment.
@@ -3664,8 +3598,10 @@ runsystem(python comment.cut > comment.out 2> comment.err)...executed.
 
 )
 (./exercises/permutation-6/main.tex (./exercises/permutation-6/question.tex
+Package marginnote Info: Margin note 48.1 is on absolute page 48 on input line 
+2.
 Package marginnote Info: right page because not two side mode on input line 2.
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
+Package marginnote Info: xpos seems to be 164.36191pt on input line 2.
 
 Overfull \hbox (1.27907pt too wide) in paragraph at lines 2--2
 \OT1/cmr/m/n/6 exercises/permutation- 
@@ -3673,11 +3609,11 @@ Overfull \hbox (1.27907pt too wide) in paragraph at lines 2--2
 
 )
 
-LaTeX Warning: Hyper reference `sol:permutation-6' on page 49 undefined on inpu
+LaTeX Warning: Hyper reference `sol:permutation-6' on page 48 undefined on inpu
 t line 5.
 
 
-LaTeX Warning: Reference `sol:permutation-6' on page 49 undefined on input line
+LaTeX Warning: Reference `sol:permutation-6' on page 48 undefined on input line
  5.
 
 Processing 'python0' comment.
@@ -3697,11 +3633,11 @@ Overfull \hbox (1.27907pt too wide) in paragraph at lines 2--2
 
 )
 
-LaTeX Warning: Hyper reference `sol:permutation-7' on page 49 undefined on inpu
+LaTeX Warning: Hyper reference `sol:permutation-7' on page 48 undefined on inpu
 t line 5.
 
 
-LaTeX Warning: Reference `sol:permutation-7' on page 49 undefined on input line
+LaTeX Warning: Reference `sol:permutation-7' on page 48 undefined on input line
  5.
 
 Processing 'python0' comment.
@@ -3721,11 +3657,11 @@ Overfull \hbox (1.27907pt too wide) in paragraph at lines 2--2
 
 )
 
-LaTeX Warning: Hyper reference `sol:permutation-8' on page 49 undefined on inpu
+LaTeX Warning: Hyper reference `sol:permutation-8' on page 48 undefined on inpu
 t line 5.
 
 
-LaTeX Warning: Reference `sol:permutation-8' on page 49 undefined on input line
+LaTeX Warning: Reference `sol:permutation-8' on page 48 undefined on input line
  5.
 
 Processing 'python0' comment.
@@ -3749,15 +3685,14 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 2.
 
 
-LaTeX Warning: Reference `LastPage' on page 49 undefined on input line 2.
-
-
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 2.
 
-[49]
+[48]
+Package marginnote Info: Margin note 49.1 is on absolute page 49 on input line 
+2.
 Package marginnote Info: right page because not two side mode on input line 2.
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
+Package marginnote Info: xpos seems to be 162.16444pt on input line 2.
 
 Overfull \hbox (1.27907pt too wide) in paragraph at lines 2--2
 \OT1/cmr/m/n/6 exercises/permutation- 
@@ -3765,11 +3700,11 @@ Overfull \hbox (1.27907pt too wide) in paragraph at lines 2--2
 
 )
 
-LaTeX Warning: Hyper reference `sol:permutation-9' on page 50 undefined on inpu
+LaTeX Warning: Hyper reference `sol:permutation-9' on page 49 undefined on inpu
 t line 5.
 
 
-LaTeX Warning: Reference `sol:permutation-9' on page 50 undefined on input line
+LaTeX Warning: Reference `sol:permutation-9' on page 49 undefined on input line
  5.
 
 Processing 'python0' comment.
@@ -3780,8 +3715,10 @@ runsystem(python comment.cut > comment.out 2> comment.err)...executed.
 
 )
 (./exercises/permutation-10/main.tex (./exercises/permutation-10/question.tex
+Package marginnote Info: Margin note 49.2 is on absolute page 49 on input line 
+2.
 Package marginnote Info: right page because not two side mode on input line 2.
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
+Package marginnote Info: xpos seems to be 162.16444pt on input line 2.
 
 Overfull \hbox (1.27907pt too wide) in paragraph at lines 2--2
 \OT1/cmr/m/n/6 exercises/permutation- 
@@ -3789,11 +3726,11 @@ Overfull \hbox (1.27907pt too wide) in paragraph at lines 2--2
 
 )
 
-LaTeX Warning: Hyper reference `sol:permutation-10' on page 50 undefined on inp
+LaTeX Warning: Hyper reference `sol:permutation-10' on page 49 undefined on inp
 ut line 5.
 
 
-LaTeX Warning: Reference `sol:permutation-10' on page 50 undefined on input lin
+LaTeX Warning: Reference `sol:permutation-10' on page 49 undefined on input lin
 e 5.
 
 Processing 'python0' comment.
@@ -3816,21 +3753,20 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 21.
 
 
-LaTeX Warning: Reference `LastPage' on page 50 undefined on input line 21.
-
-
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 21.
 
-[50] (./classical-cipher-hill-cipher.tex (./solutions.tex)
+[49] (./classical-cipher-hill-cipher.tex (./solutions.tex)
 Processing 'python0' comment.
 \openout10 = `comment.cut'.
 
  Comment 'python0' writing to comment.cut.
 runsystem(python comment.cut > comment.out 2> comment.err)...executed.
 
+Package marginnote Info: Margin note 50.1 is on absolute page 50 on input line 
+7.
 Package marginnote Info: right page because not two side mode on input line 7.
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 7.
+Package marginnote Info: xpos seems to be 162.16444pt on input line 7.
 
 Overfull \hbox (30.05702pt too wide) in paragraph at lines 32--33
 \OT1/cmr/m/n/12 Requires $\OML/cmm/m/it/12 K[]$ \OT1/cmr/m/n/12 in mod 26: com-
@@ -3856,13 +3792,10 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 50.
 
 
-LaTeX Warning: Reference `LastPage' on page 51 undefined on input line 50.
-
-
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 50.
 
-[51])
+[50])
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 22.
@@ -3876,13 +3809,10 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 22.
 
 
-LaTeX Warning: Reference `LastPage' on page 52 undefined on input line 22.
-
-
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 22.
 
-[52] (./classical-cipher-one-time-pad-cipher.tex (./solutions.tex)
+[51] (./classical-cipher-one-time-pad-cipher.tex (./solutions.tex)
 Processing 'python0' comment.
 \openout10 = `comment.cut'.
 
@@ -3895,11 +3825,11 @@ Package marginnote Info: right page because not two side mode on input line 2.
 Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
 )
 
-LaTeX Warning: Hyper reference `sol:otp-0' on page 53 undefined on input line 5
+LaTeX Warning: Hyper reference `sol:otp-0' on page 52 undefined on input line 5
 .
 
 
-LaTeX Warning: Reference `sol:otp-0' on page 53 undefined on input line 5.
+LaTeX Warning: Reference `sol:otp-0' on page 52 undefined on input line 5.
 
 Processing 'python0' comment.
 \openout10 = `comment.cut'.
@@ -3921,13 +3851,10 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 42.
 
 
-LaTeX Warning: Reference `LastPage' on page 53 undefined on input line 42.
-
-
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 42.
 
-[53])
+[52])
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 23.
@@ -3941,13 +3868,10 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 23.
 
 
-LaTeX Warning: Reference `LastPage' on page 54 undefined on input line 23.
-
-
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 23.
 
-[54] (./classical-cipher-block-and-stream-cipher.tex (./solutions.tex)
+[53] (./classical-cipher-block-and-stream-cipher.tex (./solutions.tex)
 Processing 'python0' comment.
 \openout10 = `comment.cut'.
 
@@ -3968,13 +3892,10 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 43.
 
 
-LaTeX Warning: Reference `LastPage' on page 55 undefined on input line 43.
-
-
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 43.
 
-[55]
+[54]
 Underfull \hbox (badness 2343) in paragraph at lines 77--78
 []\OT1/cmr/m/n/12 Require padding for in-com-plete
  []
@@ -4001,17 +3922,10 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 24.
 
 
-LaTeX Warning: Reference `LastPage' on page 56 undefined on input line 24.
-
-
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 24.
 
-[56]
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 24.
-
+[55]
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 24.
@@ -4021,13 +3935,14 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 24.
 
 
-LaTeX Warning: Reference `LastPage' on page 57 undefined on input line 24.
+LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 24.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 24.
 
-[57] (./classical-cipher-lfsr.tex (./solutions.tex)
+[56] (./classical-cipher-lfsr.tex (./solutions.tex)
 Processing 'python0' comment.
 \openout10 = `comment.cut'.
 
@@ -4048,22 +3963,19 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 45.
 
 
-LaTeX Warning: Reference `LastPage' on page 58 undefined on input line 45.
-
-
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 45.
 
-[58] (./exercises/lfsr-0/main.tex (./exercises/lfsr-0/question.tex
+[57] (./exercises/lfsr-0/main.tex (./exercises/lfsr-0/question.tex
 Package marginnote Info: right page because not two side mode on input line 2.
 Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
 )
 
-LaTeX Warning: Hyper reference `sol:lfsr-0' on page 59 undefined on input line 
+LaTeX Warning: Hyper reference `sol:lfsr-0' on page 58 undefined on input line 
 5.
 
 
-LaTeX Warning: Reference `sol:lfsr-0' on page 59 undefined on input line 5.
+LaTeX Warning: Reference `sol:lfsr-0' on page 58 undefined on input line 5.
 
 Processing 'python0' comment.
 \openout10 = `comment.cut'.
@@ -4077,11 +3989,11 @@ Package marginnote Info: right page because not two side mode on input line 2.
 Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
 )
 
-LaTeX Warning: Hyper reference `sol:lfsr-1' on page 59 undefined on input line 
+LaTeX Warning: Hyper reference `sol:lfsr-1' on page 58 undefined on input line 
 5.
 
 
-LaTeX Warning: Reference `sol:lfsr-1' on page 59 undefined on input line 5.
+LaTeX Warning: Reference `sol:lfsr-1' on page 58 undefined on input line 5.
 
 Processing 'python0' comment.
 \openout10 = `comment.cut'.
@@ -4095,11 +4007,11 @@ Package marginnote Info: right page because not two side mode on input line 2.
 Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
 )
 
-LaTeX Warning: Hyper reference `sol:lfsr-2' on page 59 undefined on input line 
+LaTeX Warning: Hyper reference `sol:lfsr-2' on page 58 undefined on input line 
 5.
 
 
-LaTeX Warning: Reference `sol:lfsr-2' on page 59 undefined on input line 5.
+LaTeX Warning: Reference `sol:lfsr-2' on page 58 undefined on input line 5.
 
 Processing 'python0' comment.
 \openout10 = `comment.cut'.
@@ -4113,11 +4025,11 @@ Package marginnote Info: right page because not two side mode on input line 2.
 Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
 )
 
-LaTeX Warning: Hyper reference `sol:lfsr-3' on page 59 undefined on input line 
+LaTeX Warning: Hyper reference `sol:lfsr-3' on page 58 undefined on input line 
 5.
 
 
-LaTeX Warning: Reference `sol:lfsr-3' on page 59 undefined on input line 5.
+LaTeX Warning: Reference `sol:lfsr-3' on page 58 undefined on input line 5.
 
 Processing 'python0' comment.
 \openout10 = `comment.cut'.
@@ -4143,19 +4055,16 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 20.
 
 
-LaTeX Warning: Reference `LastPage' on page 59 undefined on input line 20.
-
-
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 20.
 
-[59])
+[58])
 
-LaTeX Warning: Hyper reference `sol:lfsr-4' on page 60 undefined on input line 
+LaTeX Warning: Hyper reference `sol:lfsr-4' on page 59 undefined on input line 
 5.
 
 
-LaTeX Warning: Reference `sol:lfsr-4' on page 60 undefined on input line 5.
+LaTeX Warning: Reference `sol:lfsr-4' on page 59 undefined on input line 5.
 
 Processing 'python0' comment.
 \openout10 = `comment.cut'.
@@ -4165,15 +4074,17 @@ runsystem(python comment.cut > comment.out 2> comment.err)...executed.
 
 )
 (./exercises/lfsr-5/main.tex (./exercises/lfsr-5/question.tex
+Package marginnote Info: Margin note 59.1 is on absolute page 59 on input line 
+2.
 Package marginnote Info: right page because not two side mode on input line 2.
-Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 2.
+Package marginnote Info: xpos seems to be 168.91444pt on input line 2.
 )
 
-LaTeX Warning: Hyper reference `sol:lfsr-5' on page 60 undefined on input line 
+LaTeX Warning: Hyper reference `sol:lfsr-5' on page 59 undefined on input line 
 5.
 
 
-LaTeX Warning: Reference `sol:lfsr-5' on page 60 undefined on input line 5.
+LaTeX Warning: Reference `sol:lfsr-5' on page 59 undefined on input line 5.
 
 Processing 'python0' comment.
 \openout10 = `comment.cut'.
@@ -4210,13 +4121,10 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 2.
 
 
-LaTeX Warning: Reference `LastPage' on page 60 undefined on input line 2.
-
-
 LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 (Font)              using `OT1/cmr/m/sc' instead on input line 2.
 
-[60] (./main.ind [61
+[59] (./main.ind [60
 
 
 
@@ -4226,7 +4134,7 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scsl' undefined
 LaTeX Warning: Empty `thebibliography' environment or \BreakBibliography
                before end of `thebibliography' environment on input line 14.
 
-) [62
+) [61
 
 
 
@@ -4241,28 +4149,19 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
-
-Package lastpage Warning: Rerun to get the references right on input line 8.
-
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) ) 
 Here is how much of TeX's memory you used:
- 44536 strings out of 477985
- 1036400 string characters out of 5839370
- 3210377 words of memory out of 6000000
- 63206 multiletter control sequences out of 15000+600000
+ 44572 strings out of 477985
+ 1036808 string characters out of 5839370
+ 3213709 words of memory out of 6000000
+ 63236 multiletter control sequences out of 15000+600000
  525770 words of font info for 84 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 122i,20n,138p,10669b,845s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 122i,21n,138p,10669b,845s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{page.98} has been referenced but does not exist, re
 placed by a fixed one
@@ -4315,6 +4214,10 @@ eplaced by a fixed one
 pdfTeX warning (dest): name{page.70} has been referenced but does not exist, re
 placed by a fixed one
 
+
+pdfTeX warning (dest): name{page.62} has been referenced but does not exist, re
+placed by a fixed one
+
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texli
@@ -4337,11 +4240,10 @@ nts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/cm-super/sfrm1200.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/cm-super/sfsx1440.pfb>
-Output written on main.pdf (62 pages, 464571 bytes).
+Output written on main.pdf (61 pages, 462366 bytes).
 PDF statistics:
- 845 PDF objects out of 1000 (max. 8388607)
- 727 compressed objects within 8 object streams
+ 898 PDF objects out of 1000 (max. 8388607)
+ 781 compressed objects within 8 object streams
  320 named destinations out of 1000 (max. 500000)
  173 words of extra memory for PDF output out of 10000 (max. 10000000)
 
->>>>>>> 9e9e6be059f0f04f3d631ffd996a63a3ce698a7b

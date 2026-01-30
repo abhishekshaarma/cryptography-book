@@ -1,0 +1,66 @@
+\chapter{Semi-Groups}
+\begin{python0}
+  from solutions import *; clear()
+\end{python0}
+
+
+Let us recall that a group is$(G, *, e)$ where $G$ is a set and $e \in G$ such that it satisfies
+
+\begin{enumerate}
+\item \textbf{Closure:}  
+  If $x, y \in G$, then $x * y \in G$.  
+  This means that $* : G \times G \to G$ is a binary operation.
+\item \textbf{Associativity:}  
+  If $x, y, z \in G$, then $(x * y) * z = x * ( y * z )$.  
+\item \textbf{Inverse:}  
+  If $x \in  G$, then there is some $y \in G$ such that  $x * y = e = y * x$.  
+
+\item \textbf{Neutral:}  
+  If $x \in  G$, then   $e * x = x = x * e$.  
+
+
+\end{enumerate}
+
+For a semigroup, it is almost a group except you do not need the inverses.
+
+
+\textbf{Definition:}
+A semigroup is a tuple $(G, *)$ where $G$ where $G$ is a set and the following are satisfied:
+
+\begin{enumerate}
+\item \textbf{Closure:}  
+  If $x, y \in G$, then $x * y \in G$.  
+  This means that $* : G \times G \to G$ is a binary operation.
+\item \textbf{Associativity:}  
+  If $x, y, z \in G$, then $(x * y) * z = x * ( y * z )$.  
+
+\end{enumerate}
+
+Commulative Semigroup $(G, *)$ is a semigroup such that $*$ is commulative, i.e,
+if $x , y \in G$, then
+
+\textbf{Definition:}
+A monoid is a tuple $(G, *, e)$ where G is a set and the following are satisfied:
+Closure, Associativity and Neutral.
+
+And of course a commulative monoid $(G, *, e)$ is a monoid such that $*$ is commulative, i.e, if $x, y \in G$, then
+$x*y = y*x$
+
+
+\textbf{Proposition:} Uniqueness of an Identity.
+
+Suppose e, f are identities in $G$.
+
+
+$\forall a \ in G$
+$ae = ea = a$
+
+and
+$af = fa = a$
+Let us take, $a  = f$, then,
+$fe = ef = f$
+now, let's assume $a = e$, then
+$ef = fe = e$
+
+The above statements are only true for $e = f$, thus proving uniqueness.
+

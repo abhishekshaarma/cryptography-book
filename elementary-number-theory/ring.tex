@@ -1,0 +1,24 @@
+\chapter{Rings and Fields}
+\begin{python0}
+  from solutions import *; clear()
+\end{python0}
+
+We can generalize the properties of $\Z$ using rings.
+
+\textbf Definition: $(R,+_{R}, *_{R}, 0_R, 1_R)$ is a ring if
+\begin{enumerate}
+  \item $(R, +_{R} 0_R)$ is an abelian group
+  \item $(R, ._{R} 1_R)$ is an semigroup with Identity
+  \item Distribution: If $ x, y, z \in R$, then,
+    $x *_R (y +_R z) = x *_R y +_R x *_r z$
+    $ (y +_R z)*_R x  = y *_R x +_R z *_r x$
+
+\end{enumerate}
+
+$R,+_{R}, *_{R}, 0_R, 1_R)$  is a commulative ring if it is a ring and if $x, y \in R$,
+
+$x *_R y = y *_R x$
+
+So, A ring R is a set of stuff with two operation that. and they also have two different things known as the additive identity and the multiplicative identity.
+One way to easily visualize this is by thinking of integers, We have addition and multiplication as two operators and then for additive identity, we have $0$, no matter what element is added to $0$, the answer is always the element. Same holds true for multiplication and $1$.
+
